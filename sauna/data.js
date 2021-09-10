@@ -286,8 +286,8 @@ var APP_DATA = {
   "name": "Сауна. ВКинель.ру",
   "settings": {
     "mouseViewMode": "drag",
-    "autorotateEnabled": false,
-    "fullscreenButton": false,
+    "autorotateEnabled": true,
+    "fullscreenButton": true,
     "viewControlButtons": false
   }
 };
