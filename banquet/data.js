@@ -665,7 +665,7 @@ var APP_DATA = {
   "name": "Банкетный зал. ВКинель.ру",
   "settings": {
     "mouseViewMode": "drag",
-    "autorotateEnabled": false,
+    "autorotateEnabled": true,
     "fullscreenButton": true,
     "viewControlButtons": false
   }
