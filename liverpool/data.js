@@ -84,7 +84,14 @@ var APP_DATA = {
           "target": "1-----"
         }
       ],
-      "infoHotspots": []
+      "infoHotspots": [
+        {
+          "yaw": -1.3367364259305,
+          "pitch": 1.5707963267948966,
+          "title": "Коттедж Ливерпуль",
+          "text": "В коттеджном комплексе ВКинель.ру"
+        }
+      ]
     },
     {
       "id": "1-----",
@@ -3583,7 +3590,7 @@ var APP_DATA = {
       "infoHotspots": []
     }
   ],
-  "name": "Ливерпуль. ВКинель.ру",
+  "name": "Ливерпуль. ВКинель.ру VKinel.ru",
   "settings": {
     "mouseViewMode": "drag",
     "autorotateEnabled": true,
