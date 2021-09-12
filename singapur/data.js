@@ -76,7 +76,7 @@ var APP_DATA = {
     },
     {
       "id": "1---",
-      "name": "Вид с цлицы",
+      "name": "Вид с улицы",
       "levels": [
         {
           "tileSize": 256,
