@@ -1,0 +1,386 @@
+<html>
+<head>
+<title>Калькулятор цен ВКинель.ру</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KD2S4K4');</script>
+<!-- //ga.borodinatamanovsobakagmailcum -->
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+console.log('loaded');
+}, false);
+</script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KD2S4K4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- ga.borodinatamanovSOBAKAgmailcum -->
+
+<style>
+.full-width
+{
+position: relative;
+width: 99.4vw;
+margin-top: 0px;
+margin-left: -50vw;
+left: 50%;
+text-align:center;
+vertical-align: middle;
+overflow: hidden;
+border: 0;
+}
+
+.full-height
+{
+position: relative;
+height:99.4vh;
+text-align:center;
+vertical-align: middle;
+overflow: hidden;
+border: 0;
+}
+
+.full-screen
+{
+width:99.4vw;
+height:99.4vh;
+text-align:center;
+overflow: hidden;
+border: 0;
+}
+
+.width-screen
+{
+width:99.4vw;
+max-height:99.4vh;
+text-align:center;
+overflow: hidden;
+border: 0;
+}
+
+.max-full-screen
+{
+max-width:99.4vw;
+max-height:99.4vh;
+text-align:center;
+vertical-align: middle;
+overflow: hidden;
+border: 0;
+}
+.messengers-icon
+{
+width:0.8em;
+height:0.8em;
+position: relative !important;
+opacity:100% !important;
+text-decoration: none;
+}
+a:hover
+{
+text-decoration: underline !important;
+}
+a
+{
+text-decoration: none !important;
+opacity: 1 !important;
+}
+</style>
+
+
+
+<script>
+var prices =
+{
+    'liverpool' :
+    {
+        'weekend':  {'min_price':18000,   'min_guests':15, 'max_guests':101, 'next_person_price':600 },
+        'trivial':  {'min_price':12000,   'min_guests':10, 'max_guests':101, 'next_person_price':600 }
+    },
+    'singapur' :
+    {
+        'weekend':  {'min_price':18000,   'min_guests':15, 'max_guests':101, 'next_person_price':600 },
+        'trivial':  {'min_price':12000,   'min_guests':10, 'max_guests':101, 'next_person_price':600 }
+    },
+    'malta' :
+    {
+        'weekend':  {'min_price':19800,   'min_guests':15, 'max_guests':101, 'next_person_price':700 },
+        'trivial':  {'min_price':13000,   'min_guests':10, 'max_guests':101, 'next_person_price':650 }
+    },
+    'valencia' :
+    {
+        'weekend':  {'min_price':29900,   'min_guests':21, 'max_guests':101, 'next_person_price':700 },
+        'trivial':  {'min_price':26900,   'min_guests':21, 'max_guests':101, 'next_person_price':650 }
+    },
+    'kipr' :
+    {
+        'weekend':  {'min_price':10700,   'min_guests':6, 'max_guests':15, 'next_person_price':300 },
+        'trivial':  {'min_price':10700,   'min_guests':6, 'max_guests':15, 'next_person_price':300 }
+    },
+    'kipr1' :
+    {
+        'weekend':  {'min_price':3400,   'min_guests':1, 'max_guests':4, 'next_person_price':500 },
+        'trivial':  {'min_price':3400,   'min_guests':1, 'max_guests':4, 'next_person_price':500 }
+    },
+    'kipr2' :
+    {
+        'weekend':  {'min_price':2900,   'min_guests':1, 'max_guests':3, 'next_person_price':500 },
+        'trivial':  {'min_price':2900,   'min_guests':1, 'max_guests':3, 'next_person_price':500 }
+    },
+    'kipr3' :
+    {
+        'weekend':  {'min_price':2900,   'min_guests':1, 'max_guests':2, 'next_person_price':500 },
+        'trivial':  {'min_price':2900,   'min_guests':1, 'max_guests':2, 'next_person_price':500 }
+    },
+    'banzal' :
+    {
+        'weekend':  {'min_price':9000,   'min_guests':20, 'max_guests':101, 'next_person_price':230 },
+        'trivial':  {'min_price':9000,   'min_guests':20, 'max_guests':101, 'next_person_price':230 }
+    },
+    'banya' :
+    {
+        'weekend':  {'min_price':3000,   'min_guests':6, 'max_guests':15, 'next_person_price':250 },
+        'trivial':  {'min_price':3000,   'min_guests':6, 'max_guests':15, 'next_person_price':250 }
+    },
+    'sauna' :
+    {
+        'weekend':  {'min_price':3000,   'min_guests':6, 'max_guests':15, 'next_person_price':250 },
+        'trivial':  {'min_price':3000,   'min_guests':6, 'max_guests':15, 'next_person_price':250 }
+    },
+    'banquet' :
+    {
+        'weekend':  {'min_price':25500,   'min_guests':15, 'max_guests':101, 'next_person_price':1700 },
+        'trivial':  {'min_price':25500,   'min_guests':15, 'max_guests':101, 'next_person_price':1700 }
+    },
+
+    '': ''
+};
+
+
+function calc_vkinel_price ()
+{
+/* var text = document.getElementById("input_form").value;
+*/
+document.getElementById("all_sum").value = "100000";
+var accommodation = document.getElementById("accommodation").value;
+var weekend1 = document.getElementById("weekend1").checked;
+var weekend0 = document.getElementById("weekend0").checked;
+var guests = parseInt(document.getElementById("guests").value);
+
+if (weekend1 == true)
+{
+    day_type = 'weekend';
+}
+else
+{
+    day_type = 'trivial';
+}
+
+var price = 0;
+
+/*TODO: try to get price data from trivial, if not - get it from weekend*/
+
+console.log ('accommodation = '+ accommodation );
+console.log ('day_type = '+ day_type );
+min_price = prices[accommodation][day_type]["min_price"];
+min_guests = prices[accommodation][day_type]["min_guests"];
+max_guests = prices[accommodation][day_type]["max_guests"];
+next_person_price = prices[accommodation][day_type]["next_person_price"];
+console.dir (prices[accommodation][day_type]);
+
+price = min_price + (Math.max(guests, min_guests) - min_guests) * next_person_price;
+
+/*
+  <option value="liverpool">Liverpool</option>
+  <option value="singapur">Singapur</option>
+  <option value="">Valencia</option>
+  <option value="">Malta</option>
+  <option value="">Kipr</option>
+  <option value="">Kipr №1</option>
+  <option value="">Kipr №2</option>
+  <option value="">Kipr №3</option>
+  <option value="">Банкетный зал</option>
+  <option value="">Баня</option>
+  <option value="">Сауна</option>
+  <option value="">Банкет 1700</option>
+*/
+
+if (guests > max_guests)
+{
+    console.log ('set guests to max_guests for this accommodation');
+    document.getElementById('guests').value=max_guests;
+    guests = max_guests;
+    setTimeout( function() { calc_vkinel_price(); }, 100);
+    /*TODO: show message about max_guests to user*/
+}
+
+console.log (accommodation + ' price = '+ price);
+
+//	Вычисляем сумму на гостя
+var sum_per_guest = price / guests;
+document.getElementById("sum_per_guest").value = parseInt(sum_per_guest);
+
+//	Покажем общую сумму
+document.getElementById("all_sum").value = price;
+}
+
+</script>
+
+</head>
+
+<body>
+
+<form>
+<p>
+<select id="accommodation" onchange="calc_vkinel_price();" >
+  <option value="liverpool">Ливерпуль</option>
+  <option value="singapur">Сингапур</option>
+  <option value="malta">Мальта</option>
+  <option value="valencia">Валенсия</option>
+  <option value="kipr">Кипр</option>
+  <option value="kipr1">Kipr №1</option>
+  <option value="kipr2">Kipr №2</option>
+  <option value="kipr3">Kipr №3</option>
+  <option value="banzal">Банкетный зал</option>
+  <option value="banya">Баня</option>
+  <option value="sauna">Сауна</option>
+  <option value="banquet">Банкет за 1700</option>
+</select>
+
+<p>
+<label><input id=weekend1 type=radio name=weekend value=1 checked onchange="calc_vkinel_price();" class=vkinel_input>Выходные</label>
+<br>
+<label><input id=weekend0 type=radio name=weekend value=0 onchange="calc_vkinel_price();" class=vkinel_input>Будни</label>
+<p class="lead">
+<label>
+
+<p>
+<label>
+<select id=guests size="1" name="guests" onchange="calc_vkinel_price();" class="vkinel_input">
+<option value=1>1</option>
+<option value=2>2</option>
+<option value=3>3</option>
+<option value=4>4</option>
+<option value=5>5</option>
+<option value=6>6</option>
+<option value=7>7</option>
+<option value=8>8</option>
+<option value=9>9</option>
+<option value=10>10</option>
+<option value=11>11</option>
+<option value=12>12</option>
+<option value=13>13</option>
+<option value=14>14</option>
+<option value=15>15</option>
+<option value=16>16</option>
+<option selected value=17>17</option>
+<option value=18>18</option>
+<option value=19>19</option>
+<option value=20>20</option>
+<option value=21>21</option>
+<option value=22>22</option>
+<option value=23>23</option>
+<option value=24>24</option>
+<option value=25>25</option>
+<option value=26>26</option>
+<option value=27>27</option>
+<option value=28>28</option>
+<option value=29>29</option>
+<option value=30>30</option>
+<option value=31>31</option>
+<option value=32>32</option>
+<option value=33>33</option>
+<option value=34>34</option>
+<option value=35>35</option>
+<option value=36>36</option>
+<option value=37>37</option>
+<option value=38>38</option>
+<option value=39>39</option>
+<option value=40>40</option>
+<option value=41>41</option>
+<option value=42>42</option>
+<option value=43>43</option>
+<option value=44>44</option>
+<option value=45>45</option>
+<option value=46>46</option>
+<option value=47>47</option>
+<option value=48>48</option>
+<option value=49>49</option>
+<option value=50>50</option>
+<option value=51>51</option>
+<option value=52>52</option>
+<option value=53>53</option>
+<option value=54>54</option>
+<option value=55>55</option>
+<option value=56>56</option>
+<option value=57>57</option>
+<option value=58>58</option>
+<option value=59>59</option>
+<option value=60>60</option>
+<option value=61>61</option>
+<option value=62>62</option>
+<option value=63>63</option>
+<option value=64>64</option>
+<option value=65>65</option>
+<option value=66>66</option>
+<option value=67>67</option>
+<option value=68>68</option>
+<option value=69>69</option>
+<option value=70>70</option>
+<option value=71>71</option>
+<option value=72>72</option>
+<option value=73>73</option>
+<option value=74>74</option>
+<option value=75>75</option>
+<option value=76>76</option>
+<option value=77>77</option>
+<option value=78>78</option>
+<option value=79>79</option>
+<option value=80>80</option>
+<option value=81>81</option>
+<option value=82>82</option>
+<option value=83>83</option>
+<option value=84>84</option>
+<option value=85>85</option>
+<option value=86>86</option>
+<option value=87>87</option>
+<option value=88>88</option>
+<option value=89>89</option>
+<option value=90>90</option>
+<option value=91>91</option>
+<option value=92>92</option>
+<option value=93>93</option>
+<option value=94>94</option>
+<option value=95>95</option>
+<option value=96>96</option>
+<option value=97>97</option>
+<option value=98>98</option>
+<option value=99>99</option>
+<option value=100>100</option>
+<option value=101>101</option>
+<option value=102>102</option>
+</select>
+ гостей
+</label>
+
+<p>
+<label>Сумма общая <input id=all_sum type=text name=sum value="">₽</label>
+<p>
+<label>Сумма на гостя <input id=sum_per_guest type=text name=sum_per_guest value="">₽</label>
+
+</form>
+
+<script>
+calc_vkinel_price();
+</script>
+
+</body>
+</html>
