@@ -100,6 +100,13 @@ opacity: 1 !important;
 }
 </style>
 
+<style>
+input[type="radio"]:checked + label {
+  background: #000;
+  border-color: green;
+  color: white;
+}
+</style>
 
 </head>
 
@@ -182,7 +189,7 @@ var prices =
         'gentive_name': 'приготовления банкета'
     },
 
-    '': ''
+    'json-end': 'json-end'
 };
 
 
@@ -273,6 +280,32 @@ function change_guest_count (new_guests)
     calc_vkinel_price();
 }
 
+function bootstrap_accommodation()
+{
+    //  function set accommodation by find accommodation name from URL
+    // document.location.href
+
+    // console.dir(prices);
+    current_href = document.location.href.toLowerCase();
+    //  Loop over all accommodation from prices array
+    for (var accom in prices)
+    {
+        if (accom === 'length' || !prices.hasOwnProperty(accom)) continue;
+        var accomod = accom;
+        accomod = accomod.toLowerCase();
+
+        if (current_href.indexOf(accomod) >= 0)
+        {
+            console.log('' + accom + ' is the current accommodation because current href is ' +current_href);
+            // set input value by id
+            document.getElementById("accommodation").value = accom;
+            // set radio button value
+            document.price_calc.accommodation.value=accommodation;
+        }
+    }
+}
+
+
 </script>
 
 <form name="price_calc">
@@ -355,7 +388,10 @@ function change_guest_count (new_guests)
 </form>
 
 <script>
-calc_vkinel_price();
+document.addEventListener('DOMContentLoaded', function() {
+    bootstrap_accommodation();
+    calc_vkinel_price();
+}, false);
 </script>
 
 </body>
