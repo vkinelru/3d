@@ -135,11 +135,6 @@ opacity: 1 !important;
 
 
 <style>
-.vkinel_input
-{
-border: 1pt solid #5928e5;
-appearance: auto !important;
-}
 
 .price_only
 {
@@ -149,6 +144,24 @@ appearance: auto !important;
 .price_calculus
 {
     font-size:1.7rem;
+    display:inline-block;
+}
+.price_calculus * + *
+{
+    margin-bottom: 1.2rem !important;
+}
+
+.vkinel_input
+{
+    border: 1pt solid #5928e5;
+    appearance: auto !important;
+    font-size:2rem;
+    display:inline-block;
+}
+
+.price_calculus, .price_calculus *, .price_calculus * *, .price_calculus * + *
+{
+    font-size:2rem;
 }
 </style>
 
@@ -418,9 +431,9 @@ function bootstrap_accommodation()
 <a href="javascript:change_guest_count ('-1');"><img alt"-" title="-" src="https://vkinelru.github.io/3d/icons/light6.0-80x80x4bit-png/circle-minus.png" style="height:1em;"></a>
 <a href="javascript:change_guest_count ('+1');"><img alt"+" title="+" src="https://vkinelru.github.io/3d/icons/light6.0-80x80x4bit-png/circle-plus.png" style="height:1em;"></a>
 
-<h2>
+<h1>
 <span class="price_only"><span id=all_sum>110000</span>₽</span> - <span id=price_text>цена аренды выбранного объекта</span>
-</h2>
+</h1>
 
 <h3>
 <span id=sum_per_guest></span>₽ - цена в расчёте на одного гостя
