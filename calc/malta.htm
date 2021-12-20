@@ -111,6 +111,47 @@ opacity: 1 !important;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+.vkinel_input
+{
+border: 1pt solid #5928e5;
+appearance: auto !important;
+}
+
+.price_only
+{
+    color:#5928e5;
+}
+
+.price_calculus
+{
+    font-size:1.7rem;
+}
+</style>
+
 <script>
 var prices =
 {
@@ -306,6 +347,7 @@ function bootstrap_accommodation()
 
 </script>
 
+<div class="price_calculus">
 <form name="price_calc">
 
 <h3>Выберите в какой день планируете заехать?</h3>
@@ -338,7 +380,7 @@ function bootstrap_accommodation()
 <!--
 <input type=hidden id="accommodation" onchange="calc_vkinel_price();">
 -->
-<select id="accommodation" onchange="calc_vkinel_price();" >
+<select id="accommodation" onchange="calc_vkinel_price();" class=vkinel_input>
   <option value="liverpool">Ливерпуль</option>
   <option value="singapur">Сингапур</option>
   <option value="malta">Мальта</option>
@@ -377,13 +419,14 @@ function bootstrap_accommodation()
 <a href="javascript:change_guest_count ('+1');"><img alt"+" title="+" src="https://vkinelru.github.io/3d/icons/light6.0-80x80x4bit-png/circle-plus.png" style="height:1em;"></a>
 
 <h2>
-<span id=all_sum>110000</span>₽ - <span id=price_text>цена аренды выбранного объекта</span>
+<span class="price_only"><span id=all_sum>110000</span>₽</span> - <span id=price_text>цена аренды выбранного объекта</span>
 </h2>
 
 <h3>
 <span id=sum_per_guest></span>₽ - цена в расчёте на одного гостя
 </h3>
 </form>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -391,6 +434,25 @@ document.addEventListener('DOMContentLoaded', function() {
     calc_vkinel_price();
 }, false);
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
