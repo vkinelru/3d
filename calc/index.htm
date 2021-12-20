@@ -257,7 +257,8 @@ document.getElementById("all_sum").innerHTML = price;
 
 document.getElementById("price_text").innerHTML = 'Цена '+ prices[accommodation]["gentive_name"] +' на '+guests+' гостей '+day_name+'';
 
-
+// set radio button value
+document.price_calc.accommodation.value=accommodation;
 
 }
 
@@ -273,6 +274,8 @@ function change_guest_count (new_guests)
 }
 
 </script>
+
+<form name="price_calc">
 
 <h3>Выберите в какой день планируете заехать?</h3>
 <p>
@@ -301,8 +304,9 @@ function change_guest_count (new_guests)
 <br><label><input type=radio name=accommodation value=banquet onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Праздничный банкет за 1700₽ с персоны</label>
 
 <p>
-<input type=hidden id="accommodation" onchange="calc_vkinel_price();">
 <!--
+<input type=hidden id="accommodation" onchange="calc_vkinel_price();">
+-->
 <select id="accommodation" onchange="calc_vkinel_price();" >
   <option value="liverpool">Ливерпуль</option>
   <option value="singapur">Сингапур</option>
@@ -317,7 +321,6 @@ function change_guest_count (new_guests)
   <option value="sauna">Сауна</option>
   <option value="banquet">Праздничный банкет</option>
 </select>
--->
 
 <h3>Число гостей</h3>
 <p>
@@ -349,6 +352,7 @@ function change_guest_count (new_guests)
 <h3>
 <span id=sum_per_guest></span>₽ - цена в расчёте на одного гостя
 </h3>
+</form>
 
 <script>
 calc_vkinel_price();
