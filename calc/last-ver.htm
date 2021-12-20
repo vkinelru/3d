@@ -177,6 +177,23 @@ var prices =
     'json-end': 'json-end'
 };
 
+function get_query_params(qs)
+{
+    /*  function decode parameters from GET
+    */
+    qs = qs.split('+').join(' ');
+
+    var params = {},
+        tokens,
+        re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs))
+    {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
+}
 
 function calc_vkinel_price ()
 {
@@ -226,7 +243,7 @@ function calc_vkinel_price ()
     var sum_per_guest = price / guests;
     document.getElementById("sum_per_guest").innerHTML = parseInt(sum_per_guest);
 
-    //	Покажем общую сумму
+    //	Покажем общую сумму+
     document.getElementById("all_sum").value = price;
     document.getElementById("all_sum").innerHTML = price;
     document.getElementById("price_text").innerHTML = 'Цена '+ prices[accommodation]["gentive_name"] +' на&nbsp;'+guests+'&nbsp;гостей '+day_name+'';
@@ -257,6 +274,19 @@ function bootstrap_accommodation()
 {
     //  function set accommodation by find accommodation name from URL
     // document.location.href
+
+    // Get string from GET-request
+    var query = get_query_params(document.location.search);
+    if (!query.guests)
+    {
+        console.log('No GET[guests] parameter defined');
+    }
+    else
+    {
+        guests = String(parseInt(query.guests));
+        console.log('GET[guests] parameter defined, set guests = '+guests);
+        document.getElementById("guests").value = guests;
+    }
 
     // console.dir(prices);
     current_href = document.location.href.toLowerCase();
@@ -369,6 +399,3 @@ document.addEventListener('DOMContentLoaded', function() {
     calc_vkinel_price();
 }, false);
 </script>
-
-
-
