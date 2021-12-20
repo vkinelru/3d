@@ -1,0 +1,374 @@
+<!-- Калькулятор расчёта стоимости -->
+<style>
+
+.price_only
+{
+    color:#5928e5;
+}
+
+.price_calculus
+{
+    font-size:2.2rem;
+    display:inline-block;
+    max-width: 100vw;
+}
+
+
+.price_calculus, .price_calculus *, .price_calculus * *, .price_calculus * + *,
+{
+    font-size:2.2rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    max-width: 100vw;
+}
+
+.form_section
+{
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    max-width: 100vw;
+}
+
+.form_section h3
+{
+    margin-top:3rem;
+    margin-bottom:2rem;
+    font-size:3rem;
+    max-width: 100vw;
+}
+
+.form_section select
+{
+    font-size:3rem;
+    max-width: 100vw;
+}
+
+.select_same_height
+{
+    font-size:3rem;
+    height:3rem;
+    max-width: 100vw;
+}
+
+.vkinel_input
+{
+    border: 1pt solid #5928e5;
+    appearance: auto !important;
+    font-size:2rem;
+    max-width: 100vw;
+    height:2rem;
+    width:2rem;
+}
+
+.vkinel_select
+{
+    border: 2pt solid #5928e5;
+    appearance: auto !important;
+    font-size:2.2rem;
+    max-width: 100vw;
+}
+
+.highlighted_text
+{
+    color: #5928e5;
+}
+
+
+.lbl
+{
+    font-size:2.2rem;
+    display:block;
+    max-width: 100vw;
+}
+
+.lbl:hover
+{
+    color: #5928e5;
+}
+
+
+/*
+a[target="_blank"]:after
+{
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  width:1em;
+  height:1em;
+}
+*/
+
+</style>
+
+<script>
+var prices =
+{
+    'liverpool' :
+    {
+        'weekend':  {'min_price':18000,   'min_guests':15, 'max_guests':60, 'next_person_price':600 },
+        'trivial':  {'min_price':12000,   'min_guests':10, 'max_guests':60, 'next_person_price':600 },
+        'gentive_name': 'аренды коттеджа Ливерпуль'
+    },
+    'singapur' :
+    {
+        'weekend':  {'min_price':18000,   'min_guests':15, 'max_guests':60, 'next_person_price':600 },
+        'trivial':  {'min_price':12000,   'min_guests':10, 'max_guests':60, 'next_person_price':600 },
+        'gentive_name': 'аренды коттеджа Сингапур'
+    },
+    'malta' :
+    {
+        'weekend':  {'min_price':19800,   'min_guests':15, 'max_guests':60, 'next_person_price':700 },
+        'trivial':  {'min_price':13000,   'min_guests':10, 'max_guests':60, 'next_person_price':650 },
+        'gentive_name': 'аренды коттеджа Мальта'
+    },
+    'valencia' :
+    {
+        'weekend':  {'min_price':29900,   'min_guests':21, 'max_guests':70, 'next_person_price':700 },
+        'trivial':  {'min_price':26900,   'min_guests':21, 'max_guests':70, 'next_person_price':650 },
+        'gentive_name': 'аренды коттеджа Валенсия'
+    },
+    'kipr' :
+    {
+        'weekend':  {'min_price':10700,   'min_guests':6, 'max_guests':15, 'next_person_price':300 },
+        'trivial':  {'min_price':10700,   'min_guests':6, 'max_guests':15, 'next_person_price':300 },
+        'gentive_name': 'аренды коттеджа Кипр'
+    },
+    'kipr1' :
+    {
+        'weekend':  {'min_price':3400,   'min_guests':1, 'max_guests':4, 'next_person_price':500 },
+        'trivial':  {'min_price':3400,   'min_guests':1, 'max_guests':4, 'next_person_price':500 },
+        'gentive_name': 'аренды номера 1 в коттедже Кипр'
+    },
+    'kipr2' :
+    {
+        'weekend':  {'min_price':2900,   'min_guests':1, 'max_guests':3, 'next_person_price':500 },
+        'trivial':  {'min_price':2900,   'min_guests':1, 'max_guests':3, 'next_person_price':500 },
+        'gentive_name': 'аренды номера 2 в коттедже Кипр'
+    },
+    'kipr3' :
+    {
+        'weekend':  {'min_price':2900,   'min_guests':1, 'max_guests':2, 'next_person_price':500 },
+        'trivial':  {'min_price':2900,   'min_guests':1, 'max_guests':2, 'next_person_price':500 },
+        'gentive_name': 'аренды номера 3 в коттедже Кипр'
+    },
+    'banzal' :
+    {
+        'weekend':  {'min_price':9000,   'min_guests':20, 'max_guests':120, 'next_person_price':230 },
+        'trivial':  {'min_price':9000,   'min_guests':20, 'max_guests':120, 'next_person_price':230 },
+        'gentive_name': 'аренды банкетного зала'
+    },
+    'banya' :
+    {
+        'weekend':  {'min_price':3000,   'min_guests':6, 'max_guests':15, 'next_person_price':250 },
+        'trivial':  {'min_price':3000,   'min_guests':6, 'max_guests':15, 'next_person_price':250 },
+        'gentive_name': 'аренды русской бани на дровах на 3 часа'
+    },
+    'sauna' :
+    {
+        'weekend':  {'min_price':3000,   'min_guests':6, 'max_guests':15, 'next_person_price':250 },
+        'trivial':  {'min_price':3000,   'min_guests':6, 'max_guests':15, 'next_person_price':250 },
+        'gentive_name': 'аренды сауны с бассейном на 3 часа'
+    },
+    'banquet' :
+    {
+        'weekend':  {'min_price':25500,   'min_guests':15, 'max_guests':120, 'next_person_price':1700 },
+        'trivial':  {'min_price':25500,   'min_guests':15, 'max_guests':120, 'next_person_price':1700 },
+        'gentive_name': 'приготовления банкета'
+    },
+
+    'json-end': 'json-end'
+};
+
+
+function calc_vkinel_price ()
+{
+    document.getElementById("all_sum").value = "100000";
+    var accommodation = document.getElementById("accommodation").value;
+    var weekend1 = document.getElementById("weekend1").checked;
+    var weekend0 = document.getElementById("weekend0").checked;
+    var guests = parseInt(document.getElementById("guests").value);
+
+    if (weekend1 == true)
+    {
+        day_type = 'weekend';
+        day_name = 'в&nbsp;выходные';
+    }
+    else
+    {
+        day_type = 'trivial';
+        day_name = 'в&nbsp;будни';
+    }
+
+    var price = 0;
+
+    /*TODO: try to get price data from trivial, if not - get it from weekend*/
+
+    console.log ('accommodation = '+ accommodation );
+    console.log ('day_type = '+ day_type );
+    min_price = prices[accommodation][day_type]["min_price"];
+    min_guests = prices[accommodation][day_type]["min_guests"];
+    max_guests = prices[accommodation][day_type]["max_guests"];
+    next_person_price = prices[accommodation][day_type]["next_person_price"];
+    console.dir (prices[accommodation][day_type]);
+
+    if (guests > max_guests)
+    {
+        console.log ('set guests to max_guests for this accommodation');
+        guests = max_guests;
+        document.getElementById('guests').value=max_guests;
+        setTimeout( function() { calc_vkinel_price(); }, 42);
+        /*TODO: show message about max_guests to user*/
+    }
+
+    price = min_price + (Math.max(guests, min_guests) - min_guests) * next_person_price;
+
+    console.log (accommodation + ' price = '+ price);
+
+    //	Вычисляем сумму на гостя
+    var sum_per_guest = price / guests;
+    document.getElementById("sum_per_guest").innerHTML = parseInt(sum_per_guest);
+
+    //	Покажем общую сумму
+    document.getElementById("all_sum").value = price;
+    document.getElementById("all_sum").innerHTML = price;
+    document.getElementById("price_text").innerHTML = 'Цена '+ prices[accommodation]["gentive_name"] +' на&nbsp;'+guests+'&nbsp;гостей '+day_name+'';
+
+    // set radio button value
+    document.price_calc.accommodation.value=accommodation;
+
+    gmeter = document.getElementById("guest_meter");
+    gmeter.value = guests;
+    gmeter.low = min_guests;
+    gmeter.max = max_guests;
+    gmeter.optimum = parseInt(Math.ceil(max_guests*0.51));
+    gmeter.high = parseInt(Math.ceil(max_guests*0.72));
+}
+
+function change_guest_count (new_guests)
+{
+    cur_guests = document.getElementById("guests").value;
+    eval_is_evil = 'parseInt(cur_guests)  ' + new_guests + '';
+    eval_result = parseInt(eval( eval_is_evil ));
+    console.log(" eval this: " + eval_is_evil + ', eval_result = ' + eval_result);
+    document.getElementById("guests").value = String(Math.max(1, eval_result));
+
+    calc_vkinel_price();
+}
+
+function bootstrap_accommodation()
+{
+    //  function set accommodation by find accommodation name from URL
+    // document.location.href
+
+    // console.dir(prices);
+    current_href = document.location.href.toLowerCase();
+    //  Loop over all accommodation from prices array
+    for (var accom in prices)
+    {
+        if (accom === 'length' || !prices.hasOwnProperty(accom)) continue;
+        var accomod = accom;
+        accomod = accomod.toLowerCase();
+
+        if (current_href.indexOf(accomod) >= 0)
+        {
+            console.log('' + accom + ' is the current accommodation because current href is ' +current_href);
+            // set input value by id
+            document.getElementById("accommodation").value = accom;
+            // set radio button value
+            document.price_calc.accommodation.value=accommodation;
+        }
+    }
+}
+
+
+</script>
+
+<div class="price_calculus" id="price_calculus">
+<form name="price_calc">
+
+<div class=form_section>
+<h3>
+Выберите в какой день планируете заехать?</h3>
+<label class="lbl"><input id=weekend1 type=radio name=weekend value=1 checked onchange="calc_vkinel_price();" class=vkinel_input><span class="highlighted_text">Выходные:</span> пятница, суббота, праздники, с 20 декабря по 15 января</label>
+<label class="lbl"><input id=weekend0 type=radio name=weekend value=0 onchange="calc_vkinel_price();" class=vkinel_input><span class="highlighted_text">Будни:</span> воскресенье, понедельник, вторник, среда, четверг</label>
+</div>
+
+<div class=form_section>
+<h3>Какой объект хотите арендовать?</h3>
+
+<label class="lbl"><input type=radio name=accommodation value=liverpool onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Коттедж Ливерпуль <!--<a href="/liverpool?from=price_calc" target="_blank"></a>--></label>
+<label class="lbl"><input type=radio name=accommodation value=singapur onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Коттедж Сингапур <!--<a href="/singapur?from=price_calc" target="_blank"></a>--></label>
+<label class="lbl"><input type=radio name=accommodation value=malta onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Коттедж Мальта <!--<a href="/malta?from=price_calc" target="_blank"></a>--></label>
+<label class="lbl"><input type=radio name=accommodation value=valencia onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Коттедж Валенсия <!--<a href="/valencia?from=price_calc" target="_blank"></a>--></label>
+<label class="lbl"><input type=radio name=accommodation value=kipr onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Коттедж Кипр <!--<a href="/kipr?from=price_calc" target="_blank"></a>--></label>
+<label class="lbl"><input type=radio name=accommodation value=kipr1 onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Номер 1 в коттедже Кипр <!--<a href="/kipr?from=price_calc" target="_blank"></a>--></label>
+<label class="lbl"><input type=radio name=accommodation value=kipr2 onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Номер 2 в коттедже Кипр <!--<a href="/kipr?from=price_calc" target="_blank"></a>--></label>
+<label class="lbl"><input type=radio name=accommodation value=kipr3 onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Номер 3 в коттедже Кипр <!--<a href="/kipr?from=price_calc" target="_blank"></a>--></label>
+<label class="lbl"><input type=radio name=accommodation value=banzal onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Банкетный зал <!--<a href="/banzal?from=price_calc" target="_blank"></a>--></label>
+<label class="lbl"><input type=radio name=accommodation value=banya onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Русская баня на дровах <!--<a href="/banya?from=price_calc" target="_blank"></a>--></label>
+<label class="lbl"><input type=radio name=accommodation value=sauna onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Сауна с бассейном <!--<a href="/sauna?from=price_calc" target="_blank"></a>--></label>
+<label class="lbl"><input type=radio name=accommodation value=banquet onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Праздничный банкет за 1700₽ с персоны <!--<a href="/banquet?from=price_calc" target="_blank"></a>--></label>
+<!--
+<select id="accommodation" onchange="calc_vkinel_price();" class=vkinel_select>
+  <option value="liverpool">Ливерпуль</option>
+  <option value="singapur">Сингапур</option>
+  <option value="malta">Мальта</option>
+  <option value="valencia">Валенсия</option>
+  <option value="kipr">Кипр</option>
+  <option value="kipr1">Kipr №1</option>
+  <option value="kipr2">Kipr №2</option>
+  <option value="kipr3">Kipr №3</option>
+  <option value="banzal">Банкетный зал</option>
+  <option value="banya">Баня</option>
+  <option value="sauna">Сауна</option>
+  <option value="banquet">Праздничный банкет</option>
+</select>
+-->
+<input type=hidden id="accommodation" onchange="calc_vkinel_price();">
+</div>
+
+<div class="form_section">
+<h3>
+Число гостей</h3>
+<!--<img src="https://vkinelru.github.io/3d/icons/light6.0-80x80x4bit-png/user-group.png" style="height:1em;">-->
+<select id=guests size="1" name="guests" onchange="calc_vkinel_price();" class="vkinel_select">
+<option value=1>1</option><option value=2>2</option><option value=3>3</option><option value=4>4</option><option value=5>5</option><option value=6>6</option><option value=7>7</option><option value=8>8</option><option value=9>9</option><option value=10>10</option>
+<option value=11>11</option><option value=12>12</option><option value=13>13</option><option value=14>14</option><option value=15>15</option><option value=16>16</option><option value=17>17</option><option value=18>18</option><option value=19>19</option><option value=20>20</option>
+<option selected value=21>21</option><option value=22>22</option><option value=23>23</option><option value=24>24</option><option value=25>25</option><option value=26>26</option><option value=27>27</option><option value=28>28</option><option value=29>29</option><option value=30>30</option>
+<option value=31>31</option><option value=32>32</option><option value=33>33</option><option value=34>34</option><option value=35>35</option><option value=36>36</option><option value=37>37</option><option value=38>38</option><option value=39>39</option><option value=40>40</option>
+<option value=41>41</option><option value=42>42</option><option value=43>43</option><option value=44>44</option><option value=45>45</option><option value=46>46</option><option value=47>47</option><option value=48>48</option><option value=49>49</option><option value=50>50</option>
+<option value=51>51</option><option value=52>52</option><option value=53>53</option><option value=54>54</option><option value=55>55</option><option value=56>56</option><option value=57>57</option><option value=58>58</option><option value=59>59</option><option value=60>60</option>
+<option value=61>61</option><option value=62>62</option><option value=63>63</option><option value=64>64</option><option value=65>65</option><option value=66>66</option><option value=67>67</option><option value=68>68</option><option value=69>69</option><option value=70>70</option>
+<option value=71>71</option><option value=72>72</option><option value=73>73</option><option value=74>74</option><option value=75>75</option><option value=76>76</option><option value=77>77</option><option value=78>78</option><option value=79>79</option><option value=80>80</option>
+<option value=81>81</option><option value=82>82</option><option value=83>83</option><option value=84>84</option><option value=85>85</option><option value=86>86</option><option value=87>87</option><option value=88>88</option><option value=89>89</option><option value=90>90</option>
+<option value=91>91</option><option value=92>92</option><option value=93>93</option><option value=94>94</option><option value=95>95</option><option value=96>96</option><option value=97>97</option><option value=98>98</option><option value=99>99</option><option value=100>100</option>
+<option value=101>101</option><option value=102>102</option><option value=103>103</option><option value=104>104</option><option value=105>105</option><option value=106>106</option><option value=107>107</option><option value=108>108</option><option value=109>109</option><option value=110>110</option>
+<option value=111>111</option><option value=112>112</option><option value=113>113</option><option value=114>114</option><option value=115>115</option><option value=116>116</option><option value=117>117</option><option value=118>118</option><option value=119>119</option><option value=120>120</option>
+<option value=121>121</option>
+</select>
+
+<a href="javascript:change_guest_count ('-1');"><img class="select_same_height" alt"-" title="-" src="https://vkinelru.github.io/3d/icons/light6.0-80x80x4bit-png/circle-minus.png"></a>
+<a href="javascript:change_guest_count ('+1');"><img class="select_same_height" alt"+" title="+" src="https://vkinelru.github.io/3d/icons/light6.0-80x80x4bit-png/circle-plus.png" ></a>
+<meter id="guest_meter" class="select_same_height"  min="0" max="120" low="10" high="66" optimum="80" value="50"></meter>
+
+</div>
+
+<div class=form_section>
+<h3>
+<b>
+<span id=price_text>Цена аренды выбранного объекта</span>: <span class="price_only"><span id=all_sum>110000</span>₽</span></h3>
+</b>
+<h3>
+Цена в расчёте на одного гостя <span id=sum_per_guest>3500</span>₽</h3>
+</div>
+
+</form>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    bootstrap_accommodation();
+    calc_vkinel_price();
+}, false);
+</script>
+
+
+

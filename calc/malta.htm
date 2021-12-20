@@ -156,8 +156,6 @@ opacity: 1 !important;
     border: 1pt solid #5928e5;
     appearance: auto !important;
     font-size:2rem;
-    display:inline-block;
-}
 
 .price_calculus, .price_calculus *, .price_calculus * *, .price_calculus * + *
 {
@@ -314,7 +312,7 @@ document.getElementById("sum_per_guest").innerHTML = parseInt(sum_per_guest);
 document.getElementById("all_sum").value = price;
 document.getElementById("all_sum").innerHTML = price;
 
-document.getElementById("price_text").innerHTML = 'Цена '+ prices[accommodation]["gentive_name"] +' на '+guests+' гостей '+day_name+'';
+document.getElementById("price_text").innerHTML = 'Цена '+ prices[accommodation]["gentive_name"] +' на&nbsp;'+guests+'&nbsp;гостей '+day_name+'';
 
 // set radio button value
 document.price_calc.accommodation.value=accommodation;
@@ -323,10 +321,9 @@ document.price_calc.accommodation.value=accommodation;
 
 function change_guest_count (new_guests)
 {
-    // document.getElementById("guests").value = parseInt(document.getElementById("guests").value) + 1;
     cur_guests = document.getElementById("guests").value;
     eval_is_evil = 'parseInt(cur_guests)  ' + new_guests + '';
-    console.log('eval this: ' + eval_is_evil);
+    // console.log(" eval this: " + eval_is_evil);
     document.getElementById("guests").value = Math.max(1, eval( eval_is_evil ));
 
     calc_vkinel_price();
@@ -363,18 +360,16 @@ function bootstrap_accommodation()
 <div class="price_calculus">
 <form name="price_calc">
 
-<h3>Выберите в какой день планируете заехать?</h3>
-<p>
-<label><input id=weekend1 type=radio name=weekend value=1 checked onchange="calc_vkinel_price();" class=vkinel_input>Выходные: пятница, суббота, праздники, с 20 декабря по 15 января
-</label>
+<h3 class="sb-font-h3 sb-font-title">
+Выберите в какой день планируете заехать?</h3>
+<p class="sb-font-p1">
+<label><input id=weekend1 type=radio name=weekend value=1 checked onchange="calc_vkinel_price();" class=vkinel_input>Выходные: пятница, суббота, праздники, с 20 декабря по 15 января</label>
 <br>
 <label><input id=weekend0 type=radio name=weekend value=0 onchange="calc_vkinel_price();" class=vkinel_input>Будни: воскресенье, понедельник, вторник, среда, четверг</label>
-<p class="lead">
-<label>
+</p>
 
-
-
-<h3>Какой объект хотите арендовать?</h3>
+<h3 class="sb-font-h3 sb-font-title">
+Какой объект хотите арендовать?</h3>
 
 <label><input type=radio name=accommodation value=liverpool onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Коттедж Ливерпуль</label>
 <br><label><input type=radio name=accommodation value=singapur onchange="document.getElementById('accommodation').value=this.value; calc_vkinel_price();" class=vkinel_input>Коттедж Сингапур</label>
@@ -408,8 +403,8 @@ function bootstrap_accommodation()
   <option value="banquet">Праздничный банкет</option>
 </select>
 
-<h3>Число гостей</h3>
-<p>
+<h3 class="sb-font-h3 sb-font-title">
+Число гостей</h3>
 <label>
 <!--<img src="https://vkinelru.github.io/3d/icons/light6.0-80x80x4bit-png/user-group.png" style="height:1em;">-->
 <select id=guests size="1" name="guests" onchange="calc_vkinel_price();" class="vkinel_input">
@@ -431,11 +426,11 @@ function bootstrap_accommodation()
 <a href="javascript:change_guest_count ('-1');"><img alt"-" title="-" src="https://vkinelru.github.io/3d/icons/light6.0-80x80x4bit-png/circle-minus.png" style="height:1em;"></a>
 <a href="javascript:change_guest_count ('+1');"><img alt"+" title="+" src="https://vkinelru.github.io/3d/icons/light6.0-80x80x4bit-png/circle-plus.png" style="height:1em;"></a>
 
-<h1>
-<span class="price_only"><span id=all_sum>110000</span>₽</span> - <span id=price_text>цена аренды выбранного объекта</span>
+<h1 class="sb-font-h1 sb-font-title">
+<span id=price_text>Цена аренды выбранного объекта</span><span class="price_only"><span id=all_sum>110000</span>₽</span>
 </h1>
 
-<h3>
+<h3 class="sb-font-h3 sb-font-title">
 <span id=sum_per_guest></span>₽ - цена в расчёте на одного гостя
 </h3>
 </form>
