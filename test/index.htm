@@ -185,9 +185,9 @@
 #navibar
 {
     position:fixed;
-    height:3rem;
-    line-height:3rem;
-    top:-3rem;
+    height:5rem;
+    line-height:5rem;
+    top:-5rem;
     left:0;
     width:100%;
     background:transparent;
@@ -196,7 +196,7 @@
     z-index:162;
     text-align:right;
     vertical-align:bottom;
-    display:table;
+    display:block;
     margin:0;
     padding:0;
 }
@@ -204,16 +204,16 @@
 #navbar-icon
 {
     display:inline-block;
-    background:#5928e5;
-    line-height:2.4rem;
-    height:2.4rem;
-    width:2.4rem;
-    font-size:2rem;
+    background:#5928e5CC;
+    line-height:4rem;
+    height:4rem;
+    width:4rem;
+    font-size:4rem;
     text-align:center;
     vertical-align:middle;
-    padding:0.3rem;
+    padding:0.5rem;
     float:right;
-    outline: 1px solid white;
+    outline: 0.1rem solid white;
 }
 
 </style>
@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function()
             /*scroll up*/
             if (navibar_state == 0)
             {
-                navibar.style.top='1px';
+                navibar.style.top='0px';
                 navibar_state = 1;
                 console.log('show');
             }
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function()
             /*scroll down*/
             if (navibar_state == 1)
             {
-                navibar.style.top='-3rem';
+                navibar.style.top='-5rem';
                 navibar_state = 0;
                 console.log('hide');
             }
@@ -496,6 +496,7 @@ document.addEventListener('DOMContentLoaded', function()
             margin: 0px 0px;
             float:right;
             text-align:right;
+            padding-right: 5.1rem;
             }
             </style>
             <div id=descriptor class="full-width">
