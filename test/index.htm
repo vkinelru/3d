@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function()
             if (navibar_state == 0)
             {
                 navibar.style.top='0px';
-                messagebar.style.bottom='0px';
+                messagebar.style.left='0px';
                 navibar_state = 1;
                 console.log('show');
             }
@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', function()
             if (navibar_state == 1)
             {
                 navibar.style.top='-5rem';
-                messagebar.style.bottom='-15%';
+                messagebar.style.left='-99%';
                 navibar_state = 0;
                 console.log('hide');
             }
