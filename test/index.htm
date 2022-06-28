@@ -153,11 +153,12 @@
             {
             width:3rem;
             height:3rem;
-            font-size:3.3rem;
-            line-height:3.3rem;
+            font-size:2rem;
+            line-height:2rem;
             position: relative !important;
             opacity:100% !important;
             text-decoration: none;
+            max-width: 90%;
             }
 
             </style>  </head>
@@ -170,9 +171,11 @@
 <div id="scroll_percentage"></div>
 <div id="navibar"><div id="navbar-icon"><a href="#" onclick="javascript:alert('Представь навигационное меню, появляющееся на весь экран!');">☰</a></div></div>
 
-<div id="messagebar">
-<div id="messagebar-inner">
-<a class="messengers-icon-bigger" target="_blank" href="tel:+79270025759" style="color: #5928e5;">+79270025759</a>
+<div class="messagebar">
+<div class="messagebar-inner">
+    <a class="messengers-icon-bigger" target="_blank" href="tel:+79270025759" style="color: #5928e5;">+7 927 002 57 59</a>
+</div>
+<div class="messagebar-inner">
     <a target="_blank" class="messengers-icon-bigger" title="Позвонить" href="tel:+79270025759"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/phone.png" alt="Позвонить" title="Позвонить"></a>
     <a target="_blank" class="messengers-icon-bigger" title="WhatsApp +79270025759" href="whatsapp://send?phone=79270025759"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/WhatsApp.png" alt="+79270025759" title="+79270025759"></a>
     <a target="_blank" class="messengers-icon-bigger" title="Telegram +79270025759" href="https://t.me/BorodinaLudmila"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/Telegram.png" alt="+79270025759" title="+79270025759"></a>
@@ -227,11 +230,9 @@
     padding:0;
 }
 
-#messagebar
+.messagebar
 {
     position:fixed;
-    height:5rem;
-    line-height:5rem;
     bottom:0;
     left:0;
     width:99.6%;
@@ -245,9 +246,12 @@
     margin:0;
     padding:0;
 }
-#messagebar-inner
+.messagebar-inner
 {
     vertical-align:middle;
+    float:left;
+    text-align:left;
+
 }
 
 #navbar-icon
