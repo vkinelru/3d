@@ -130,6 +130,7 @@
             overflow: hidden;
             border: 0;
             }
+
             .messengers-icon
             {
             width:0.8em;
@@ -138,16 +139,17 @@
             opacity:100% !important;
             text-decoration: none;
             }
+
             a:hover
             {
             text-decoration: underline !important;
             }
+
             a
             {
             text-decoration: none !important;
             opacity: 1 !important;
             }
-
 
             .messengers-icon-bigger
             {
@@ -158,7 +160,7 @@
             position: relative !important;
             opacity:100% !important;
             text-decoration: none;
-            max-width: 90%;
+            max-width: 99.6%;
             }
 
             </style>  </head>
@@ -171,10 +173,7 @@
 <div id="scroll_percentage"></div>
 <div id="navibar"><div id="navbar-icon"><a href="#" onclick="javascript:alert('Представь навигационное меню, появляющееся на весь экран!');">☰</a></div></div>
 
-<div class="messagebar">
-<div class="messagebar-inner">
-    <a class="messengers-icon-bigger" target="_blank" href="tel:+79270025759" style="color: #5928e5;">+7 927 002 57 59</a>
-</div>
+<div id="messagebar">
 <div class="messagebar-inner">
     <a target="_blank" class="messengers-icon-bigger" title="Позвонить" href="tel:+79270025759"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/phone.png" alt="Позвонить" title="Позвонить"></a>
     <a target="_blank" class="messengers-icon-bigger" title="WhatsApp +79270025759" href="whatsapp://send?phone=79270025759"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/WhatsApp.png" alt="+79270025759" title="+79270025759"></a>
@@ -183,6 +182,9 @@
     <a target="_blank" class="messengers-icon-bigger" title="Instagram +79270025759" href="https://www.instagram.com/borodinaarenda/"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/Instagram.png" alt="+79270025759" title="+79270025759"></a>
     <a target="_blank" class="messengers-icon-bigger" title="VK +79270025759" href="https://vk.com/im?sel=134951081"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/VK.png" alt="+79270025759" title="+79270025759"></a>
     <a target="_blank" class="messengers-icon-bigger" title="Email +79270025759" href="mailto:kupi@vkinel.ru"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/email.png" alt="Email" title="Email"></a>
+</div>
+<div class="messagebar-inner">
+    <a class="messengers-icon-bigger" target="_blank" href="tel:+79270025759" style="color: #5928e5;">+7 927 002 57 59</a>
 </div>
 </div>
 
@@ -230,7 +232,7 @@
     padding:0;
 }
 
-.messagebar
+#messagebar
 {
     position:fixed;
     bottom:0;
@@ -321,6 +323,7 @@ document.addEventListener('DOMContentLoaded', function()
 
     window.addEventListener('scroll',function(){
         navibar = document.getElementById('navibar'); // Get The NavBar
+        messagebar = document.getElementById('messagebar'); // Get The NavBar
         var scroll_top = get_window_Yscroll();
         if(scroll_top < last_scroll_top)
         {
@@ -328,6 +331,7 @@ document.addEventListener('DOMContentLoaded', function()
             if (navibar_state == 0)
             {
                 navibar.style.top='0px';
+                messagebar.style.bottom='0px';
                 navibar_state = 1;
                 console.log('show');
             }
@@ -338,6 +342,7 @@ document.addEventListener('DOMContentLoaded', function()
             if (navibar_state == 1)
             {
                 navibar.style.top='-5rem';
+                messagebar.style.bottom='-15%';
                 navibar_state = 0;
                 console.log('hide');
             }
