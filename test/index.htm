@@ -147,6 +147,19 @@
             text-decoration: none !important;
             opacity: 1 !important;
             }
+
+
+            .messengers-icon-bigger
+            {
+            width:3rem;
+            height:3rem;
+            font-size:3.3rem;
+            line-height:3.3rem;
+            position: relative !important;
+            opacity:100% !important;
+            text-decoration: none;
+            }
+
             </style>  </head>
 
 <body class="sb-body sb-body_with-footer  font-pragmatica-opensans sb-content-size_l sb-buttons-border_round">
@@ -156,6 +169,19 @@
 <div id="scroll_percentage_background"></div>
 <div id="scroll_percentage"></div>
 <div id="navibar"><div id="navbar-icon"><a href="#" onclick="javascript:alert('Представь навигационное меню, появляющееся на весь экран!');">☰</a></div></div>
+
+<div id="messagebar">
+<div id="messagebar-inner">
+<a class="messengers-icon-bigger" target="_blank" href="tel:+79270025759" style="color: #5928e5;">+79270025759</a>
+    <a target="_blank" class="messengers-icon-bigger" title="Позвонить" href="tel:+79270025759"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/phone.png" alt="Позвонить" title="Позвонить"></a>
+    <a target="_blank" class="messengers-icon-bigger" title="WhatsApp +79270025759" href="whatsapp://send?phone=79270025759"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/WhatsApp.png" alt="+79270025759" title="+79270025759"></a>
+    <a target="_blank" class="messengers-icon-bigger" title="Telegram +79270025759" href="https://t.me/BorodinaLudmila"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/Telegram.png" alt="+79270025759" title="+79270025759"></a>
+    <a target="_blank" class="messengers-icon-bigger" title="Viber +79270025759" href="viber://chat?number=79270025759"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/Viber.png" alt="+79270025759" title="+79270025759"></a>
+    <a target="_blank" class="messengers-icon-bigger" title="Instagram +79270025759" href="https://www.instagram.com/borodinaarenda/"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/Instagram.png" alt="+79270025759" title="+79270025759"></a>
+    <a target="_blank" class="messengers-icon-bigger" title="VK +79270025759" href="https://vk.com/im?sel=134951081"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/VK.png" alt="+79270025759" title="+79270025759"></a>
+    <a target="_blank" class="messengers-icon-bigger" title="Email +79270025759" href="mailto:kupi@vkinel.ru"><img class="messengers-icon-bigger" src="https://vkinelru.github.io/3d/icons/64/email.png" alt="Email" title="Email"></a>
+</div>
+</div>
 
 <style>
 #scroll_percentage_background
@@ -199,6 +225,29 @@
     display:block;
     margin:0;
     padding:0;
+}
+
+#messagebar
+{
+    position:fixed;
+    height:5rem;
+    line-height:5rem;
+    bottom:0;
+    left:0;
+    width:99.6%;
+    background:transparent;
+    color:white;
+    transition: 0.4s;
+    z-index:163;
+    text-align:left;
+    vertical-align:middle;
+    display:block;
+    margin:0;
+    padding:0;
+}
+#messagebar-inner
+{
+    vertical-align:middle;
 }
 
 #navbar-icon
