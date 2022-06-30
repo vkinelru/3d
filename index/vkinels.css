@@ -1,0 +1,89 @@
+.s-footer, .s-back-to-top__icon, .s-back-to-top__image, .s-back-to-top
+{
+    visibility:hidden !important;
+    display:none !important;
+    transform: scale(0)  !important;
+    clip-path: circle(0) !important;
+    position: absolute !important;
+    left: -999px !important;
+    height: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.full-width
+{
+    position: relative;
+    width: 99.4vw;
+    margin-top: 0px;
+    margin-left: -50vw;
+    left: 50%;
+    text-align:center;
+    vertical-align: middle;
+    overflow: hidden;
+    border: 0;
+}
+
+.full-height
+{
+    position: relative;
+    height:99.4vh;
+    text-align:center;
+    vertical-align: middle;
+    overflow: hidden;
+    border: 0;
+}
+
+.full-screen
+{
+    width:99.4vw;
+    height:99.4vh;
+    text-align:center;
+    overflow: hidden;
+    border: 0;
+}
+
+.width-screen
+{
+    width:99.4vw;
+    max-height:99.4vh;
+    text-align:center;
+    overflow: hidden;
+    border: 0;
+}
+
+.max-full-screen
+{
+    max-width:99.4vw;
+    max-height:99.4vh;
+    text-align:center;
+    vertical-align: middle;
+    overflow: hidden;
+    border: 0;
+}
+
+.messengers-icon
+{
+    width:0.8em;
+    height:0.8em;
+    position: relative !important;
+    opacity:100% !important;
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline !important;
+}
+
+a
+{
+    text-decoration: none !important;
+    opacity: 1 !important;
+}
+
+.modal_links
+{
+    text-decoration: underline !important;
+    color:darkblue;
+}
