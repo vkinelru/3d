@@ -4,10 +4,9 @@
 
 // calltouch
 (function(w,d,n,c){w.CalltouchDataObject=n;w[n]=function(){w[n]["callbacks"].push(arguments)};if(!w[n]["callbacks"]){w[n]["callbacks"]=[]}w[n]["loaded"]=false;if(typeof c!=="object"){c=[c]}w[n]["counters"]=c;for(var i=0;i<c.length;i+=1){p(c[i])}function p(cId){var a=d.getElementsByTagName("script")[0],s=d.createElement("script"),i=function(){a.parentNode.insertBefore(s,a)},m=typeof Array.prototype.find === 'function',n=m?"init-min.js":"init.js";s.type="text/javascript";s.async=true;s.src="https://mod.calltouch.ru/"+n+"?id="+cId;if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded",i,false)}else{i()}}})(window,document,"ct","663gyaf5");
-</script>
-<!-- calltouch -->
 
-<script>
+
+
 
 /**
  * Get current browser viewpane heigtht
@@ -250,97 +249,294 @@ document.addEventListener('DOMContentLoaded', function() {
     hide_element_by_class ('s-back-to-top');
     console.log('loaded');
 }, false);
-</script>
+/* Copyright (c) 2022 Borodin-Atamanov */
 
-
-<style>
-.s-footer, .s-back-to-top__icon, .s-back-to-top__image, .s-back-to-top
+function get_query_params(qs)
 {
-    visibility:hidden !important;
-    display:none !important;
-    transform: scale(0)  !important;
-    clip-path: circle(0) !important;
-    position: absolute !important;
-    left: -999px !important;
-    height: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
+    /*  function decode parameters from GET
+     */
+    qs = qs.split('+').join(' ');
+
+    var params = {},
+    tokens,
+    re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs))
+    {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
 }
 
-.full-width
+function replace_text(node, search_this, replace_to_this)
 {
-    position: relative;
-    width: 99.4vw;
-    margin-top: 0px;
-    margin-left: -50vw;
-    left: 50%;
-    text-align:center;
-    vertical-align: middle;
-    overflow: hidden;
-    border: 0;
+    /*  function recursively search for text and replace it
+     *       It replaces only text, not HTML-code
+     */
+    if (node.nodeType == 3)
+    {
+        node.data = node.data.replaceAll(search_this, replace_to_this);
+    }
+    if (node.nodeType == 1 && node.nodeName != "SCRIPT")
+    {
+        for (var i = 0; i < node.childNodes.length; i++)
+        {
+            replace_text(node.childNodes[i], search_this, replace_to_this);
+        }
+    }
 }
 
-.full-height
+function replace_html(search_this, replace_to_this)
 {
-    position: relative;
-    height:99.4vh;
-    text-align:center;
-    vertical-align: middle;
-    overflow: hidden;
-    border: 0;
+    /*  function search for search_this and replace it with replace_to_this
+     *       It works with all body HTML-content, include attributes
+     */
+    document.body.innerHTML = document.body.innerHTML.replaceAll(search_this, replace_to_this);
 }
 
-.full-screen
+
+function replace_everything (tid, replacer)
 {
-    width:99.4vw;
-    height:99.4vh;
-    text-align:center;
-    overflow: hidden;
-    border: 0;
+    /*  tid - Text identificator
+     *       Get target text from replacer array by text_id
+     */
+    original_texts = replacer['original_texts'];
+    new_texts = replacer[tid];
+    if ((new_texts !== undefined) && (original_texts !== undefined))
+    {
+        console.log('original_texts and new_texts is exist in variables');
+        for (var key in new_texts)
+        {
+            /* check if the property/key is defined in the object itself, not in parent */
+            if (new_texts.hasOwnProperty(key))
+            {
+                if (original_texts[key][0] == 0)
+                {
+                    /* Use fast and unsafe method of search-and-replace HTML code on the page */
+                    console.log('replace_html: "', original_texts[key][1], '" -> "', new_texts[key], '"');
+                    replace_html(original_texts[key][1], new_texts[key]);
+                }
+                if (original_texts[key][0] == 1)
+                {
+                    /* Use slow and safe recursive method of search-and-replace HTML code on the page */
+                    console.log('replace_text: "', original_texts[key][1], '" -> "', new_texts[key], '"');
+                    replace_text(document.body, original_texts[key][1], new_texts[key]);
+                }
+            }
+        }
+    }
 }
 
-.width-screen
+
+function add_nbsp_after_short_word(shrtwrd)
 {
-    width:99.4vw;
-    max-height:99.4vh;
-    text-align:center;
-    overflow: hidden;
-    border: 0;
+    /*  function search for short_word and add &nbsp; after it
+     *       It works with all body HTML-content, include attributes, so be careful with short words!
+     */
+    replace_html(' '+shrtwrd+' ', ' '+shrtwrd+'&nbsp;');
+    replace_html('&nbsp;'+shrtwrd+' ', '&nbsp;'+shrtwrd+'&nbsp;');
+    replace_html('>'+shrtwrd+' ', '>'+shrtwrd+'&nbsp;');
 }
 
-.max-full-screen
+if (!String.prototype.replaceAll)
 {
-    max-width:99.4vw;
-    max-height:99.4vh;
-    text-align:center;
-    vertical-align: middle;
-    overflow: hidden;
-    border: 0;
+    String.prototype.replaceAll = String.prototype.replaceAll = function(target, replacement)
+    {
+        return this.split(target).join(replacement);
+    };
 }
 
-.messengers-icon
+
+
+function get_query_params(qs)
 {
-    width:0.8em;
-    height:0.8em;
-    position: relative !important;
-    opacity:100% !important;
-    text-decoration: none;
+    /*  function decode parameters from GET
+     */
+    qs = qs.split('+').join(' ');
+
+    var params = {},
+    tokens,
+    re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs))
+    {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
 }
 
-a:hover
+function replace_text(node, search_this, replace_to_this)
 {
-    text-decoration: underline !important;
+    /*  function recursively search for text and replace it
+     I *t replaces only text, not HTML-code
+     */
+    if (node.nodeType == 3)
+    {
+        node.data = node.data.replaceAll(search_this, replace_to_this);
+    }
+    if (node.nodeType == 1 && node.nodeName != "SCRIPT")
+    {
+        for (var i = 0; i < node.childNodes.length; i++)
+        {
+            replace_text(node.childNodes[i], search_this, replace_to_this);
+        }
+    }
 }
 
-a
+function replace_html(search_this, replace_to_this)
 {
-    text-decoration: none !important;
-    opacity: 1 !important;
+    /*  function search for search_this and replace it with replace_to_this
+     I *t works with all body HTML-content, include attributes
+     */
+    document.body.innerHTML = document.body.innerHTML.replaceAll(search_this, replace_to_this);
 }
 
-.modal_links
+
+function replace_everything (tid, replacer)
 {
-    text-decoration: underline !important;
-    color:darkblue;
+    /*  tid - Text identificator
+     G *et target text from replacer array by text_id
+     */
+    original_texts = replacer['original_texts'];
+    new_texts = replacer[tid];
+    if ((new_texts !== undefined) && (original_texts !== undefined))
+    {
+        console.log('original_texts and new_texts is exist in variables');
+        for (var key in new_texts)
+        {
+            /* check if the property/key is defined in the object itself, not in parent */
+            if (new_texts.hasOwnProperty(key))
+            {
+                if (original_texts[key][0] == 0)
+                {
+                    /* Use fast and unsafe method of search-and-replace HTML code on the page */
+                    console.log('replace_html: "', original_texts[key][1], '" -> "', new_texts[key], '"');
+                    replace_html(original_texts[key][1], new_texts[key]);
+                }
+                if (original_texts[key][0] == 1)
+                {
+                    /* Use slow and safe recursive method of search-and-replace HTML code on the page */
+                    console.log('replace_text: "', original_texts[key][1], '" -> "', new_texts[key], '"');
+                    replace_text(document.body, original_texts[key][1], new_texts[key]);
+                }
+            }
+        }
+    }
 }
-</style>
+
+
+function add_nbsp_after_short_word(shrtwrd)
+{
+    /*  function search for short_word and add &nbsp; after it
+     I *t works with all body HTML-content, include attributes, so be careful with short words!
+     */
+    replace_html(' '+shrtwrd+' ', ' '+shrtwrd+'&nbsp;');
+    replace_html('&nbsp;'+shrtwrd+' ', '&nbsp;'+shrtwrd+'&nbsp;');
+    replace_html('>'+shrtwrd+' ', '>'+shrtwrd+'&nbsp;');
+}
+
+if (!String.prototype.replaceAll)
+{
+    String.prototype.replaceAll = String.prototype.replaceAll = function(target, replacement)
+    {
+        return this.split(target).join(replacement);
+    };
+}
+
+function get_query_params(qs)
+{
+    /*  function decode parameters from GET
+     */
+    qs = qs.split('+').join(' ');
+
+    var params = {},
+    tokens,
+    re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs))
+    {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
+}
+
+function replace_text(node, search_this, replace_to_this)
+{
+    /*  function recursively search for text and replace it
+     I *t replaces only text, not HTML-code
+     */
+    if (node.nodeType == 3)
+    {
+        node.data = node.data.replaceAll(search_this, replace_to_this);
+    }
+    if (node.nodeType == 1 && node.nodeName != "SCRIPT")
+    {
+        for (var i = 0; i < node.childNodes.length; i++)
+        {
+            replace_text(node.childNodes[i], search_this, replace_to_this);
+        }
+    }
+}
+
+function replace_html(search_this, replace_to_this)
+{
+    /*  function search for search_this and replace it with replace_to_this
+     I *t works with all body HTML-content, include attributes
+     */
+    document.body.innerHTML = document.body.innerHTML.replaceAll(search_this, replace_to_this);
+}
+
+
+function replace_everything (tid, replacer)
+{
+    /*  tid - Text identificator
+     G *et target text from replacer array by text_id
+     */
+    original_texts = replacer['original_texts'];
+    new_texts = replacer[tid];
+    if ((new_texts !== undefined) && (original_texts !== undefined))
+    {
+        console.log('original_texts and new_texts is exist in variables');
+        for (var key in new_texts)
+        {
+            /* check if the property/key is defined in the object itself, not in parent */
+            if (new_texts.hasOwnProperty(key))
+            {
+                if (original_texts[key][0] == 0)
+                {
+                    /* Use fast and unsafe method of search-and-replace HTML code on the page */
+                    console.log('replace_html: "', original_texts[key][1], '" -> "', new_texts[key], '"');
+                    replace_html(original_texts[key][1], new_texts[key]);
+                }
+                if (original_texts[key][0] == 1)
+                {
+                    /* Use slow and safe recursive method of search-and-replace HTML code on the page */
+                    console.log('replace_text: "', original_texts[key][1], '" -> "', new_texts[key], '"');
+                    replace_text(document.body, original_texts[key][1], new_texts[key]);
+                }
+            }
+        }
+    }
+}
+
+
+function add_nbsp_after_short_word(shrtwrd)
+{
+    /*  function search for short_word and add &nbsp; after it
+     I *t works with all body HTML-content, include attributes, so be careful with short words!
+     */
+    replace_html(' '+shrtwrd+' ', ' '+shrtwrd+'&nbsp;');
+    replace_html('&nbsp;'+shrtwrd+' ', '&nbsp;'+shrtwrd+'&nbsp;');
+    replace_html('>'+shrtwrd+' ', '>'+shrtwrd+'&nbsp;');
+}
+
+if (!String.prototype.replaceAll)
+{
+    String.prototype.replaceAll = String.prototype.replaceAll = function(target, replacement)
+    {
+        return this.split(target).join(replacement);
+    };
+}
