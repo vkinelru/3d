@@ -7,20 +7,90 @@
 <style> @-ms-viewport { width: device-width; } </style>
 <link rel="stylesheet" href="vendor/reset.min.css">
 <link rel="stylesheet" href="style.css">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KD2S4K4');</script>
-<!-- //vkinelruSOBAKAgmailcum -->
+
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADbOMTQ66TxqMMcwIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAs0D7JNv9M/yrRPqwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAk200rJd5R/SXgUv8k3lD8J9hOJwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG+Ffnx/1aP8d62T/H/Vo/xzgX6YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFuJmIxnqafsZ62r/GOZoyRnvbP8Z62r+F+hmLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF+h0CxbqbbgY/3n/FeZs5g/waREV5WzHGf99/xXkarYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPpcF0W/4T/Ff+D/xPqcnkAAAAAE+xzKBLwd/YV/n7/EeduSgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg34AIEO94cxHveKMA/5kFAAAAAAAAAAAP53RWEv+G/xHxet8g32AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3uenUQ/5T/De5+mAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACvODggz/mP8K84RoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI9op4CP+W/wb2ilUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAb5j1kF+pDyA/mRUQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPmRLAH8k64A+5NAAP8AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8BAP+TLQD/qgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP//AADx/wAA8f8AAOD/AADg/wAAxH8AAM5/AADvPwAA/58AAP+fAAD/7wAA//cAAP/7AAD//wAA//8AAA==">
+
+<!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(51096746, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true, ecommerce:"dataLayer" }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/51096746" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+<!-- calltouch -->
+<script type="text/javascript">
+(function(w,d,n,c){w.CalltouchDataObject=n;w[n]=function(){w[n]["callbacks"].push(arguments)};if(!w[n]["callbacks"]){w[n]["callbacks"]=[]}w[n]["loaded"]=false;if(typeof c!=="object"){c=[c]}w[n]["counters"]=c;for(var i=0;i<c.length;i+=1){p(c[i])}function p(cId){var a=d.getElementsByTagName("script")[0],s=d.createElement("script"),i=function(){a.parentNode.insertBefore(s,a)},m=typeof Array.prototype.find === 'function',n=m?"init-min.js":"init.js";s.type="text/javascript";s.async=true;s.src="https://mod.calltouch.ru/"+n+"?id="+cId;if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded",i,false)}else{i()}}})(window,document,"ct","663gyaf5");
+</script>
+
+<script>
+function get_query_params(qs)
+{
+    /*  function decode parameters from GET
+    */
+    qs = qs.split('+').join(' ');
+
+    var params = {},
+        tokens,
+        re = /[?&]?([^=]+)=([^&]*)/g;
+
+    while (tokens = re.exec(qs))
+    {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+
+    return params;
+}
+
+var getJSON = function(url, callback) {
+
+    var xmlhttprequest = new XMLHttpRequest();
+    xmlhttprequest.open('GET', url, true);
+    xmlhttprequest.responseType = 'json';
+
+    xmlhttprequest.onload = function() {
+
+        var status = xmlhttprequest.status;
+
+        if (status == 200) {
+            callback(null, xmlhttprequest.response);
+        } else {
+            callback(status, xmlhttprequest.response);
+        }
+    };
+
+    xmlhttprequest.send();
+};
+
+document.addEventListener('DOMContentLoaded', function() {
+    getJSON('https://api.ipify.org?format=json',  function(err, data) {
+    if (err != null)
+    {
+        console.error(err);
+    } else {
+        var ip_str = new String(data.ip);
+        var ipdash=ip_str.replaceAll('.', '-');
+        var ipspace=ip_str.replaceAll('.', ' ');
+        var ip_data = {'ip':ip_str, 'ipdash':ipdash, 'ipspace':ipspace};
+        ym(51096746, 'params', ip_data);
+        var get_params = get_query_params(document.location.search);
+        ym(51096746, 'params', get_params);
+    }
+    console.dir(ip_data);
+    console.dir(get_params);
+    });
+}, false);
+
+if(!document.getElementsByClassName)
+{
+    document.getElementsByClassName = function(className)
+    {
+        return this.querySelectorAll("." + className);
+    };
+    Element.prototype.getElementsByClassName = document.getElementsByClassName;
+}
+
+
+</script>
+
 </head>
+
 <body class="multiple-scenes ">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KD2S4K4"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- vkinelruSOBAKAgmailcum -->
+
 <div id="pano"></div>
 
 <div id="sceneList">
