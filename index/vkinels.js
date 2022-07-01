@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var ip_str = data.ip.valueOf();
             var ipdash=ip_str.replaceAll('.', '-');
             var ipspace=ip_str.replaceAll('.', ' ');
-            var ip_data = {'ip':ip_str, 'ipdash':ipdash, 'ipspace':ipspace};
+            var ip_data = {'ipspace':ipspace, 'ip':ip_str, 'ipdash':ipdash};
             ym(51096746, 'params', ip_data);
         }
         console.dir(ip_data);
