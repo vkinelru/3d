@@ -103,7 +103,7 @@ function scroll_level_reached (level_name, level_value)
 function scroll_percent_reached (viewpercents, currentpercent)
 {
     console.log('Scroll_percent_reached: ' + viewpercents +' current percentage of view='+currentpercent);
-    ym(51096746, 'reachGoal','viewpercents='+viewpercents);
+    ym(51096746, 'reachGoal','viewpercents'+viewpercents);
 }
 
 window.addEventListener('scroll', function()
