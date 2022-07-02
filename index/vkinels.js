@@ -36,6 +36,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // cleversite();
     console.log('cleversite();');
 }, false);
+
+function xpath_callback (xpath, callback)
+{
+    /* find all elements by XPath, call callback function for every element.
+     *   use:
+     *   xpath_callback ('//div', function (elem) {elem.style.color='red';} );
+     */
+    var elements = document.evaluate(xpath, document, null, XPathResult.ANY_TYPE, null);
+    var elem = elements.iterateNext();
+    while (elem) {
+        callback(elem);
+        elem = elements.iterateNext();
+    }
+}
+
 /**
  * Get current browser viewpane heigtht
  */
