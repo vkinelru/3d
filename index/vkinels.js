@@ -5,9 +5,36 @@
 // calltouch
 // (function(w,d,n,c){w.CalltouchDataObject=n;w[n]=function(){w[n]["callbacks"].push(arguments)};if(!w[n]["callbacks"]){w[n]["callbacks"]=[]}w[n]["loaded"]=false;if(typeof c!=="object"){c=[c]}w[n]["counters"]=c;for(var i=0;i<c.length;i+=1){p(c[i])}function p(cId){var a=d.getElementsByTagName("script")[0],s=d.createElement("script"),i=function(){a.parentNode.insertBefore(s,a)},m=typeof Array.prototype.find === 'function',n=m?"init-min.js":"init.js";s.type="text/javascript";s.async=true;s.src="https://mod.calltouch.ru/"+n+"?id="+cId;if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded",i,false)}else{i()}}})(window,document,"ct","663gyaf5");
 
+function cleversite() {
+    if ("undefined" == typeof window.clever_magic_var) {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.defer = true;
+        s.charset = 'utf-8';
+        var defaultSource = 'https://widget.cleversite.ru/static/clever-widget.umd.min.js';
+        var changedSource = localStorage.getItem("CLEVERSITE.WIDGET.SOURCE");
+        s.src = changedSource || defaultSource;
+        var ss = document.getElementsByTagName('script')[0];
+        if (ss) {
+            ss.parentNode.insertBefore(s, ss);
+        } else {
+            document.documentElement.firstChild.appendChild(s);
+        };
+        if (changedSource) {
+            console.log('Переопределён источник скрипта для виджета !!!')
+        }
+        document.addEventListener('clever-loaded', () => {
+            if (window.cleversiteEvent) {
+                window.cleversiteEvent.trigger('init', 118692, 181620)
+            }
+        });
+        window.clever_magic_var = 1;
+    }
+}
 
-
-
+document.addEventListener('DOMContentLoaded', function() {
+    cleversite();
+}, false);
 /**
  * Get current browser viewpane heigtht
  */
