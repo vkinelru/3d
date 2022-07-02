@@ -33,7 +33,8 @@ function cleversite() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    cleversite();
+    // cleversite();
+    console.log('cleversite();');
 }, false);
 /**
  * Get current browser viewpane heigtht
