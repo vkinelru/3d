@@ -22,7 +22,7 @@ function cleversite_init() {
         }
         document.addEventListener('clever-loaded', () => {
             if (window.cleversiteEvent) {
-                window.cleversiteEvent.trigger('init', 118692, 181620)
+                window.cleversiteEvent.trigger('init', 118692, 181728)
             }
         });
         window.clever_magic_var = 1;
