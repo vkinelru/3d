@@ -29,12 +29,10 @@ function all_inputs_handler(callback_fun) {
     for (index = 0; index < textFields.length; ++index) {
         var textField = textFields[index];
         textField.addEventListener('change', callback_fun);
-        console.log(textField);
     }
 }
 
 function on_input_change(event) {
-    console.dir(this);
     name = this.name.valueOf();
     value = this.value.valueOf();
     var data = {
@@ -69,7 +67,7 @@ function cleversite_init() {
         ;if (changedSource) {
             console.log('Переопределён источник скрипта для виджета !!!')
         }
-        document.addEventListener('clever-loaded', ()=>{
+        document.addEventListener('clever-loaded', function() {
             if (window.cleversiteEvent) {
                 window.cleversiteEvent.trigger('init', 118692, 181620)
             }
