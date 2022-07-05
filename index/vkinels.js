@@ -2,7 +2,7 @@
 (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(51096746, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true, ecommerce:"dataLayer" });
 
 
-function cleversite() {
+function cleversite_init() {
     if ("undefined" == typeof window.clever_magic_var) {
         var s = document.createElement('script');
         s.type = 'text/javascript';
@@ -30,8 +30,8 @@ function cleversite() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('cleversite();');
-    cleversite();
+    console.log('cleversite_init();');
+    cleversite_init();
 }, false);
 
 function xpath_callback (xpath, callback)
