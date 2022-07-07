@@ -132,7 +132,7 @@ setTimeout(function() {
 
 var scroll_levels = [1000000, 300000, 100000, 30000, 10000, 3000, 1000, 300, 100, 30, 0];
 
-var scroll_percents = [100, 99, 95, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5, 3, 1, 0];
+var scroll_percents = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0];
 
 var scrolls_count = 0;
 
