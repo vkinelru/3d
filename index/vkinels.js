@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     user_params = {};
     var screen_params_names =
-    ["availWidth","availHeight","width","height","pixelDepth","colorDepth"];
+    ["width","height","availWidth","availHeight","pixelDepth","colorDepth"];
     for (var i = 0; i < screen_params_names.length; i++)
     {
         param_name = screen_params_names[i];
