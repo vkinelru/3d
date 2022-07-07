@@ -64,10 +64,8 @@ document.addEventListener('DOMContentLoaded', function()
     var query = get_query_params(document.location.search);
     /* Replace text on the page */
     replace_everything(query.q, replacer);
-    console.log('');
 
     /* add unbreakable space before short words */
-
     replace_html(' м²', '&nbsp;м²');
     replace_html(' ₽', '&nbsp;₽');
     replace_html(' шт.', '&nbsp;шт.');
@@ -87,4 +85,6 @@ document.addEventListener('DOMContentLoaded', function()
     add_nbsp_after_short_word('на');
     add_nbsp_after_short_word('но');
     add_nbsp_after_short_word('вы');
+
+    console.log('words replaced');
 }, false);
