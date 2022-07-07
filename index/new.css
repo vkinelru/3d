@@ -30,6 +30,7 @@ label.sb-input__placeholder {
     -webkit-box-shadow: 1px 2px 9px 0px rgba(22, 163, 10, 0.2);
     -moz-box-shadow: 1px 2px 9px 0px rgba(22, 163, 10, 0.2);
     box-shadow: 1px 2px 9px 0px rgba(22, 163, 10, 0.2);
+    white-space: normal !important;
 }
 
 .sb-input__field:focus~.sb-input__placeholder,
@@ -106,13 +107,19 @@ label.sb-input__placeholder {
     margin-top: 20px !important;
 }
 
+.s-form-type-1__submit
+{
+    width:100% !important;
+    word-break: normal !important;
+}
+
 .sb-container form .s-form-type-1__submit {
     margin-top: 32px;
 }
 
 @media (min-width: 960px) and (max-width: 1359px) {
     .sb-row .sb-col_md-6 {
-        width: 100%;
+        width: 99.6%;
     }
 
 }
