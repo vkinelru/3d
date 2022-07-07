@@ -217,7 +217,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 'ipspace': ipspace,
             'ip': ip_str,
             'ipdash': ipdash,
-            'agent': navigator.userAgent
             };
             ym(yametrika_id, 'params', ip_data);
         }
@@ -228,7 +227,17 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     var get_params = get_query_params(document.location.search);
     ym(yametrika_id, 'params', get_params);
-    console.dir(get_params);
+
+    user_params = {};
+    var screen_params_names =
+    ["availWidth","availHeight","width","height","pixelDepth","colorDepth"];
+    for (var i = 0; i < screen_params_names.length; i++)
+    {
+        param_name = screen_params_names[i];
+        user_params[param_name] = screen[param_name];
+    }
+    user_params['agent'] = navigator.userAgent;
+    ym(yametrika_id, 'params', user_params);
 });
 
 if (!document.getElementsByClassName) {
