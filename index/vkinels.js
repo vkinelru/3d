@@ -240,57 +240,57 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
-    function cleversite_init() {
-        if ("undefined" == typeof window.clever_magic_var) {
-            var s = document.createElement('script');
-            s.type = 'text/javascript';
-            s.defer = true;
-            s.charset = 'utf-8';
-            var defaultSource = 'https://widget.cleversite.ru/static/clever-widget.umd.min.js';
-            var changedSource = localStorage.getItem("CLEVERSITE.WIDGET.SOURCE");
-            s.src = changedSource || defaultSource;
-            var ss = document.getElementsByTagName('script')[0];
-            if (ss) {
-                ss.parentNode.insertBefore(s, ss);
-            } else {
-                document.documentElement.firstChild.appendChild(s);
-            }
-            ;if (changedSource) {
-                console.log('Переопределён источник скрипта для виджета !!!')
-            }
-            document.addEventListener('clever-loaded', function() {
-                if (window.cleversiteEvent) {
-                    window.cleversiteEvent.trigger('init', 118692, 181620)
+        function cleversite_init() {
+            if ("undefined" == typeof window.clever_magic_var) {
+                var s = document.createElement('script');
+                s.type = 'text/javascript';
+                s.defer = true;
+                s.charset = 'utf-8';
+                var defaultSource = 'https://widget.cleversite.ru/static/clever-widget.umd.min.js';
+                var changedSource = localStorage.getItem("CLEVERSITE.WIDGET.SOURCE");
+                s.src = changedSource || defaultSource;
+                var ss = document.getElementsByTagName('script')[0];
+                if (ss) {
+                    ss.parentNode.insertBefore(s, ss);
+                } else {
+                    document.documentElement.firstChild.appendChild(s);
                 }
+                ;if (changedSource) {
+                    console.log('Переопределён источник скрипта для виджета !!!')
+                }
+                document.addEventListener('clever-loaded', function() {
+                    if (window.cleversiteEvent) {
+                        window.cleversiteEvent.trigger('init', 118692, 181620)
+                    }
+                }
+                );
+                window.clever_magic_var = 1;
             }
-            );
-            window.clever_magic_var = 1;
         }
-    }
-    cleversite_init();
-    console.log('cleversite_init();');
+        cleversite_init();
+        console.log('cleversite_init();');
     }, 5555);
 }, false);
 
 
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
-    getJSON('https://api.ipify.org?format=json', function(err, data) {
-        if (err != null) {
-            console.error(err);
-        } else {
-            var ip_str = data.ip.valueOf();
-            var ipdash = ip_str.replaceAll('.', '-');
-            var ipspace = ip_str.replaceAll('.', ' ');
-            var ip_data = {
-                'ipspace': ipspace,
-            'ip': ip_str,
-            'ipdash': ipdash,
-            };
-            ym(yametrika_id, 'params', ip_data);
-        }
-        console.dir(ip_data);
-    });
+        getJSON('https://api.ipify.org?format=json', function(err, data) {
+            if (err != null) {
+                console.error(err);
+            } else {
+                var ip_str = data.ip.valueOf();
+                var ipdash = ip_str.replaceAll('.', '-');
+                var ipspace = ip_str.replaceAll('.', ' ');
+                var ip_data = {
+                    'ipspace': ipspace,
+                'ip': ip_str,
+                'ipdash': ipdash,
+                };
+                ym(yametrika_id, 'params', ip_data);
+            }
+            console.dir(ip_data);
+        });
     }, 1111);
 }, false);
 
@@ -311,12 +311,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 var scroll_levels = [1000000, 300000, 100000, 30000, 10000, 3000, 1000, 300, 100, 30, 0];
+var scroll_levels_length_original = scroll_levels.length;
 var scroll_percents = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0];
 var scrolls_count = 0;
 window.addEventListener('scroll', function() {
     scrolls_count = scrolls_count + 1;
     for (var i = 0; i < scroll_levels.length; i++) {
-        var level_name = scroll_levels.length - i;
+        var level_name = scroll_levels_length_original - i;
         var level_value = scroll_levels[i]
         if (scrolls_count >= level_value) {
             /* Delete current level from scroll_levels array */
