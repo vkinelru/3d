@@ -68,8 +68,7 @@ function scroll_level_reached(level_name, level_value) {
     ym(yametrika_id, 'reachGoal', 'scroll' + level_name);
 }
 
-function scroll_percent_reached(viewpercents, currentpercent) {
-    console.log('Scroll_percent_reached: ' + viewpercents + ' current percentage of view=' + currentpercent);
+function scroll_percent_reached(viewpercents) {
     ym(yametrika_id, 'reachGoal', 'viewpercents' + viewpercents);
 }
 
@@ -332,7 +331,7 @@ window.addEventListener('scroll', function() {
         if (currentpercent >= scroll_percents[i]) {
             /* Delete current level from scroll_percents array */
             scroll_percents.pop();
-            scroll_percent_reached(viewpercent, currentpercent);
+            scroll_percent_reached(viewpercent);
         }
     }
 
