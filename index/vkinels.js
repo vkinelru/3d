@@ -11,13 +11,13 @@ yametrika_id = 51096746;
 	k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
 })(window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym");
 ym(yametrika_id, "init",
-{
-	clickmap: true,
-	trackLinks: true,
-	accurateTrackBounce: true,
-	webvisor: true,
-	trackHash: true
-});
+   {
+	   clickmap: true,
+   trackLinks: true,
+   accurateTrackBounce: true,
+   webvisor: true,
+   trackHash: true
+   });
 
 function all_inputs_handler(callback_fun)
 {
@@ -106,7 +106,7 @@ function get_query_params(qs)
 	qs = qs.split('+').join(' ');
 
 	var params = {},
-		tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+	tokens, re = /[?&]?([^=]+)=([^&]*)/g;
 
 	while (tokens = re.exec(qs))
 	{
@@ -193,7 +193,7 @@ function get_query_params(qs)
 	qs = qs.split('+').join(' ');
 
 	var params = {},
-		tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+	tokens, re = /[?&]?([^=]+)=([^&]*)/g;
 
 	while (tokens = re.exec(qs))
 	{
@@ -206,7 +206,7 @@ function get_query_params(qs)
 function replace_text(node, search_this, replace_to_this)
 {
 	/*  function recursively search for text and replace it
-	 *       It replaces only text, not HTML-code
+	 *	   It replaces only text, not HTML-code
 	 */
 	if (node.nodeType == 3)
 	{
@@ -224,7 +224,7 @@ function replace_text(node, search_this, replace_to_this)
 function replace_html(search_this, replace_to_this)
 {
 	/*  function search for search_this and replace it with replace_to_this
-	 *       It works with all body HTML-content, include attributes
+	 *	   It works with all body HTML-content, include attributes
 	 */
 	document.body.innerHTML = document.body.innerHTML.replaceAll(search_this, replace_to_this);
 }
@@ -232,7 +232,7 @@ function replace_html(search_this, replace_to_this)
 function replace_everything(tid, replacer)
 {
 	/*  tid - Text identificator
-	 *       Get target text from replacer array by text_id
+	 *	   Get target text from replacer array by text_id
 	 */
 	original_texts = replacer['original_texts'];
 	new_texts = replacer[tid];
@@ -264,7 +264,7 @@ function replace_everything(tid, replacer)
 function add_nbsp_after_short_word(shrtwrd)
 {
 	/*  function search for short_word and add &nbsp; after it
-	 *       It works with all body HTML-content, include attributes, so be careful with short words!
+	 *	   It works with all body HTML-content, include attributes, so be careful with short words!
 	 */
 	replace_html(' ' + shrtwrd + ' ', ' ' + shrtwrd + '&nbsp;');
 	replace_html('&nbsp;' + shrtwrd + ' ', '&nbsp;' + shrtwrd + '&nbsp;');
@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function()
 	setTimeout(function()
 	{
 		all_inputs_handler(on_input_change);
-	}, 555);
+	}, 111);
 }, false);
 
 document.addEventListener('DOMContentLoaded', function()
@@ -336,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function()
 		}
 		cleversite_init();
 		console.log('cleversite_init();');
-	}, 5555);
+	}, 333);
 }, false);
 
 document.addEventListener('DOMContentLoaded', function()
@@ -356,8 +356,8 @@ document.addEventListener('DOMContentLoaded', function()
 				var ipspace = ip_str.replaceAll('.', ' ');
 				var ip_data = {
 					'ipspace': ipspace,
-					'ip': ip_str,
-					'ipdash': ipdash,
+				'ip': ip_str,
+				'ipdash': ipdash,
 				};
 				ym(yametrika_id, 'params', ip_data);
 			}
@@ -379,6 +379,11 @@ document.addEventListener('DOMContentLoaded', function()
 		user_params[param_name] = screen[param_name];
 	}
 	user_params['agent'] = navigator.userAgent;
+
+
+	ym(yametrika_id, 'getClientID', function(clientID) {
+		document.title += ' ' + clientID;
+	});
 	ym(yametrika_id, 'params', user_params);
 });
 
