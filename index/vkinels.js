@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function()
         }
         cleversite_init();
         console.log('cleversite_init();');
-    }, 333);
+    }, 17333);
 }, false);
 
 document.addEventListener('DOMContentLoaded', function()
