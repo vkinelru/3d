@@ -12,7 +12,7 @@ yametrika_id = 51096746;
 })(window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym");
 ym(yametrika_id, "init",
    {
-	   clickmap: true,
+    clickmap: true,
    trackLinks: true,
    accurateTrackBounce: true,
    webvisor: true,
@@ -150,72 +150,10 @@ if (!document.getElementsByClassName)
 	Element.prototype.getElementsByClassName = document.getElementsByClassName;
 }
 
-
 // Шаги алгоритма ECMA-262, 5-е издание, 15.4.4.14
 // Ссылка (en): http://es5.github.io/#x15.4.4.14
 // Ссылка (ru): http://es5.javascript.ru/x15.4.html#x15.4.4.14
-if (!Array.prototype.indexOf) {
-	Array.prototype.indexOf = function(searchElement, fromIndex) {
-		var k;
-
-		// 1. Положим O равным результату вызова ToObject с передачей ему
-		//	значения this в качестве аргумента.
-		if (this == null) {
-			throw new TypeError('"this" is null or not defined');
-		}
-
-		var O = Object(this);
-
-		// 2. Положим lenValue равным результату вызова внутреннего метода Get
-		//	объекта O с аргументом "length".
-		// 3. Положим len равным ToUint32(lenValue).
-		var len = O.length >>> 0;
-
-		// 4. Если len равен 0, вернём -1.
-		if (len === 0) {
-			return -1;
-		}
-
-		// 5. Если был передан аргумент fromIndex, положим n равным
-		//	ToInteger(fromIndex); иначе положим n равным 0.
-		var n = +fromIndex || 0;
-
-		if (Math.abs(n) === Infinity) {
-			n = 0;
-		}
-
-		// 6. Если n >= len, вернём -1.
-		if (n >= len) {
-			return -1;
-		}
-
-		// 7. Если n >= 0, положим k равным n.
-		// 8. Иначе, n<0, положим k равным len - abs(n).
-		//	Если k меньше нуля 0, положим k равным 0.
-		k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
-
-		// 9. Пока k < len, будем повторять
-		while (k < len) {
-			// a. Положим Pk равным ToString(k).
-			//   Это неявное преобразование для левостороннего операнда в операторе in
-			// b. Положим kPresent равным результату вызова внутреннего метода
-			//	HasProperty объекта O с аргументом Pk.
-			//   Этот шаг может быть объединён с шагом c
-			// c. Если kPresent равен true, выполним
-			//	i.  Положим elementK равным результату вызова внутреннего метода Get
-			//		объекта O с аргументом ToString(k).
-			//   ii.  Положим same равным результату применения
-			//		Алгоритма строгого сравнения на равенство между
-			//		searchElement и elementK.
-			//  iii.  Если same равен true, вернём k.
-			if (k in O && O[k] === searchElement) {
-				return k;
-			}
-			k++;
-		}
-		return -1;
-	};
-}
+Array.prototype.indexOf||(Array.prototype.indexOf=function(e,f){if(this==null)throw new TypeError('"this" is null or not defined');var a,d=Object(this),c=d.length>>>0;if(0===c)return -1;var b=+f||0;if(Math.abs(b)===1/0&&(b=0),b>=c)return -1;for(a=Math.max(b>=0?b:c-Math.abs(b),0);a<c;){if(a in d&&d[a]===e)return a;a++}return -1})
 
 function hide_element_by_class(class_name)
 {
@@ -339,23 +277,23 @@ if (!String.prototype.replaceAll)
 
 function onclick_handler_by_class_name(class_name, callback_fun)
 {
-	var all = document.getElementsByClassName(class_name);
-	for (var i = 0; i < all.length; i++)
-	{
-		all[i].addEventListener('click', callback_fun);
-	}
-	console.log('Add onclick handler to ' + all.length + ' elements');
+    var all = document.getElementsByClassName(class_name);
+    for (var i = 0; i < all.length; i++)
+    {
+        all[i].addEventListener('click', callback_fun);
+    }
+    console.log('Add onclick handler to ' + all.length + ' elements');
 }
 //use "onclick_handler_by_class_name ('modal_links', close_tb_modal);"
 
 function find_href_from_element(target) {
-	if (target.tagName == 'A' && target.href) {
-		return target.href;
-	} else if (target.parentElement) {
-		return find_href_from_element(target.parentElement);
-	} else {
-		return '';
-	}
+    if (target.tagName == 'A' && target.href) {
+        return target.href;
+    } else if (target.parentElement) {
+        return find_href_from_element(target.parentElement);
+    } else {
+        return '';
+    }
 };
 
 
@@ -416,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function()
 		}
 		cleversite_init();
 		console.log('cleversite_init();');
-	}, 17333);
+	}, 333);
 }, false);
 
 document.addEventListener('DOMContentLoaded', function()
@@ -460,12 +398,12 @@ document.addEventListener('DOMContentLoaded', function()
 	}
 	user_params['agent'] = navigator.userAgent;
 
-    ym(yametrika_id, 'getClientID', function(clientID) {
+	ym(yametrika_id, 'getClientID', function(clientID) {
         window.yametrikaclientid = clientID;
         ym(yametrika_id, 'params', {'ymclid': clientID});
     });
 
-    ym(yametrika_id, 'params', user_params);
+	ym(yametrika_id, 'params', user_params);
 });
 
 var scroll_levels = [1000000, 300000, 100000, 30000, 10000, 3000, 1000, 300, 100, 30, 0];
@@ -504,40 +442,40 @@ window.addEventListener('scroll', function()
 var good_hrefs_for_goal = ['vk.com', '9270025759', 't.me', 'kupi@vkinel.ru', 'tel:'];
 
 function click_callback(event) {
-	var event = window.event || event;
+    var event = window.event || event;
 
-	//if ((event.target.tagName == 'a') || (event.target.tagName == 'A'))
-	{
-		console.log('click!');
-		user_params = {};
-		user_params['href'] = find_href_from_element(event.target);
-		user_params['clientX'] = event.clientX;
-		user_params['clientY'] = event.clientY;
-		user_params['baseURI'] = event.target.baseURI;
-		user_params['path'] = event.path;
-		user_params['innerText'] = event.target.innerText;
-		user_params['time'] = event.timeStamp;
-		ym(yametrika_id, 'params', user_params);
+    //if ((event.target.tagName == 'a') || (event.target.tagName == 'A'))
+    {
+        console.log('click!');
+        user_params = {};
+        user_params['href'] = find_href_from_element(event.target);
+        user_params['clientX'] = event.clientX;
+        user_params['clientY'] = event.clientY;
+        user_params['baseURI'] = event.target.baseURI;
+        user_params['path'] = event.path;
+        user_params['innerText'] = event.target.innerText;
+        user_params['time'] = event.timeStamp;
+        ym(yametrika_id, 'params', user_params);
 
-		for (var i = 0; i < good_hrefs_for_goal.length; i++)
-		{
-			if (user_params['href'].valueOf().toLowerCase().indexOf(good_hrefs_for_goal[i]) !== -1)
-			{
-				console.log(good_hrefs_for_goal[i], ' in ', user_params['href']);
-				console.dir(user_params);
-				ym(yametrika_id, 'reachGoal', 'good_link');
-				break;
-			}
-		}
-	}
-	return;
+        for (var i = 0; i < good_hrefs_for_goal.length; i++)
+        {
+            if (user_params['href'].valueOf().toLowerCase().indexOf(good_hrefs_for_goal[i]) !== -1)
+            {
+                console.log(good_hrefs_for_goal[i], ' in ', user_params['href']);
+                console.dir(user_params);
+                ym(yametrika_id, 'reachGoal', 'good_link');
+                break;
+            }
+        }
+    }
+    return;
 }
 
 if (document.addEventListener)
 {
-	document.addEventListener('click', click_callback, false);
+    document.addEventListener('click', click_callback, false);
 }
 else
 {
-	document.attachEvent('onclick', click_callback);
+    document.attachEvent('onclick', click_callback);
 }
