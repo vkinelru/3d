@@ -387,7 +387,12 @@ document.addEventListener('DOMContentLoaded', function()
 
 document.addEventListener('DOMContentLoaded', function()
 {
-	var get_params = get_query_params(document.location.search);
+    ym(yametrika_id, 'getClientID', function(clientID) {
+        window.yametrikaclientid = clientID;
+        ym(yametrika_id, 'params', {'ymclid': clientID});
+    });
+
+    var get_params = get_query_params(document.location.search);
 	ym(yametrika_id, 'params', get_params);
 
 	user_params = {};
@@ -398,11 +403,6 @@ document.addEventListener('DOMContentLoaded', function()
 		user_params[param_name] = screen[param_name];
 	}
 	user_params['agent'] = navigator.userAgent;
-
-    ym(yametrika_id, 'getClientID', function(clientID) {
-        window.yametrikaclientid = clientID;
-        ym(yametrika_id, 'params', {'ymclid': clientID});
-    });
 
     ym(yametrika_id, 'params', user_params);
 });
