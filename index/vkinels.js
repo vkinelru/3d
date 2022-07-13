@@ -452,7 +452,7 @@ function click_callback(event) {
 		user_params['href'] = find_href_from_element(event.target);
 		user_params['clientX'] = event.clientX;
 		user_params['clientY'] = event.clientY;
-		user_params['baseURI'] = event.target.baseURI;
+		// user_params['baseURI'] = event.target.baseURI;
 		user_params['path'] = event.path;
 		user_params['innerText'] = event.target.innerText;
 		user_params['time'] = event.timeStamp;
