@@ -300,10 +300,10 @@ function find_href_from_element(target) {
 
 document.addEventListener('DOMContentLoaded', function()
 {
-	hide_element_by_class('s-footer');
-	hide_element_by_class('s-back-to-top__icon');
-	hide_element_by_class('s-back-to-top__image');
-	hide_element_by_class('s-back-to-top');
+    // 	hide_element_by_class('s-footer');
+    // 	hide_element_by_class('s-back-to-top__icon');
+    // 	hide_element_by_class('s-back-to-top__image');
+    // 	hide_element_by_class('s-back-to-top');
 	console.log('loaded');
 }, false);
 
