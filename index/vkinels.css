@@ -1,3 +1,16 @@
+.s-footer, .s-back-to-top__icon, .s-back-to-top__image, .s-back-to-top, .copyright
+{
+    visibility:hidden !important;
+    display:none !important;
+    transform: scale(0)  !important;
+    clip-path: circle(0) !important;
+    position: absolute !important;
+    left: -9999px !important;
+    height: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
 .full-width
 {
     position: relative;
