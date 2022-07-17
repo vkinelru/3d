@@ -11,7 +11,7 @@
     overflow: hidden !important;
 }
 
-.clv_copyright_wrapper, .clv_copyright_wrapper_selected, .clv_chat_copyright
+.clv_copyright_wrapper, .clv_copyright_wrapper_selected, .clv_chat_copyright, .clv_copyright_text
 {
     visibility:hidden !important;
     display:none !important;
