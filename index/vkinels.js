@@ -440,7 +440,7 @@ window.addEventListener('scroll', function()
 
 });
 
-var good_hrefs_for_goal = ['vk.com', '9270025759', 't.me', 'kupi@vkinel.ru', 'tel:', 'whatsapp', 'WhatsApp'];
+var good_hrefs_for_goal = ['vk.com', '9270025759', 't.me', 'kupi@vkinel.ru', 'tel:', 'whatsapp', 'viber'];
 
 function click_callback(event) {
 	var event = window.event || event;
