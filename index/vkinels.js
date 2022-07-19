@@ -297,6 +297,69 @@ function find_href_from_element(target) {
 	}
 };
 
+function show_on_scroll_all()
+{
+	var all = document.getElementsByClassName('show_on_scroll');
+	console.log('show_on_scroll() ' + all.length + ' elements');
+	for (var i = 0; i < all.length; i++)
+	{
+		show_on_scroll_data_elem(all[i]);
+	}
+}
+
+function show_on_scroll_data_elem(elem)
+{
+	// console.log('show_on_scroll_data_elem() ');
+	elem.className = elem.dataset.classes_in_show_state;
+}
+
+function hide_on_scroll_all()
+{
+	var all = document.getElementsByClassName('show_on_scroll');
+	console.log('hide_on_scroll_all() ' + all.length + ' elements');
+	for (var i = 0; i < all.length; i++)
+	{
+		hide_on_scroll_data_elem(all[i]);
+	}
+}
+
+function hide_on_scroll_data_elem(elem)
+{
+	// console.log('hide_on_scroll_data_elem() ');
+	elem.className = elem.dataset.classes_in_hide_state;
+}
+
+document.addEventListener('DOMContentLoaded', function()
+{
+var last_scroll_top;
+var show_on_scroll_state = 1;
+
+window.addEventListener('scroll',function()
+{
+    var scroll_top = get_window_Yscroll();
+    if(scroll_top < last_scroll_top)
+    {
+        /*scroll up*/
+        if (show_on_scroll_state == 0)
+        {
+            show_on_scroll_all();
+            show_on_scroll_state = 1;
+        }
+    }
+    else
+    {
+        /*scroll down*/
+        if (show_on_scroll_state == 1)
+        {
+            hide_on_scroll_all();
+            show_on_scroll_state = 0;
+        }
+    }
+    last_scroll_top = scroll_top;
+
+    });
+}, false);
+
 
 document.addEventListener('DOMContentLoaded', function()
 {
@@ -480,3 +543,4 @@ else
 {
 	document.attachEvent('onclick', click_callback);
 }
+
