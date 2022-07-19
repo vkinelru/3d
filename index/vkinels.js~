@@ -305,6 +305,7 @@ function show_on_scroll_all()
 	{
 		show_on_scroll_data_elem(all[i]);
 	}
+	window.show_on_scroll_state = 1;
 }
 
 function show_on_scroll_data_elem(elem)
@@ -322,6 +323,7 @@ function hide_on_scroll_all()
 	{
 		hide_on_scroll_data_elem(all[i]);
 	}
+	window.show_on_scroll_state = 0;
 }
 
 function hide_on_scroll_data_elem(elem)
@@ -334,27 +336,33 @@ function hide_on_scroll_data_elem(elem)
 document.addEventListener('DOMContentLoaded', function()
 {
 var last_scroll_top;
-var show_on_scroll_state = 1;
+window.show_on_scroll_state = 0;
+window.timeout_to_hide_all = 0;
 
 window.addEventListener('scroll',function()
 {
     var scroll_top = get_window_Yscroll();
+	var timeout_to_hide_all;
+
     if(scroll_top < last_scroll_top)
     {
         /*scroll up*/
-        if (show_on_scroll_state == 0)
+        if (window.show_on_scroll_state == 0)
         {
             show_on_scroll_all();
-            show_on_scroll_state = 1;
+			clearTimeout(window.timeout_to_hide_all);
+			window.timeout_to_hide_all = window.setTimeout(hide_on_scroll_all, 13333);
+			console.dir(window.timeout_to_hide_all);
         }
+		clearTimeout(window.timeout_to_hide_all);
     }
     else
     {
         /*scroll down*/
-        if (show_on_scroll_state == 1)
+        if (window.show_on_scroll_state == 1)
         {
             hide_on_scroll_all();
-            show_on_scroll_state = 0;
+			clearTimeout(window.timeout_to_hide_all)
         }
     }
     last_scroll_top = scroll_top;

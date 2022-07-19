@@ -354,7 +354,6 @@ window.addEventListener('scroll',function()
 			window.timeout_to_hide_all = window.setTimeout(hide_on_scroll_all, 13333);
 			console.dir(window.timeout_to_hide_all);
         }
-		clearTimeout(window.timeout_to_hide_all);
     }
     else
     {
