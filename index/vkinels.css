@@ -7,6 +7,7 @@
     position: absolute !important;
     left: -9999px !important;
     height: 0 !important;
+    width: 0 !important;
     padding: 0 !important;
     overflow: hidden !important;
 }
@@ -21,6 +22,7 @@
     position: absolute !important;
     left: -9999px !important;
     height: 0 !important;
+    width: 0 !important;
     padding: 0 !important;
     overflow: hidden !important;
 }
@@ -55,6 +57,35 @@
 	margin:0;
 	padding:0;
 }
+
+.messagebar_any_state
+{
+	position:fixed;
+	left:0;
+	width:99.6%;
+	background:transparent;
+	background: rgba(255,255,255,0.3);
+	backdrop-filter: blur(3px);
+	color:white;
+	transition: 0.4s;
+	z-index:163;
+	text-align:left;
+	vertical-align:middle;
+	display:block;
+	margin:0;
+	padding:0;
+}
+
+.messagebar_show_state
+{
+    bottom:0px;
+}
+
+.messagebar_hide_state
+{
+    bottom:-25%;
+}
+
 .messagebar-inner
 {
 	vertical-align:middle;
