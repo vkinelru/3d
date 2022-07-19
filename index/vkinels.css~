@@ -39,25 +39,6 @@
 	max-width: 99.6%;
 }
 
-#messagebar
-{
-	position:fixed;
-	bottom:-25%;
-	left:0;
-	width:99.6%;
-	background:transparent;
-	background: rgba(255,255,255,0.3);
-	backdrop-filter: blur(3px);
-	color:white;
-	transition: 0.4s;
-	z-index:163;
-	text-align:left;
-	vertical-align:middle;
-	display:block;
-	margin:0;
-	padding:0;
-}
-
 .messagebar_any_state
 {
 	position:fixed;
@@ -169,3 +150,4 @@ a
     text-decoration: underline !important;
     color:darkblue;
 }
+
