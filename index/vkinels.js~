@@ -310,7 +310,8 @@ function show_on_scroll_all()
 function show_on_scroll_data_elem(elem)
 {
 	// console.log('show_on_scroll_data_elem() ');
-	elem.className = elem.dataset.classes_in_show_state;
+	var new_classes = elem.getAttribute('data-classes_in_show_state');
+	elem.className = new_classes;
 }
 
 function hide_on_scroll_all()
@@ -326,7 +327,8 @@ function hide_on_scroll_all()
 function hide_on_scroll_data_elem(elem)
 {
 	// console.log('hide_on_scroll_data_elem() ');
-	elem.className = elem.dataset.classes_in_hide_state;
+	var new_classes = elem.getAttribute('data-classes_in_hide_state');	
+	elem.className = new_classes;
 }
 
 document.addEventListener('DOMContentLoaded', function()

@@ -48,7 +48,8 @@
 	background: rgba(255,255,255,0.3);
 	backdrop-filter: blur(3px);
 	color:white;
-	transition: 0.4s;
+	transition: 0.75s;
+	transition-timing-function: ease;
 	z-index:163;
 	text-align:left;
 	vertical-align:middle;
