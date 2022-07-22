@@ -9,7 +9,7 @@ yametrika_id = 51096746;
 	};
 	m[i].l = 1 * new Date();
 	k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-})(window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym");
+})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 ym(yametrika_id, "init",
    {
 	   clickmap: true,
