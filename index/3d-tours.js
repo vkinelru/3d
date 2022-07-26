@@ -30,7 +30,7 @@ function cleversite_init() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('cleversite_init();');
+    // console.log('cleversite_init();');
     // cleversite_init();
 }, false);
 

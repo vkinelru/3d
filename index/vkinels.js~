@@ -425,8 +425,8 @@ document.addEventListener('DOMContentLoaded', function()
 				window.clever_magic_var = 1;
 			}
 		}
-		cleversite_init();
-		console.log('cleversite_init();');
+		// cleversite_init();
+		// console.log('cleversite_init();');
 	}, 17333);
 }, false);
 
