@@ -60,11 +60,6 @@ replacer = {
 document.addEventListener('DOMContentLoaded', function()
 {
     console.log('Page loaded');
-
-}, false);
-
-function replace_after_page_loaded() 
-{
     /*  parse GET parameters */
     var query = get_query_params(document.location.search);
     /* Replace text on the page */
@@ -92,14 +87,4 @@ function replace_after_page_loaded()
     add_nbsp_after_short_word('вы');
 
     console.log('words replaced');
-}
-
-if (document.readyState !== 'loading') {
-    console.log('document.readyState replace_after_page_loaded');
-    replace_after_page_loaded() 
-} else {
-    document.addEventListener('DOMContentLoaded', function () {
-        console.log('DOMContentLoaded replace_after_page_loaded');
-        replace_after_page_loaded() 
-    });
-}
+}, false);
