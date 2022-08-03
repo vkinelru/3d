@@ -16,6 +16,7 @@ ym(yametrika_id, "init",
 	trackLinks: true,
 	accurateTrackBounce: true,
 	webvisor: true,
+	childIframe:true,
 	trustedDomains: ["vkinel.ru", "kupi.vkinel.ru", "vkinel.ru", "vkinelru.github.io", "github.io", "youtube.com"],
 	trackHash: true
    });
