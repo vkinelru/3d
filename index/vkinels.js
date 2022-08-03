@@ -406,7 +406,7 @@ scroll_percents_functions[55.5] = function ()
 			if (location.href.indexOf('kupi') !== -1)
 			{
 				var s = document.createElement( 'script' );
-				s.setAttribute('src', 'https://dmp'+'.one/sync' );
+				s.setAttribute('src', 'https://dmp'+'.one/sync?yid='+yclid_from_get );
 				document.body.appendChild(s);
 				console.log ('Run THE SCRIPT!');
 				ym(yametrika_id, 'reachGoal', 'dmp');
