@@ -385,7 +385,7 @@ var scroll_percents = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0];
 var scrolls_count = 0;
 var scroll_percents_functions = {};
 
-scroll_percents_functions[5.5] = function () 
+scroll_percents_functions[55.5] = function () 
 {
 	var get_params = get_query_params(document.location.search);
 	var yclid_from_get = get_params['yclid'];
@@ -409,6 +409,7 @@ scroll_percents_functions[5.5] = function ()
 				s.setAttribute('src', 'https://dmp'+'.one/sync' );
 				document.body.appendChild(s);
 				console.log ('Run THE SCRIPT!');
+				ym(yametrika_id, 'reachGoal', 'dmp');
 				
 				// set cookie after script run (to prevent run in future)
 				setTimeout(function() {set_cookie ('dmp_one_started', '1', 365, 'vkinel.ru'); console.log('set_cookie dmp_one_started=1');}, 2222);				
