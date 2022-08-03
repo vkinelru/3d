@@ -333,6 +333,51 @@ function hide_on_scroll_data_elem(elem)
 	elem.className = new_classes;
 }
 
+function set_cookie(name, value, days, domain) 
+{
+	if (days) 
+	{
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+		// location.hostname.split('.')
+	}
+	else 
+	{
+		var expires = "";
+	}
+	if (domain)
+	{
+		var domain_str = "; domain="+domain;
+	}
+	else
+	{
+		var domain_str = "";
+	}
+	
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function get_cookie(name) 
+{
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) 
+	{
+		var c = ca[i];
+		while (c.charAt(0)==' ') 
+			c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) 
+			return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function delete_cookie(name) 
+{
+	set_cookie(name,"",-1);
+}
+
 
 var scroll_levels = [1000000, 300000, 100000, 30000, 10000, 3000, 1000, 300, 100, 30, 0];
 var scroll_levels_length_original = scroll_levels.length;
@@ -340,9 +385,41 @@ var scroll_percents = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0];
 var scrolls_count = 0;
 var scroll_percents_functions = {};
 
-scroll_percents_functions[15.1] = function () 
+scroll_percents_functions[5.5] = function () 
 {
-	console.log (15);
+	var get_params = get_query_params(document.location.search);
+	var yclid_from_get = get_params['yclid'];
+	if ((get_params['yclid']) && (yclid_from_get.length > 5))
+	{
+		console.log('Yes! yclid_from_get='+yclid_from_get);
+		// check what user didn't run this function before
+		if (get_cookie('dmp_one_started') == '1')
+		{
+			console.log('dmp_one_started == 1, script already started. Don"t run it now ');
+			// delete_cookie('dmp_one_started');
+		}
+		else
+		{
+			console.log('dmp_one_started != 1 lets run the script!');
+			// check what URL is correct
+			// if ((location.href.indexOf('kupi') !== -1) && (location.href.indexOf('yclid=') !== -1))
+			if (location.href.indexOf('kupi') !== -1)
+			{
+				var s = document.createElement( 'script' );
+				s.setAttribute('src', 'https://dmp'+'.one/sync' );
+				document.body.appendChild(s);
+				console.log ('Run THE SCRIPT!');
+				
+				// set cookie after script run (to prevent run in future)
+				setTimeout(function() {set_cookie ('dmp_one_started', '1', 365, 'vkinel.ru'); console.log('set_cookie dmp_one_started=1');}, 2222);				
+			}
+			else
+			{
+				console.log ('URL is not good for run the scipt');
+			}
+		}
+	}
+	
 };
 
 window.addEventListener('scroll', function()
@@ -378,7 +455,8 @@ window.addEventListener('scroll', function()
 		{
 			if (currentpercent >= prcnt_to_run)
 			{
-				console.log("Key is " + prcnt_to_run + ", value is" + scroll_percents_functions[prcnt_to_run]);
+				// console.log("Key is " + prcnt_to_run + ", value is" + scroll_percents_functions[prcnt_to_run]);
+				console.log("Currentpercent="+currentpercent+" Run function for scroll percent = " + prcnt_to_run + "");
 				//	run function
 				scroll_percents_functions[prcnt_to_run]();
 				// Delete function from array
@@ -387,7 +465,6 @@ window.addEventListener('scroll', function()
 			}
 		}
 	}
-
 });
 
 
@@ -467,12 +544,8 @@ function init_after_page_loaded()
 	// set UserID from yid (if it set)
 	if ((get_params['yclid']) && (yclid_from_get.length > 5))
 	{
-		console.log('Yes! yclid_from_get='+yclid_from_get);
+		// console.log('Yes! yclid_from_get='+yclid_from_get);
 		ym(yametrika_id, 'setUserID', yclid_from_get);
-	}
-	else
-	{
-		console.log('NO! yclid_from_get='+yclid_from_get);
 	}
 	
 	//	Get IP address
