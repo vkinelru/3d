@@ -12,11 +12,12 @@ yametrika_id = 51096746;
 })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 ym(yametrika_id, "init",
    {
-	   clickmap: true,
-   trackLinks: true,
-   accurateTrackBounce: true,
-   webvisor: true,
-   trackHash: true
+	clickmap: true,
+	trackLinks: true,
+	accurateTrackBounce: true,
+	webvisor: true,
+	trustedDomains: ["vkinel.ru", "kupi.vkinel.ru", "vkinel.ru", "vkinelru.github.io", "github.io", "youtube.com"],
+	trackHash: true
    });
 
 function all_inputs_handler(callback_fun)
