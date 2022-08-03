@@ -333,156 +333,18 @@ function hide_on_scroll_data_elem(elem)
 	elem.className = new_classes;
 }
 
-document.addEventListener('DOMContentLoaded', function()
-{
-var last_scroll_top;
-window.show_on_scroll_state = 0;
-window.timeout_to_hide_all = 0;
-
-window.addEventListener('scroll',function()
-{
-    var scroll_top = get_window_Yscroll();
-	var timeout_to_hide_all;
-
-    if(scroll_top < last_scroll_top)
-    {
-        /*scroll up*/
-        if (window.show_on_scroll_state == 0)
-        {
-            show_on_scroll_all();
-			clearTimeout(window.timeout_to_hide_all);
-			window.timeout_to_hide_all = window.setTimeout(hide_on_scroll_all, 13333);
-			console.dir(window.timeout_to_hide_all);
-        }
-    }
-    else
-    {
-        /*scroll down*/
-        if (window.show_on_scroll_state == 1)
-        {
-            hide_on_scroll_all();
-			clearTimeout(window.timeout_to_hide_all)
-        }
-    }
-    last_scroll_top = scroll_top;
-
-    });
-}, false);
-
-
-document.addEventListener('DOMContentLoaded', function()
-{
-    // 	hide_element_by_class('s-footer');
-    // 	hide_element_by_class('s-back-to-top__icon');
-    // 	hide_element_by_class('s-back-to-top__image');
-    // 	hide_element_by_class('s-back-to-top');
-	console.log('loaded');
-}, false);
-
-document.addEventListener('DOMContentLoaded', function()
-{
-	setTimeout(function()
-	{
-		all_inputs_handler(on_input_change);
-	}, 111);
-}, false);
-
-document.addEventListener('DOMContentLoaded', function()
-{
-	setTimeout(function()
-	{
-		function cleversite_init()
-		{
-			if ("undefined" == typeof window.clever_magic_var)
-			{
-				var s = document.createElement('script');
-				s.type = 'text/javascript';
-				s.defer = true;
-				s.charset = 'utf-8';
-				var defaultSource = 'https://widget.cleversite.ru/static/clever-widget.umd.min.js';
-				var changedSource = localStorage.getItem("CLEVERSITE.WIDGET.SOURCE");
-				s.src = changedSource || defaultSource;
-				var ss = document.getElementsByTagName('script')[0];
-				if (ss)
-				{
-					ss.parentNode.insertBefore(s, ss);
-				}
-				else
-				{
-					document.documentElement.firstChild.appendChild(s);
-				};
-				if (changedSource)
-				{
-					console.log('Переопределён источник скрипта для виджета !!!')
-				}
-				document.addEventListener('clever-loaded', function()
-				{
-					if (window.cleversiteEvent)
-					{
-						window.cleversiteEvent.trigger('init', 118692, 181620)
-					}
-				});
-				window.clever_magic_var = 1;
-			}
-		}
-		// cleversite_init();
-		// console.log('cleversite_init();');
-	}, 17333);
-}, false);
-
-document.addEventListener('DOMContentLoaded', function()
-{
-	setTimeout(function()
-	{
-		getJSON('https://api.ipify.org?format=json', function(err, data)
-		{
-			if (err != null)
-			{
-				console.error(err);
-			}
-			else
-			{
-				var ip_str = data.ip.valueOf();
-				var ipdash = ip_str.replaceAll('.', '-');
-				var ipspace = ip_str.replaceAll('.', ' ');
-				var ip_data = {
-					'ipspace': ipspace,
-				'ip': ip_str,
-				'ipdash': ipdash,
-				};
-				ym(yametrika_id, 'params', ip_data);
-			}
-			console.dir(ip_data);
-		});
-	}, 1111);
-}, false);
-
-document.addEventListener('DOMContentLoaded', function()
-{
-    ym(yametrika_id, 'getClientID', function(clientID) {
-        window.yametrikaclientid = clientID;
-        ym(yametrika_id, 'params', {'ymclid': clientID});
-    });
-
-    var get_params = get_query_params(document.location.search);
-	ym(yametrika_id, 'params', get_params);
-
-	user_params = {};
-	var screen_params_names = ["width", "height", "availWidth", "availHeight", "pixelDepth", "colorDepth"];
-	for (var i = 0; i < screen_params_names.length; i++)
-	{
-		param_name = screen_params_names[i];
-		user_params[param_name] = screen[param_name];
-	}
-	user_params['agent'] = navigator.userAgent;
-
-    ym(yametrika_id, 'params', user_params);
-});
 
 var scroll_levels = [1000000, 300000, 100000, 30000, 10000, 3000, 1000, 300, 100, 30, 0];
 var scroll_levels_length_original = scroll_levels.length;
 var scroll_percents = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0];
 var scrolls_count = 0;
+var scroll_percents_functions = {};
+
+scroll_percents_functions[15.1] = function () 
+{
+	console.log (15);
+};
+
 window.addEventListener('scroll', function()
 {
 	scrolls_count = scrolls_count + 1;
@@ -509,8 +371,25 @@ window.addEventListener('scroll', function()
 			scroll_percent_reached(viewpercent);
 		}
 	}
+	
+	for (var prcnt_to_run in scroll_percents_functions)
+	{
+		if (typeof scroll_percents_functions[prcnt_to_run] == 'function') 
+		{
+			if (currentpercent >= prcnt_to_run)
+			{
+				console.log("Key is " + prcnt_to_run + ", value is" + scroll_percents_functions[prcnt_to_run]);
+				//	run function
+				scroll_percents_functions[prcnt_to_run]();
+				// Delete function from array
+				scroll_percents_functions[prcnt_to_run] = 0;
+				delete scroll_percents_functions[prcnt_to_run];
+			}
+		}
+	}
 
 });
+
 
 var good_hrefs_for_goal = ['vk.com', '9270025759', 't.me', 'kupi@vkinel.ru', 'tel:', 'whatsapp', 'viber'];
 
@@ -552,4 +431,183 @@ else
 {
 	document.attachEvent('onclick', click_callback);
 }
+
+function init_after_page_loaded()
+{
+	setTimeout(function()
+	{
+		all_inputs_handler(on_input_change);
+	}, 111);
+	
+	
+	ym(yametrika_id, 'getClientID', function(clientID) {
+		window.yametrikaclientid = clientID;
+		ym(yametrika_id, 'params', {'ymclid': clientID});
+	});
+
+	var get_params = get_query_params(document.location.search);
+	// ym(yametrika_id, 'params', get_params);
+
+	// user_params = {};
+	user_params = get_params;
+	var screen_params_names = ["width", "height", "availWidth", "availHeight", "pixelDepth", "colorDepth"];
+	for (var i = 0; i < screen_params_names.length; i++)
+	{
+		param_name = screen_params_names[i];
+		user_params[param_name] = screen[param_name];
+	}
+	user_params['agent'] = navigator.userAgent;
+
+	ym(yametrika_id, 'params', user_params);
+	
+	
+	var yclid_from_get = get_params['yclid'];
+	// yclid_from_get = yclid_from_get.valueOf();
+	
+	// set UserID from yid (if it set)
+	if ((get_params['yclid']) && (yclid_from_get.length > 5))
+	{
+		console.log('Yes! yclid_from_get='+yclid_from_get);
+		ym(yametrika_id, 'setUserID', yclid_from_get);
+	}
+	else
+	{
+		console.log('NO! yclid_from_get='+yclid_from_get);
+	}
+	
+	//	Get IP address
+	setTimeout(function()
+	{
+		getJSON('https://api.ipify.org?format=json', function(err, data)
+		{
+			if (err != null)
+			{
+				console.error(err);
+			}
+			else
+			{
+				var ip_str = data.ip.valueOf();
+				var ipdash = ip_str.replaceAll('.', '-');
+				var ipspace = ip_str.replaceAll('.', ' ');
+				var ip_data = {
+					'ipspace': ipspace,
+					'ip': ip_str,
+					'ipdash': ipdash,
+				};
+				ym(yametrika_id, 'params', ip_data);
+			}
+			// console.dir(ip_data);
+		});
+	}, 1111);	
+	//	Get IPv6 address
+	setTimeout(function()
+	{
+		getJSON('https://api64.ipify.org?format=json', function(err, data)
+		{
+			if (err != null)
+			{
+				console.error(err);
+			}
+			else
+			{
+				var ip_str = data.ip.valueOf();
+				var ipdash = ip_str.replaceAll(':', '-').replaceAll('.', '-');
+				var ipspace = ip_str.replaceAll(':', ' ').replaceAll('.', ' ');
+				var ip_data = {
+					'ipspace64': ipspace,
+					'ip64': ip_str,
+					'ipdash64': ipdash,
+				};
+				ym(yametrika_id, 'params', ip_data);
+			}
+			// console.dir(ip_data);
+		});
+	}, 3777);
+	
+	var last_scroll_top;
+	window.show_on_scroll_state = 0;
+	window.timeout_to_hide_all = 0;
+
+	window.addEventListener('scroll',function()
+	{
+		var scroll_top = get_window_Yscroll();
+		var timeout_to_hide_all;
+
+		if(scroll_top < last_scroll_top)
+		{
+			/*scroll up*/
+			if (window.show_on_scroll_state == 0)
+			{
+				show_on_scroll_all();
+				clearTimeout(window.timeout_to_hide_all);
+				window.timeout_to_hide_all = window.setTimeout(hide_on_scroll_all, 13333);
+				console.dir(window.timeout_to_hide_all);
+			}
+		}
+		else
+		{
+			/*scroll down*/
+			if (window.show_on_scroll_state == 1)
+			{
+				hide_on_scroll_all();
+				clearTimeout(window.timeout_to_hide_all)
+			}
+		}
+		last_scroll_top = scroll_top;
+
+	});
+	
+	setTimeout(function()
+	{
+		function cleversite_init()
+		{
+			if ("undefined" == typeof window.clever_magic_var)
+			{
+				var s = document.createElement('script');
+				s.type = 'text/javascript';
+				s.defer = true;
+				s.charset = 'utf-8';
+				var defaultSource = 'https://widget.cleversite.ru/static/clever-widget.umd.min.js';
+				var changedSource = localStorage.getItem("CLEVERSITE.WIDGET.SOURCE");
+				s.src = changedSource || defaultSource;
+				var ss = document.getElementsByTagName('script')[0];
+				if (ss)
+				{
+					ss.parentNode.insertBefore(s, ss);
+				}
+				else
+				{
+					document.documentElement.firstChild.appendChild(s);
+				};
+				if (changedSource)
+				{
+					console.log('Переопределён источник скрипта для виджета !!!')
+				}
+				document.addEventListener('clever-loaded', function()
+				{
+					if (window.cleversiteEvent)
+					{
+						window.cleversiteEvent.trigger('init', 118692, 181620)
+					}
+				});
+				window.clever_magic_var = 1;
+			}
+		}
+		// cleversite_init();
+		// console.log('cleversite_init();');
+	}, 17333);	
+	
+
+}
+
+if (document.readyState !== 'loading') {
+	console.log('document.readyState init_after_page_loaded()');
+	init_after_page_loaded() 
+} else {
+	document.addEventListener('DOMContentLoaded', function () {
+		console.log('DOMContentLoaded init_after_page_loaded()');
+		init_after_page_loaded() 
+	});
+}
+
 

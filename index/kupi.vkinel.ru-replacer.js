@@ -306,13 +306,12 @@ replacer = {
 
 /* Copyright (c) 2021 Borodin-Atamanov */
 
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('Page loaded');
+function replace_after_page_loaded() 
+{
     /*  parse GET parameters */
     var query = get_query_params(document.location.search);
     /* Replace text on the page */
     replace_everything(query.q, replacer);
-    console.log('');
 
     /* add unbreakable space before short words */
     replace_html(' ₽', '&nbsp;₽');
@@ -334,4 +333,15 @@ document.addEventListener('DOMContentLoaded', function() {
     add_nbsp_after_short_word('на');
     add_nbsp_after_short_word('но');
     add_nbsp_after_short_word('вы');
-}, false);
+
+}
+
+if (document.readyState !== 'loading') {
+    console.log('document.readyState replace_after_page_loaded');
+    replace_after_page_loaded() 
+} else {
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('DOMContentLoaded replace_after_page_loaded');
+        replace_after_page_loaded() 
+    });
+}
