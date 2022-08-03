@@ -74,6 +74,8 @@ function replace_after_page_loaded()
     replace_html(' м²', '&nbsp;м²');
     replace_html(' ₽', '&nbsp;₽');
     replace_html(' шт.', '&nbsp;шт.');
+    add_nbsp_after_short_word('к');
+    add_nbsp_after_short_word('о');
     add_nbsp_after_short_word('а');
     add_nbsp_after_short_word('и');
     add_nbsp_after_short_word('в');

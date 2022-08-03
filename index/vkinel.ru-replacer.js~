@@ -60,6 +60,11 @@ replacer = {
 document.addEventListener('DOMContentLoaded', function()
 {
     console.log('Page loaded');
+
+}, false);
+
+function replace_after_page_loaded() 
+{
     /*  parse GET parameters */
     var query = get_query_params(document.location.search);
     /* Replace text on the page */
@@ -69,6 +74,8 @@ document.addEventListener('DOMContentLoaded', function()
     replace_html(' м²', '&nbsp;м²');
     replace_html(' ₽', '&nbsp;₽');
     replace_html(' шт.', '&nbsp;шт.');
+    add_nbsp_after_short_word('к');
+    add_nbsp_after_short_word('о');
     add_nbsp_after_short_word('а');
     add_nbsp_after_short_word('и');
     add_nbsp_after_short_word('в');
@@ -87,4 +94,14 @@ document.addEventListener('DOMContentLoaded', function()
     add_nbsp_after_short_word('вы');
 
     console.log('words replaced');
-}, false);
+}
+
+if (document.readyState !== 'loading') {
+    console.log('document.readyState replace_after_page_loaded');
+    replace_after_page_loaded() 
+} else {
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('DOMContentLoaded replace_after_page_loaded');
+        replace_after_page_loaded() 
+    });
+}
