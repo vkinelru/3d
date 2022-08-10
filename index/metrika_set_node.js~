@@ -53,13 +53,16 @@ const page = await browser.newPage();
 // await page.goto(target_url);
 await page.setDefaultNavigationTimeout(0);
 await page.goto(target_url, {waitUntil: 'networkidle2'});
-//browser.close();
 
 var body_str = 'Ok';
-if (event.queryStringParameters.bebug)
+if (event.queryStringParameters.debug)
 {
     body_str = request_parametr_str+ '\n' + JSON.stringify(parameters, null, ' ')+'\nTarget url="'+target_url+'"\n\n'+JSON.stringify(event, null, ' ');
 }
+
+setTimeout( () => {
+    browser.close();
+}, 4444)
 
 return {
     statusCode: 200,
