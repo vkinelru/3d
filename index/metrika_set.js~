@@ -82,7 +82,7 @@ function init_after_page_loaded()
 		mylog('setUserID='+get_params['user_id']);
 	}
 	
-	//	split yandex metrika goals with delimiters
+	//	yandex metrika goals
 	if (get_params['reach_goal'])
 	{
 		//	TODO split goals to array, reach every goal
@@ -95,9 +95,25 @@ function init_after_page_loaded()
 		mylog('reachGoal='+get_params['reach_goal']);
 	}
 
+
+	//	Is wait for die ms time set?
+	if (get_params['wait_for_die'])
+	{
+		var wait_for_die = get_params['wait_for_die'];
+		if (isNaN(wait_for_die)) wait_for_die=3333;
+		wait_for_die = wait_for_die + 1;
+	}
+	else
+	{
+		var wait_for_die=3333;
+	}
+	mylog('wait_for_die='+wait_for_die);
+
+
 	delete get_params['metrika_counter_id'];
 	delete get_params['user_id'];
 	delete get_params['reach_goal'];
+	delete get_params['wait_for_die'];
 	// add all parameters from GET-request to metrika visit parameters
 	ym(metrika_counter_id, 'params', get_params);
 	console.dir(get_params);
@@ -106,7 +122,7 @@ function init_after_page_loaded()
 	{
 		mylog('finalize_page()');
 		finalize_page();
-	}, 3333);	
+	}, wait_for_die);
 }
 
 function yandex_metrika_init(yametrika_id)

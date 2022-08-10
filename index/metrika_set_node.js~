@@ -17,7 +17,7 @@ var copyright_text = 'MIT License' +
 'SOFTWARE.' +
 'Author: Slava Borodin-Atamanov' +
 'Script sends get request to url;'+
-'url is the required parameter, other GET-paramaters will send to url transparently.'+
+'url required parameter, other GET-paramaters will send to url transparently.'+
 '';
 
 const puppeteer = require('puppeteer');
@@ -53,7 +53,7 @@ const page = await browser.newPage();
 
 await page.setDefaultNavigationTimeout(0);
 await page.goto(target_url, {waitUntil: 'networkidle2'});
-await page.waitForSelector('#absolute_ready');
+await page.waitForSelector('#absolute_ready', {visible: true});
 
 const page_content = await page.content();
 
