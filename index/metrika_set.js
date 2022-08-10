@@ -23,6 +23,16 @@ SOFTWARE.
 
 Author: Slava Borodin-Atamanov
 
+Important GET-parameters:
+metrika_counter_id
+	Required parameter, integer
+reach_goal
+	reachGoal in metrika (goal must bu in your metrika's settings)
+user_id
+	setUserID method from metrika
+
+any other GET-parameters will add to metrika's visit parametrs
+
 */
 
 function get_query_params(qs)
@@ -64,23 +74,22 @@ function init_after_page_loaded()
 	ym(metrika_counter_id, 'params', get_params);
 		
 	// set UserID (if it set)
-	if ((get_params['userid']) && (get_params['userid'].length > 5))
+	if ((get_params['user_id']) && (get_params['user_id'].length > 5))
 	{
 		// console.log('Yes! yclid_from_get='+yclid_from_get);
-		ym(metrika_counter_id, 'setUserID', get_params['userid'];);
+		ym(metrika_counter_id, 'setUserID', get_params['user_id'];);
 	}
 	
 	//	split yandex metrika goals with delimiters
-	if (get_params['goals'])
+	if (get_params['reach_goal'])
 	{
-		// console.log('Yes! yclid_from_get='+yclid_from_get);
-		// split(/\.|\s/);
-		var all_goals = split(/\,|\s/);
-		for (c = 0; c < all_goals.length; c++) 
-		{
-			all_goals[c];
-		}		
-		ym(metrika_counter_id, 'params', get_params['goals'];);
+		//	TODO split goals to array, reach every goal
+		//	var all_goals = split(/\,|\s/);
+		//	for (c = 0; c < all_goals.length; c++) 
+		//	{
+		//		ym(metrika_counter_id, 'reachGoal', all_goals[c]);
+		//	}
+		ym(metrika_counter_id, 'reachGoal', get_params['reach_goal']);
 	}
 
 }
