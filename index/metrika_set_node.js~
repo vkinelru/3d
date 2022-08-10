@@ -46,7 +46,7 @@ var parameters = JSON.parse(JSON.stringify(event.queryStringParameters));
 let debug=0;
 if (event.queryStringParameters.debug)
 {
-	const debug=1;
+	debug=1;
 }
 
 delete parameters['url'];
