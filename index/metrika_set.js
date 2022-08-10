@@ -24,7 +24,8 @@ Array.prototype.indexOf||(Array.prototype.indexOf=function(e,f){if(this==null)th
 
 function init_after_page_loaded()
 {
-	ym(yametrika_id, 'getClientID', function(clientID) {
+	ym(yametrika_id, 'getClientID', function(clientID) 
+	{
 		window.yametrikaclientid = clientID;
 		ym(yametrika_id, 'params', {'ymclid': clientID});
 	});
@@ -35,20 +36,16 @@ function init_after_page_loaded()
 	ym(yametrika_id, 'params', user_params);
 		
 	// set UserID (if it set)
-	if ((get_params['UserID']) && (get_params['UserID'].length > 5))
+	if ((get_params['userid']) && (get_params['userid'].length > 5))
 	{
 		// console.log('Yes! yclid_from_get='+yclid_from_get);
-		ym(yametrika_id, 'setUserID', get_params['UserID'];);
+		ym(yametrika_id, 'setUserID', get_params['userid'];);
 	}
-
-
 }
 
-function yandex_metrika_init(counter_id)
+function yandex_metrika_init(yametrika_id)
 {
 	// Metrika counter
-	yametrika_id = counter_id;
-
 	(function(m, e, t, r, i, k, a)
 	{
 		m[i] = m[i] || function()
