@@ -17,7 +17,7 @@ var copyright_text = 'MIT License' +
 'SOFTWARE.' +
 'Author: Slava Borodin-Atamanov' +
 'Script sends get request to url;'+
-'url required parameter, other GET-paramaters will send to url transparently.'+
+'url is the required parameter, other GET-paramaters will send to url transparently.'+
 '';
 
 const puppeteer = require('puppeteer');
@@ -50,19 +50,27 @@ target_url = target_url + '?' +request_parametr_str;
 
 const browser = await puppeteer.launch();
 const page = await browser.newPage();
-// await page.goto(target_url);
+
 await page.setDefaultNavigationTimeout(0);
 await page.goto(target_url, {waitUntil: 'networkidle2'});
+await page.waitForSelector('#absolute_ready');
+
+const page_content = await page.content();
 
 var body_str = 'Ok';
 if (event.queryStringParameters.debug)
 {
-    body_str = request_parametr_str+ '\n' + JSON.stringify(parameters, null, ' ')+'\nTarget url="'+target_url+'"\n\n'+JSON.stringify(event, null, ' ');
+    body_str = 
+    'Target url="'+target_url+'"\n'+
+    'request_parametr_str="'+request_parametr_str+'"\n' +
+    JSON.stringify(parameters, null, ' ')+'\n'+
+    JSON.stringify(event, null, ' ')+'\n\n\n'+
+    page_content;
 }
 
 setTimeout( () => {
     browser.close();
-}, 4444)
+}, 7444)
 
 return {
     statusCode: 200,
