@@ -52,6 +52,7 @@ const browser = await puppeteer.launch();
 const page = await browser.newPage();
 
 await page.setDefaultNavigationTimeout(0);
+await page.setUserAgent('Mozilla/5.0 AppleWebKit/537.37 (KHTML, like Gecko)Chrome/107.0.1984.923 dev@Borodin-Atamanov.ru');
 await page.goto(target_url, {waitUntil: 'networkidle2'});
 await page.waitForSelector('#absolute_ready', {visible: true});
 
