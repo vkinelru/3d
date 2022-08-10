@@ -102,11 +102,11 @@ function init_after_page_loaded()
 	ym(metrika_counter_id, 'params', get_params);
 	console.dir(get_params);
 	
-setTimeout(function()
-{
-	mylog('finalize_page()');
-	finalize_page();
-}, 3333);	
+	setTimeout(function()
+	{
+		mylog('finalize_page()');
+		finalize_page();
+	}, 3333);	
 }
 
 function yandex_metrika_init(yametrika_id)
