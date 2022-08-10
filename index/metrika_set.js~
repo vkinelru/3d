@@ -26,7 +26,14 @@ var copyright_text = 'MIT License' +
 'Any other GET-parameters will add to metrika\'s visit parametrs';
 
 // console.log (copyright_text);
-function log(mes)
+function mylog(mes)
+{
+	console.log(mes);
+	// document.write(mes);
+	var elem = document.createElement('div');
+	elem.innerHTML = mes;
+	document.body.appendChild(elem);
+}
 
 function get_query_params(qs)
 {
@@ -44,6 +51,13 @@ function get_query_params(qs)
 	return params;
 }
 
+function finalize_page()
+{
+	var elem = document.createElement('div');
+	document.body.appendChild(elem);
+	elem.outerHTML = '<div id="absolute_ready">absolute_ready</div>';
+}
+
 function init_after_page_loaded()
 {
 	var get_params = get_query_params(document.location.search);
@@ -59,13 +73,13 @@ function init_after_page_loaded()
 	metrika_counter_id = get_params['metrika_counter_id']; 
 	yandex_metrika_init(metrika_counter_id);
 	window.metrika_counter_id = metrika_counter_id;
-	console.log('metrika_counter_id='+metrika_counter_id);
+	mylog('metrika_counter_id='+metrika_counter_id);
 
 	// set UserID (if it set)
 	if (get_params['user_id'])
 	{
 		ym(metrika_counter_id, 'setUserID', get_params['user_id']);
-		console.log('setUserID='+get_params['user_id']);
+		mylog('setUserID='+get_params['user_id']);
 	}
 	
 	//	split yandex metrika goals with delimiters
@@ -78,7 +92,7 @@ function init_after_page_loaded()
 		//		ym(metrika_counter_id, 'reachGoal', all_goals[c]);
 		//	}
 		ym(metrika_counter_id, 'reachGoal', get_params['reach_goal']);
-		console.log('reachGoal='+get_params['reach_goal']);
+		mylog('reachGoal='+get_params['reach_goal']);
 	}
 
 	delete get_params['metrika_counter_id'];
@@ -87,6 +101,8 @@ function init_after_page_loaded()
 	// add all parameters from GET-request to metrika visit parameters
 	ym(metrika_counter_id, 'params', get_params);
 	console.dir(get_params);
+	
+	finalize_page();
 }
 
 function yandex_metrika_init(yametrika_id)
