@@ -26,6 +26,7 @@ var copyright_text = 'MIT License' +
 'Any other GET-parameters will add to metrika\'s visit parametrs';
 
 // console.log (copyright_text);
+function log(mes)
 
 function get_query_params(qs)
 {
@@ -86,8 +87,6 @@ function init_after_page_loaded()
 	// add all parameters from GET-request to metrika visit parameters
 	ym(metrika_counter_id, 'params', get_params);
 	console.dir(get_params);
-	
-
 }
 
 function yandex_metrika_init(yametrika_id)

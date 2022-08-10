@@ -26,6 +26,11 @@ var copyright_text = 'MIT License' +
 'Any other GET-parameters will add to metrika\'s visit parametrs';
 
 // console.log (copyright_text);
+function log(mes)
+{
+	console.log(mes);
+	document.write(mes);
+}
 
 function get_query_params(qs)
 {
