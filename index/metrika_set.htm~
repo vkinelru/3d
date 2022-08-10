@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="metrika_set.js"></script>
 <meta charset="utf-8">
 <title>Metrika set</title>
-<script src="metrika_set.js"></script>
 </head>
 <body>
 </body>
