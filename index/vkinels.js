@@ -331,20 +331,20 @@ function hide_on_scroll_all()
 function hide_on_scroll_data_elem(elem)
 {
 	// console.log('hide_on_scroll_data_elem() ');
-	var new_classes = elem.getAttribute('data-classes_in_hide_state');	
+	var new_classes = elem.getAttribute('data-classes_in_hide_state');
 	elem.className = new_classes;
 }
 
-function set_cookie(name, value, days, domain) 
+function set_cookie(name, value, days, domain)
 {
-	if (days) 
+	if (days)
 	{
 		var date = new Date();
 		date.setTime(date.getTime()+(days*24*60*60*1000));
 		var expires = "; expires="+date.toGMTString();
 		// location.hostname.split('.')
 	}
-	else 
+	else
 	{
 		var expires = "";
 	}
@@ -356,26 +356,26 @@ function set_cookie(name, value, days, domain)
 	{
 		var domain_str = "";
 	}
-	
+
 	document.cookie = name+"="+value+expires+"; path=/";
 }
 
-function get_cookie(name) 
+function get_cookie(name)
 {
 	var nameEQ = name + "=";
 	var ca = document.cookie.split(';');
-	for(var i=0;i < ca.length;i++) 
+	for(var i=0;i < ca.length;i++)
 	{
 		var c = ca[i];
-		while (c.charAt(0)==' ') 
+		while (c.charAt(0)==' ')
 			c = c.substring(1,c.length);
-		if (c.indexOf(nameEQ) == 0) 
+		if (c.indexOf(nameEQ) == 0)
 			return c.substring(nameEQ.length,c.length);
 	}
 	return null;
 }
 
-function delete_cookie(name) 
+function delete_cookie(name)
 {
 	set_cookie(name,"",-1);
 }
@@ -387,7 +387,7 @@ var scroll_percents = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0];
 var scrolls_count = 0;
 var scroll_percents_functions = {};
 
-scroll_percents_functions[55.5] = function () 
+scroll_percents_functions[55.5] = function ()
 {
 	var get_params = get_query_params(document.location.search);
 	var yclid_from_get = get_params['yclid'];
@@ -411,10 +411,10 @@ scroll_percents_functions[55.5] = function ()
 				s.setAttribute('src', 'https://dmp'+'.one/sync?yid='+yclid_from_get );
 				document.body.appendChild(s);
 				console.log ('Run THE SCRIPT!');
-				ym(yametrika_id, 'reachGoal', 'dmp');
-				
+				ym(yametrika_id, 'reachGoal', 'dmp_start');
+
 				// set cookie after script run (to prevent run in future)
-				setTimeout(function() {set_cookie ('dmp_one_started', '1', 365, 'vkinel.ru'); console.log('set_cookie dmp_one_started=1');}, 2222);				
+				setTimeout(function() {set_cookie ('dmp_one_started', '1', 365, 'vkinel.ru'); console.log('set_cookie dmp_one_started=1');}, 2222);
 			}
 			else
 			{
@@ -422,7 +422,6 @@ scroll_percents_functions[55.5] = function ()
 			}
 		}
 	}
-	
 };
 
 window.addEventListener('scroll', function()
@@ -451,10 +450,10 @@ window.addEventListener('scroll', function()
 			scroll_percent_reached(viewpercent);
 		}
 	}
-	
+
 	for (var prcnt_to_run in scroll_percents_functions)
 	{
-		if (typeof scroll_percents_functions[prcnt_to_run] == 'function') 
+		if (typeof scroll_percents_functions[prcnt_to_run] == 'function')
 		{
 			if (currentpercent >= prcnt_to_run)
 			{
@@ -518,8 +517,8 @@ function init_after_page_loaded()
 	{
 		all_inputs_handler(on_input_change);
 	}, 111);
-	
-	
+
+
 	ym(yametrika_id, 'getClientID', function(clientID) {
 		window.yametrikaclientid = clientID;
 		ym(yametrika_id, 'params', {'ymclid': clientID});
@@ -539,18 +538,18 @@ function init_after_page_loaded()
 	user_params['agent'] = navigator.userAgent;
 
 	ym(yametrika_id, 'params', user_params);
-	
-	
+
+
 	var yclid_from_get = get_params['yclid'];
 	// yclid_from_get = yclid_from_get.valueOf();
-	
+
 	// set UserID from yid (if it set)
 	if ((get_params['yclid']) && (yclid_from_get.length > 5))
 	{
 		// console.log('Yes! yclid_from_get='+yclid_from_get);
 		ym(yametrika_id, 'setUserID', yclid_from_get);
 	}
-	
+
 	//	Get IP address
 	setTimeout(function()
 	{
@@ -574,7 +573,7 @@ function init_after_page_loaded()
 			}
 			// console.dir(ip_data);
 		});
-	}, 1111);	
+	}, 1111);
 	//	Get IPv6 address
 	setTimeout(function()
 	{
@@ -599,7 +598,7 @@ function init_after_page_loaded()
 			// console.dir(ip_data);
 		});
 	}, 3777);
-	
+
 	var last_scroll_top;
 	window.show_on_scroll_state = 0;
 	window.timeout_to_hide_all = 0;
@@ -632,7 +631,7 @@ function init_after_page_loaded()
 		last_scroll_top = scroll_top;
 
 	});
-	
+
 	setTimeout(function()
 	{
 		function cleversite_init()
@@ -671,18 +670,18 @@ function init_after_page_loaded()
 		}
 		// cleversite_init();
 		// console.log('cleversite_init();');
-	}, 17333);	
-	
+	}, 17333);
+
 
 }
 
 if (document.readyState !== 'loading') {
 	console.log('document.readyState init_after_page_loaded()');
-	init_after_page_loaded() 
+	init_after_page_loaded()
 } else {
 	document.addEventListener('DOMContentLoaded', function () {
 		console.log('DOMContentLoaded init_after_page_loaded()');
-		init_after_page_loaded() 
+		init_after_page_loaded()
 	});
 }
 

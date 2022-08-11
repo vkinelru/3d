@@ -19,12 +19,20 @@ var copyright_text = 'MIT License\n' +
 'url is required parameter, other GET-paramaters will send to url transparently.'+
 '';
 
+module.exports.handler = async function (event, context) 
+{
+
 const puppeteer = require('puppeteer');
 const querystring = require('querystring');
 const url = require('url');
+const buffer = require('node:buffer');
 
-module.exports.handler = async function (event, context) 
+var all_messages = {}; var mes='';
+function mylog(mes)
 {
+	if (debug) 	console.error(mes);
+	all_messages[Object.keys(all_messages).length] = mes;
+}
 
 var target_url = event.queryStringParameters.url;
 target_url = decodeURI(target_url);
@@ -32,46 +40,106 @@ target_url = decodeURI(target_url);
 try 
 {
     urlo = new URL(target_url);
+    mes = 'target_url is ok, target_url='+target_url; mylog(mes);
 } 
-catch (_) 
+catch (e) 
 {
+    mes = 'Invalid url parameter🤷‍♂️ ='+target_url+' '+e; mylog(mes);
     return {
         statusCode: 400,
-        body: 'Invalid url parameter🤷‍♂️ '+target_url,
+        body: mes
     };
 }
 
 var parameters = JSON.parse(JSON.stringify(event.queryStringParameters));
 
-let debug=0;
+var body_str = 'Ok';
+var debug=0;
 if (event.queryStringParameters.debug)
 {
 	debug=1;
 	delete parameters['debug'];
 }
 
+var post_data = event['body'];
+if (post_data)
+{
+	mes = 'event.body.length='+event.body.length; mylog(mes);
+
+	post_data = new Buffer.from(post_data, 'base64');
+	mes = 'base64decoded post_data.length='+post_data.length; mylog(mes);
+	post_data = post_data.toString('ascii');
+	mes = 'string post_data.length='+post_data.length; mylog(mes);
+	// исправь ниже, возвращает undefined
+	post_data = new URLSearchParams(post_data);
+	mes = 'URLSearchParams object post_data.length='+post_data.length; mylog(mes);
+
+	var page_with_parameters = decodeURI(post_data['page_with_parameters']);
+	mes = 'page_with_parameters.length='+page_with_parameters.length; mylog(mes);
+	var page_with_parameters_obj = new URLSearchParams(page_with_parameters);
+	mes = 'page_with_parameters_obj.length='+page_with_parameters_obj.length; mylog(mes);
+
+	parameters['user_id'] = post_data['yid'] || page_with_parameters_obj['yid'];
+	mes = "user_id from post_data['yid']="+ post_data['yid']+", user_id from from page_with_parameters_obj['yid']="+page_with_parameters_obj['yid']; mylog(mes);
+	if (!parameters['user_id'])
+	{
+		mes = 'user_id is undefined from post_data!'; mylog(mes);
+		delete parameters['user_id'];
+	}
+	else
+	{
+		mes = 'from post_data user_id=['+parameters['user_id']+']'; mylog(mes);
+	}
+	post_data = post_data.toString();
+	mes = 'string post_data length=['+post_data.length+']'; mylog(mes);
+}
+else
+{
+	mes = 'No post_data!'; mylog(mes);
+	post_data = '';
+}
 delete parameters['url'];
 const searchParams = new URLSearchParams(parameters);
 var request_parametr_str = searchParams.toString();
-target_url = target_url + '?' +request_parametr_str;
+// TODO change yid parameter to UserID
+//target_url = target_url + '?' +request_parametr_str + '&' + post_data;
+target_url = target_url + '?' +request_parametr_str + '&' + post_data;
 
 const browser = await puppeteer.launch();
 const page = await browser.newPage();
 
-await page.setDefaultNavigationTimeout(0);
+await page.setDefaultNavigationTimeout(21111);
+await page.setDefaultTimeout(23333);
 await page.setUserAgent('Mozilla/5.0 AppleWebKit/537.37 (KHTML, like Gecko)Chrome/107.0.1984.923 dev@Borodin-Atamanov.ru');
-await page.goto(target_url, {waitUntil: 'networkidle2'});
-await page.waitForSelector('#absolute_ready', {visible: true});
 
-const page_content = await page.content();
+try 
+{
+	await page.goto(target_url, {waitUntil: 'networkidle2', timeout: 19999});
+	// await page.waitForSelector('#absolute_ready', {visible: true, timeout: 3777});
+    mes = 'target_url is ok, target_url=['+target_url+']'; mylog(mes);
+} 
+catch (e) 
+{
+	var page_content = await page.content();
+    mes = 'Something went wrong while opening page🤷‍♂️\ntarget_url='+target_url+'\n '+e+'\n\n'+page_content; mylog(mes);
+    return {
+        statusCode: 400,
+        body: mes
+    };
+}
 
-var body_str = 'Ok';
+var page_content = await page.content();
+
 if (debug)
 {
     body_str = 
     'Target url="'+target_url+'"\n'+
     'request_parametr_str="'+request_parametr_str+'"\n' +
+    'all_messages \n'+
+    JSON.stringify(all_messages, null, ' ')+'\n'+
+    'parameters \n'+
     JSON.stringify(parameters, null, ' ')+'\n'+
+    'event \n'+
     JSON.stringify(event, null, ' ')+'\n\n\n'+
     page_content;
 }
