@@ -141,7 +141,7 @@ await page.setUserAgent('Mozilla/5.0 AppleWebKit/537.37 (KHTML, like Gecko)Chrom
 try
 {
 	await page.goto(target_url, {waitUntil: 'networkidle2', timeout: 19999});
-	// await page.waitForSelector('#absolute_ready', {visible: true, timeout: 3777});
+	await page.waitForSelector('#absolute_ready', {visible: true, timeout: 3777});
     mes = 'target_url is ok, target_url=['+target_url+']'; mylog(mes);
 }
 catch (e)

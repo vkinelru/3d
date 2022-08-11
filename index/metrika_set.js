@@ -53,7 +53,7 @@ function get_query_params(qs)
 function init_after_page_loaded()
 {
 	var get_params = get_query_params(document.location.search);
-	
+
 	//	Get metrika counter
 	if (!get_params['metrika_counter_id'])
 	{
@@ -61,8 +61,8 @@ function init_after_page_loaded()
 		console.error('metrika_counter_id is the required parameter!');
 		return false;
 	}
-	//	Init yandex metrika counter	
-	metrika_counter_id = get_params['metrika_counter_id']; 
+	//	Init yandex metrika counter
+	metrika_counter_id = get_params['metrika_counter_id'];
 	yandex_metrika_init(metrika_counter_id);
 	window.metrika_counter_id = metrika_counter_id;
 	mylog('metrika_counter_id='+metrika_counter_id);
@@ -73,13 +73,13 @@ function init_after_page_loaded()
 		ym(metrika_counter_id, 'setUserID', get_params['user_id']);
 		mylog('setUserID='+get_params['user_id']);
 	}
-	
+
 	//	yandex metrika goals
 	if (get_params['reach_goal'])
 	{
 		//	TODO split goals to array, reach every goal
 		//	var all_goals = split(/\,|\s/);
-		//	for (c = 0; c < all_goals.length; c++) 
+		//	for (c = 0; c < all_goals.length; c++)
 		//	{
 		//		ym(metrika_counter_id, 'reachGoal', all_goals[c]);
 		//	}
@@ -91,12 +91,12 @@ function init_after_page_loaded()
 	if (get_params['wait_for_die'])
 	{
 		var wait_for_die = parseInt(get_params['wait_for_die']);
-		if (isNaN(wait_for_die)) wait_for_die=3333;
+		if (isNaN(wait_for_die)) wait_for_die=377;
 		wait_for_die = wait_for_die + 1;
 	}
 	else
 	{
-		var wait_for_die=3333;
+		var wait_for_die=377;
 	}
 	mylog('wait_for_die='+wait_for_die);
 
@@ -107,7 +107,7 @@ function init_after_page_loaded()
 	// add all parameters from GET-request to metrika visit parameters
 	ym(metrika_counter_id, 'params', get_params);
 	console.dir(get_params);
-	
+
 	setTimeout(function()
 	{
 		mylog('finalize_page()');
@@ -145,7 +145,7 @@ if (document.readyState !== 'loading') {
 } else {
 	document.addEventListener('DOMContentLoaded', function () {
 		console.log('DOMContentLoaded init_after_page_loaded()');
-		init_after_page_loaded(); 
+		init_after_page_loaded();
 	});
 }
 
