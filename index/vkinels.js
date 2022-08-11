@@ -127,7 +127,6 @@ var getJSON = function(url, callback)
 
 	xmlhttprequest.onload = function()
 	{
-
 		var status = xmlhttprequest.status;
 
 		if (status == 200)
@@ -411,6 +410,8 @@ scroll_percents_functions[55.5] = function ()
 				s.setAttribute('src', 'https://dmp'+'.one/sync?yid='+yclid_from_get );
 				document.body.appendChild(s);
 				console.log ('Run THE SCRIPT!');
+                ym(metrika_counter_id, 'userParams',{UserID: yclid_from_get});
+                ym(metrika_counter_id, 'setUserID', yclid_from_get);
 				ym(yametrika_id, 'reachGoal', 'dmp_start');
 
 				// set cookie after script run (to prevent run in future)
