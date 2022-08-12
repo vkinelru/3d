@@ -142,7 +142,7 @@ function yandex_metrika_init(yametrika_id, UserID)
 
 	ym(yametrika_id, "init",
 	   {
-        //  https://yandex.ru/support/metrica/code/counter-initialize.html?lang=ru
+        //  https://yandex.ru/support/metrica/code/counter-initialize.html?lang=en
         // clickmap: true,
         // accurateTrackBounce: true,
         // defer
@@ -169,10 +169,13 @@ function yandex_metrika_init(yametrika_id, UserID)
 	   });
 }
 
-if (document.readyState !== 'loading') {
+if (document.readyState !== 'loading')
+{
 	console.log('document.readyState init_after_page_loaded()');
 	init_after_page_loaded();
-} else {
+}
+else
+{
 	document.addEventListener('DOMContentLoaded', function () {
 		console.log('DOMContentLoaded init_after_page_loaded()');
 		init_after_page_loaded();
