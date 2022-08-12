@@ -30,13 +30,13 @@ var copyright_text = 'MIT License\n' +
 '</pre>';
 
 /*
- # this will create new .format() function for Date object
- # there is auto localization from Intl, but you can also set language as a 2nd argument
- # all possible values were tested and compared on Apache server with PHP 8 date() function
- # you can find minified version in the first comment
- # examples:
- new Date().format('d.m.Y H:i:s') // 25.07.2022 09:11
- new Date().format( 'l, j. F Y', 'de' ) // Montag, 25. Juli 2022
+ * # this will create new .format() function for Date object
+ * # there is auto localization from Intl, but you can also set language as a 2nd argument
+ * # all possible values were tested and compared on Apache server with PHP 8 date() function
+ * # you can find minified version in the first comment
+ * # examples:
+ * new Date().format('d.m.Y H:i:s') // 25.07.2022 09:11
+ * new Date().format( 'l, j. F Y', 'de' ) // Montag, 25. Juli 2022
  */
 
 (function(){
@@ -162,11 +162,9 @@ if (console.all === undefined) {
     }
 
     function hookLogType(logType) {
-        const original=console[logType].bind(console)
         console['orig_'+logType] = console[logType].bind(console);
 
         return function(){
-            //console.all.push({
             logValue = Array.from(arguments);
             if (logValue.length == 1)
             {
@@ -177,7 +175,6 @@ if (console.all === undefined) {
                 logValue = logValue.join(', ');
             }
             console.all[genKey()+logType] = logValue;
-            // original.apply(console, arguments)
             console['orig_'+logType].apply(console, arguments);
         }
     }
@@ -203,39 +200,39 @@ if (console.all === undefined) {
 
 function mylog(mes)
 {
-	console.log(mes);
-	var elem = document.createElement('div');
-	document.body.appendChild(elem);
-	elem.innerHTML = mes;
+    console.log(mes);
+    var elem = document.createElement('div');
+    document.body.appendChild(elem);
+    elem.innerHTML = mes;
 }
 
 function get_query_params(qs)
 {
-	/*  function decode parameters from GET */
-	qs = qs.split('+').join(' ');
-	var params = {},
-	tokens, re = /[?&]?([^=]+)=([^&]*)/g;
-	while (tokens = re.exec(qs))
-	{
-		params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
-	}
-	return params;
+    /*  function decode parameters from GET */
+    qs = qs.split('+').join(' ');
+    var params = {},
+    tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+    while (tokens = re.exec(qs))
+    {
+        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+    }
+    return params;
 }
 
 function init_after_page_loaded()
 {
-	var get_params = get_query_params(document.location.search);
+    var get_params = get_query_params(document.location.search);
 
-	//	Get metrika counter id
-	if (!get_params['metrika_counter_id'])
-	{
-		// Critical error
+    //	Get metrika counter id
+    if (!get_params['metrika_counter_id'])
+    {
+        // Critical error
         mes = 'metrika_counter_id is the required GET-parameter!'; mylog(mes);
         console.error(mes);
         return false;
-	}
+    }
 
-	// Get metrika UserID (if it present)
+    // Get metrika UserID (if it present)
     if (!get_params['user_id'])
     {
         // Critical error
@@ -244,10 +241,10 @@ function init_after_page_loaded()
         return false;
     }
 
-	// enable Metrika debug mode
-	window['_ym_debug']=1;
+    // enable Metrika debug mode
+    window['_ym_debug']=1;
 
-	metrika_counter_id = get_params['metrika_counter_id'];
+    metrika_counter_id = get_params['metrika_counter_id'];
     mylog('metrika_counter_id='+metrika_counter_id);
     get_params['UserID'] = get_params['user_id'];
     mylog('setUserID='+get_params['user_id']);
@@ -257,22 +254,22 @@ function init_after_page_loaded()
 
 
     //	yandex metrika goals
-	if (get_params['reach_goal'])
-	{
-		//	TODO split goals to array, reach every goal
-		//	var all_goals = split(/\,|\s/);
-		//	for (c = 0; c < all_goals.length; c++)
-		//	{
-		//		ym(metrika_counter_id, 'reachGoal', all_goals[c]);
-		//	}
-		ym(metrika_counter_id, 'reachGoal', get_params['reach_goal']);
-		mylog('reachGoal='+get_params['reach_goal']);
-	}
+    if (get_params['reach_goal'])
+    {
+        //	TODO split goals to array, reach every goal
+        //	var all_goals = split(/\,|\s/);
+        //	for (c = 0; c < all_goals.length; c++)
+        //	{
+        //		ym(metrika_counter_id, 'reachGoal', all_goals[c]);
+        //	}
+        ym(metrika_counter_id, 'reachGoal', get_params['reach_goal']);
+        mylog('reachGoal='+get_params['reach_goal']);
+    }
 
-	ym(metrika_counter_id, 'setUserID', get_params['user_id']);
+    ym(metrika_counter_id, 'setUserID', get_params['user_id']);
 
     // add all parameters from GET-request to metrika visit parameters and user parameters
-	console.dir(get_params);
+    console.dir(get_params);
     delete get_params['metrika_counter_id'];
     delete get_params['user_id'];
     delete get_params['reach_goal'];
@@ -293,28 +290,28 @@ function init_after_page_loaded()
     }
     mylog('wait_for_die='+wait_for_die);
 
-	setTimeout(function()
-	{
-		mylog('finalize_page()');
-		finalize_page();
-	}, wait_for_die);
+    setTimeout(function()
+    {
+        mylog('finalize_page()');
+        finalize_page();
+    }, wait_for_die);
 }
 
-function yandex_metrika_init(yametrika_id, UserID, get_params)
+function yandex_metrika_init(yametrika_id, get_params)
 {
-	// Metrika counter
+    // Metrika counter
     window['_ym_debug']=1;
     console.log('yandex_metrika_init()');
 
-	(function(m, e, t, r, i, k, a)
-	{
-		m[i] = m[i] || function()
-		{
-			(m[i].a = m[i].a || []).push(arguments)
-		};
-		m[i].l = 1 * new Date();
-		k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-	})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    (function(m, e, t, r, i, k, a)
+    {
+        m[i] = m[i] || function()
+        {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        m[i].l = 1 * new Date();
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
     window['_ym_debug']=1;
 
@@ -341,32 +338,32 @@ function yandex_metrika_init(yametrika_id, UserID, get_params)
      *    trackHash: true,
      *
      *    // includes UserID
-     *    //userParams: get_params,
-     *    //params: get_params,
      */
 
-	ym(yametrika_id, "init",
-    {
-        trackLinks: true,
-        triggerEvent: true,
-        webvisor: true,
-        trackHash: true,
-    });
+    ym(yametrika_id, "init",
+       {
+           trackLinks: true,
+       triggerEvent: true,
+       webvisor: true,
+       trackHash: true,
+       userParams: get_params,
+       params: get_params,
+       });
     window['_ym_debug']=1;
 
 }
 
 if (document.readyState !== 'loading')
 {
-	console.log('document.readyState init_after_page_loaded()');
-	init_after_page_loaded();
+    console.log('document.readyState init_after_page_loaded()');
+    init_after_page_loaded();
 }
 else
 {
-	document.addEventListener('DOMContentLoaded', function () {
-		console.log('DOMContentLoaded init_after_page_loaded()');
-		init_after_page_loaded();
-	});
+    document.addEventListener('DOMContentLoaded', function () {
+        console.log('DOMContentLoaded init_after_page_loaded()');
+        init_after_page_loaded();
+    });
 }
 
 // init_after_page_loaded();
@@ -377,8 +374,8 @@ function finalize_page()
     document.body.appendChild(log);
     log.outerHTML = '<pre id="absolute_ready">'+JSON.stringify(window.console.all, null, ' ')+'</pre>';
     var elem = document.createElement('div');
-	document.body.appendChild(elem);
-	elem.outerHTML = '<div id="absolute_ready">'+copyright_text+'</div>';
+    document.body.appendChild(elem);
+    elem.outerHTML = '<div id="absolute_ready">'+copyright_text+'</div>';
 }
 
 
