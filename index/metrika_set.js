@@ -71,6 +71,7 @@ function init_after_page_loaded()
 	if (get_params['user_id'])
 	{
 		ym(metrika_counter_id, 'setUserID', get_params['user_id']);
+        ym(metrika_counter_id, 'userParams', {UserID: get_params['user_id']});
 		mylog('setUserID='+get_params['user_id']);
 	}
 
