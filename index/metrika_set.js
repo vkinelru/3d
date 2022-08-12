@@ -222,6 +222,7 @@ function get_query_params(qs)
 function init_after_page_loaded()
 {
     var get_params = get_query_params(document.location.search);
+    window.get_params = get_params;
 
     //	Get metrika counter id
     if (!get_params['metrika_counter_id'])
@@ -242,7 +243,7 @@ function init_after_page_loaded()
     }
 
     // enable Metrika debug mode
-    window['_ym_debug']=1;
+    //window['_ym_debug']=1;
 
     metrika_counter_id = get_params['metrika_counter_id'];
     mylog('metrika_counter_id='+metrika_counter_id);
@@ -300,7 +301,7 @@ function init_after_page_loaded()
 function yandex_metrika_init(yametrika_id, get_params)
 {
     // Metrika counter
-    window['_ym_debug']=1;
+    //window['_ym_debug']=1;
     console.log('yandex_metrika_init()');
 
     (function(m, e, t, r, i, k, a)
@@ -313,7 +314,7 @@ function yandex_metrika_init(yametrika_id, get_params)
         k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
     })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-    window['_ym_debug']=1;
+    //window['_ym_debug']=1;
 
     /*
      *    // https://yandex.ru/support/metrica/code/counter-initialize.html
@@ -342,14 +343,14 @@ function yandex_metrika_init(yametrika_id, get_params)
 
     ym(yametrika_id, "init",
        {
-           trackLinks: true,
-       triggerEvent: true,
-       webvisor: true,
-       trackHash: true,
-       userParams: get_params,
-       params: get_params,
+        trackLinks: true,
+        triggerEvent: true,
+        webvisor: true,
+        trackHash: true,
+        userParams: get_params,
+        params: get_params,
        });
-    window['_ym_debug']=1;
+    //window['_ym_debug']=1;
 
 }
 
