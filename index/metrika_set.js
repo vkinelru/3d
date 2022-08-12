@@ -81,7 +81,7 @@ function init_after_page_loaded()
     mylog('setUserID='+get_params['user_id']);
     //	Init yandex metrika counter
     yandex_metrika_init(metrika_counter_id, get_params['UserID'], get_params);
-    window.metrika_counter_id = metrika_counter_id;
+    //  window.metrika_counter_id = metrika_counter_id;
 
     ym(metrika_counter_id, 'setUserID', get_params['user_id']);
 
@@ -141,32 +141,32 @@ function yandex_metrika_init(yametrika_id, UserID, params)
 	})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
 	ym(yametrika_id, "init",
-	   {
-        // https://yandex.ru/support/metrica/code/counter-initialize.html?lang=en
-        // clickmap: true,
-        // accurateTrackBounce: true,
-        // defer
-        // ecommerce
-        // params
-        // userParams
-        // trackHash
-        // trackLinks
-        // trustedDomains
-        // type
-        // webvisor
-        // triggerEvent
-        // childIframe
-        // childIframe
-        trackLinks: true,
-        triggerEvent: true,
-        webvisor: true,
-        childIframe:true,
-        trackHash: true,
+    {
+    // https://yandex.ru/support/metrica/code/counter-initialize.html?lang=en
+    // clickmap: true,
+    // accurateTrackBounce: true,
+    // defer
+    // ecommerce
+    // params
+    // userParams
+    // trackHash
+    // trackLinks
+    // trustedDomains
+    // type
+    // webvisor
+    // triggerEvent
+    // childIframe
+    // childIframe
+    // childIframe:true,
+    trackLinks: true,
+    triggerEvent: true,
+    webvisor: true,
+    trackHash: true,
 
-        // includes UserID
-        userParams: params,
-        params: params,
-	   });
+    // includes UserID
+    userParams: params,
+    params: params,
+    });
 }
 
 if (document.readyState !== 'loading')
