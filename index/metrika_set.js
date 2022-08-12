@@ -304,52 +304,23 @@ function yandex_metrika_init(yametrika_id, get_params)
     //window['_ym_debug']=1;
     console.log('yandex_metrika_init()');
 
-    (function(m, e, t, r, i, k, a)
-    {
-        m[i] = m[i] || function()
-        {
+    (function(m, e, t, r, i, k, a) {
+        m[i] = m[i] || function() {
             (m[i].a = m[i].a || []).push(arguments)
         };
         m[i].l = 1 * new Date();
         k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
     })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    ym(51096746, "init", {
+        clickmap: true,
+       trackLinks: true,
+       accurateTrackBounce: true,
+       childIframe:true,
+       trustedDomains: ["vkinel.ru", "kupi.vkinel.ru", "vkinel.ru", "vkinelru.github.io", "github.io", "youtube.com"],
+       webvisor: true,
+       trackHash: true
+    });
 
-    //window['_ym_debug']=1;
-
-    /*
-     *    // https://yandex.ru/support/metrica/code/counter-initialize.html
-     *    // clickmap: true,
-     *    // accurateTrackBounce: true,
-     *    // defer
-     *    // ecommerce
-     *    // params
-     *    // userParams
-     *    // trackHash
-     *    // trackLinks
-     *    // trustedDomains
-     *    // type
-     *    // webvisor
-     *    // triggerEvent
-     *    // childIframe
-     *    // childIframe
-     *    // childIframe:true,
-     *    trackLinks: true,
-     *    triggerEvent: true,
-     *    webvisor: true,
-     *    trackHash: true,
-     *
-     *    // includes UserID
-     */
-
-    ym(yametrika_id, "init",
-       {
-        trackLinks: true,
-        triggerEvent: true,
-        webvisor: true,
-        trackHash: true,
-        userParams: get_params,
-        params: get_params,
-       });
     //window['_ym_debug']=1;
 
 }
