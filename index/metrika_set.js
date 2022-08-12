@@ -54,28 +54,38 @@ function init_after_page_loaded()
 {
 	var get_params = get_query_params(document.location.search);
 
-	//	Get metrika counter
+	//	Get metrika counter id
 	if (!get_params['metrika_counter_id'])
 	{
 		// Critical error
-		console.error('metrika_counter_id is the required parameter!');
-		return false;
+        mes = 'metrika_counter_id is the required GET-parameter!'; mylog(mes);
+        console.error(mes);
+        return false;
 	}
-	//	Init yandex metrika counter
+
+	// Get metrika UserID (if it present)
+    if (!get_params['user_id'])
+    {
+        // Critical error
+        mes = 'user_id is the required GET-parameter!'; mylog(mes);
+        console.error(mes);
+        return false;
+    }
+
+	// enable Metrika debug mode
+	window['_ym_debug']=1;
+
 	metrika_counter_id = get_params['metrika_counter_id'];
-	yandex_metrika_init(metrika_counter_id);
-	window.metrika_counter_id = metrika_counter_id;
-	mylog('metrika_counter_id='+metrika_counter_id);
+    mylog('metrika_counter_id='+metrika_counter_id);
+    get_params['UserID'] = get_params['user_id'];
+    mylog('setUserID='+get_params['user_id']);
+    //	Init yandex metrika counter
+    yandex_metrika_init(metrika_counter_id, get_params['UserID']);
+    window.metrika_counter_id = metrika_counter_id;
+    ym(metrika_counter_id, 'setUserID', get_params['user_id']);
+    ym(metrika_counter_id, 'userParams', {UserID: get_params['user_id']});
 
-	// set UserID (if it set)
-	if (get_params['user_id'])
-	{
-		ym(metrika_counter_id, 'setUserID', get_params['user_id']);
-        ym(metrika_counter_id, 'userParams', {UserID: get_params['user_id']});
-		mylog('setUserID='+get_params['user_id']);
-	}
-
-	//	yandex metrika goals
+    //	yandex metrika goals
 	if (get_params['reach_goal'])
 	{
 		//	TODO split goals to array, reach every goal
@@ -88,18 +98,6 @@ function init_after_page_loaded()
 		mylog('reachGoal='+get_params['reach_goal']);
 	}
 
-	//	Is wait for die ms time set?
-	if (get_params['wait_for_die'])
-	{
-		var wait_for_die = parseInt(get_params['wait_for_die']);
-		if (isNaN(wait_for_die)) wait_for_die=377;
-		wait_for_die = wait_for_die + 1;
-	}
-	else
-	{
-		var wait_for_die=377;
-	}
-	mylog('wait_for_die='+wait_for_die);
 
 	delete get_params['metrika_counter_id'];
 	delete get_params['user_id'];
@@ -109,6 +107,20 @@ function init_after_page_loaded()
 	ym(metrika_counter_id, 'params', get_params);
 	console.dir(get_params);
 
+
+    //	Is wait for die ms time set?
+    if (get_params['wait_for_die'])
+    {
+        var wait_for_die = parseInt(get_params['wait_for_die']);
+        if (isNaN(wait_for_die)) wait_for_die=377;
+        wait_for_die = wait_for_die + 1;
+    }
+    else
+    {
+        var wait_for_die=377;
+    }
+    mylog('wait_for_die='+wait_for_die);
+
 	setTimeout(function()
 	{
 		mylog('finalize_page()');
@@ -116,7 +128,7 @@ function init_after_page_loaded()
 	}, wait_for_die);
 }
 
-function yandex_metrika_init(yametrika_id)
+function yandex_metrika_init(yametrika_id, UserID)
 {
 	// Metrika counter
 	(function(m, e, t, r, i, k, a)
@@ -131,6 +143,7 @@ function yandex_metrika_init(yametrika_id)
 
 	ym(yametrika_id, "init",
 	   {
+        UserID: UserID,
 		clickmap: true,
 		trackLinks: true,
 		accurateTrackBounce: true,
