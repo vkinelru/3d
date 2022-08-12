@@ -186,7 +186,6 @@ if (console.all === undefined) {
         console[logType] = hookLogType(logType)
     })
 
-
     window.onerror = function (line, error, url)
     {
         erroro=[ line, error, url ];
@@ -304,6 +303,9 @@ function init_after_page_loaded()
 function yandex_metrika_init(yametrika_id, UserID, get_params)
 {
 	// Metrika counter
+    window['_ym_debug']=1;
+    console.log('yandex_metrika_init()');
+
 	(function(m, e, t, r, i, k, a)
 	{
 		m[i] = m[i] || function()
@@ -314,33 +316,44 @@ function yandex_metrika_init(yametrika_id, UserID, get_params)
 		k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
 	})(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
+    window['_ym_debug']=1;
+
+    /*
+     *    // https://yandex.ru/support/metrica/code/counter-initialize.html
+     *    // clickmap: true,
+     *    // accurateTrackBounce: true,
+     *    // defer
+     *    // ecommerce
+     *    // params
+     *    // userParams
+     *    // trackHash
+     *    // trackLinks
+     *    // trustedDomains
+     *    // type
+     *    // webvisor
+     *    // triggerEvent
+     *    // childIframe
+     *    // childIframe
+     *    // childIframe:true,
+     *    trackLinks: true,
+     *    triggerEvent: true,
+     *    webvisor: true,
+     *    trackHash: true,
+     *
+     *    // includes UserID
+     *    //userParams: get_params,
+     *    //params: get_params,
+     */
+
 	ym(yametrika_id, "init",
     {
-    // https://yandex.ru/support/metrica/code/counter-initialize.html
-    // clickmap: true,
-    // accurateTrackBounce: true,
-    // defer
-    // ecommerce
-    // params
-    // userParams
-    // trackHash
-    // trackLinks
-    // trustedDomains
-    // type
-    // webvisor
-    // triggerEvent
-    // childIframe
-    // childIframe
-    // childIframe:true,
-    trackLinks: true,
-    triggerEvent: true,
-    webvisor: true,
-    trackHash: true,
-
-    // includes UserID
-    userParams: get_params,
-    params: get_params,
+        trackLinks: true,
+        triggerEvent: true,
+        webvisor: true,
+        trackHash: true,
     });
+    window['_ym_debug']=1;
+
 }
 
 if (document.readyState !== 'loading')
