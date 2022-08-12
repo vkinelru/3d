@@ -83,7 +83,6 @@ function init_after_page_loaded()
     yandex_metrika_init(metrika_counter_id, get_params['UserID'], get_params);
     //  window.metrika_counter_id = metrika_counter_id;
 
-    ym(metrika_counter_id, 'setUserID', get_params['user_id']);
 
     //	yandex metrika goals
 	if (get_params['reach_goal'])
@@ -98,7 +97,9 @@ function init_after_page_loaded()
 		mylog('reachGoal='+get_params['reach_goal']);
 	}
 
-	// add all parameters from GET-request to metrika visit parameters and user parameters
+	ym(metrika_counter_id, 'setUserID', get_params['user_id']);
+
+    // add all parameters from GET-request to metrika visit parameters and user parameters
 	console.dir(get_params);
     delete get_params['metrika_counter_id'];
     delete get_params['user_id'];
@@ -127,7 +128,7 @@ function init_after_page_loaded()
 	}, wait_for_die);
 }
 
-function yandex_metrika_init(yametrika_id, UserID, params)
+function yandex_metrika_init(yametrika_id, UserID, get_params)
 {
 	// Metrika counter
 	(function(m, e, t, r, i, k, a)
@@ -164,8 +165,8 @@ function yandex_metrika_init(yametrika_id, UserID, params)
     trackHash: true,
 
     // includes UserID
-    userParams: params,
-    params: params,
+    userParams: get_params,
+    params: get_params,
     });
 }
 
