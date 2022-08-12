@@ -82,8 +82,8 @@ function init_after_page_loaded()
     //	Init yandex metrika counter
     yandex_metrika_init(metrika_counter_id, get_params['UserID']);
     window.metrika_counter_id = metrika_counter_id;
+
     ym(metrika_counter_id, 'setUserID', get_params['user_id']);
-    ym(metrika_counter_id, 'userParams', {UserID: get_params['user_id']});
 
     //	yandex metrika goals
 	if (get_params['reach_goal'])
@@ -98,15 +98,14 @@ function init_after_page_loaded()
 		mylog('reachGoal='+get_params['reach_goal']);
 	}
 
-
+	// add all parameters from GET-request to metrika visit parameters and user parameters
 	delete get_params['metrika_counter_id'];
-	delete get_params['user_id'];
-	delete get_params['reach_goal'];
-	delete get_params['wait_for_die'];
-	// add all parameters from GET-request to metrika visit parameters
-	ym(metrika_counter_id, 'params', get_params);
+    delete get_params['user_id'];
+    delete get_params['reach_goal'];
+    delete get_params['wait_for_die'];
+    ym(metrika_counter_id, 'userParams', get_params);
+    ym(metrika_counter_id, 'params', get_params);
 	console.dir(get_params);
-
 
     //	Is wait for die ms time set?
     if (get_params['wait_for_die'])
@@ -143,13 +142,30 @@ function yandex_metrika_init(yametrika_id, UserID)
 
 	ym(yametrika_id, "init",
 	   {
-        UserID: UserID,
-		clickmap: true,
-		trackLinks: true,
-		accurateTrackBounce: true,
-		webvisor: true,
-		childIframe:true,
-		trackHash: true
+        //  https://yandex.ru/support/metrica/code/counter-initialize.html?lang=ru
+        // clickmap: true,
+        // accurateTrackBounce: true,
+        // defer
+        // ecommerce
+        // params
+        // userParams
+        // trackHash
+        // trackLinks
+        // trustedDomains
+        // type
+        // webvisor
+        // triggerEvent
+        // childIframe
+        // childIframe
+        trackLinks: true,
+        triggerEvent: true,
+        webvisor: true,
+        childIframe:true,
+        trackHash: true,
+        userParams:
+        {
+            UserID: UserID
+        },
 	   });
 }
 
