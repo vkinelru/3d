@@ -80,7 +80,7 @@ function init_after_page_loaded()
     get_params['UserID'] = get_params['user_id'];
     mylog('setUserID='+get_params['user_id']);
     //	Init yandex metrika counter
-    yandex_metrika_init(metrika_counter_id, get_params['UserID']);
+    yandex_metrika_init(metrika_counter_id, get_params['UserID'], get_params);
     window.metrika_counter_id = metrika_counter_id;
 
     ym(metrika_counter_id, 'setUserID', get_params['user_id']);
@@ -99,13 +99,13 @@ function init_after_page_loaded()
 	}
 
 	// add all parameters from GET-request to metrika visit parameters and user parameters
-	delete get_params['metrika_counter_id'];
+	console.dir(get_params);
+    delete get_params['metrika_counter_id'];
     delete get_params['user_id'];
     delete get_params['reach_goal'];
     delete get_params['wait_for_die'];
     ym(metrika_counter_id, 'userParams', get_params);
     ym(metrika_counter_id, 'params', get_params);
-	console.dir(get_params);
 
     //	Is wait for die ms time set?
     if (get_params['wait_for_die'])
@@ -127,7 +127,7 @@ function init_after_page_loaded()
 	}, wait_for_die);
 }
 
-function yandex_metrika_init(yametrika_id, UserID)
+function yandex_metrika_init(yametrika_id, UserID, params)
 {
 	// Metrika counter
 	(function(m, e, t, r, i, k, a)
@@ -142,7 +142,7 @@ function yandex_metrika_init(yametrika_id, UserID)
 
 	ym(yametrika_id, "init",
 	   {
-        //  https://yandex.ru/support/metrica/code/counter-initialize.html?lang=en
+        // https://yandex.ru/support/metrica/code/counter-initialize.html?lang=en
         // clickmap: true,
         // accurateTrackBounce: true,
         // defer
@@ -162,10 +162,10 @@ function yandex_metrika_init(yametrika_id, UserID)
         webvisor: true,
         childIframe:true,
         trackHash: true,
-        userParams:
-        {
-            UserID: UserID
-        },
+
+        // includes UserID
+        userParams: params,
+        params: params,
 	   });
 }
 
