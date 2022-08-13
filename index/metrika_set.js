@@ -250,7 +250,7 @@ function init_after_page_loaded()
     get_params['UserID'] = get_params['user_id'];
     mylog('setUserID='+get_params['user_id']);
     //	Init yandex metrika counter
-    yandex_metrika_init(metrika_counter_id, get_params['UserID'], get_params);
+    yandex_metrika_init(metrika_counter_id, get_params);
     //  window.metrika_counter_id = metrika_counter_id;
 
 
@@ -344,7 +344,7 @@ function finalize_page()
 {
     var log = document.createElement('pre');
     document.body.appendChild(log);
-    log.outerHTML = '<pre id="absolute_ready">'+JSON.stringify(window.console.all, null, ' ')+'</pre>';
+    log.outerHTML = '<pre id="log">'+JSON.stringify(window.console.all, null, ' ')+'</pre>';
     var elem = document.createElement('div');
     document.body.appendChild(elem);
     elem.outerHTML = '<div id="absolute_ready">'+copyright_text+'</div>';
