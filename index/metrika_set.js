@@ -212,6 +212,31 @@ function get_query_params(qs)
     return params;
 }
 
+function set_cookie(name, value, days, domain)
+{
+    if (days)
+    {
+        var date = new Date();
+        date.setTime(date.getTime()+(days*24*60*60*1000));
+        var expires = "; expires="+date.toGMTString();
+        // location.hostname.split('.')
+    }
+    else
+    {
+        var expires = "";
+    }
+    if (domain)
+    {
+        var domain_str = "; domain="+domain;
+    }
+    else
+    {
+        var domain_str = "";
+    }
+
+    document.cookie = name+"="+value+expires+"; path=/";
+}
+
 function init_after_page_loaded()
 {
     var get_params = get_query_params(document.location.search);
@@ -295,6 +320,8 @@ function yandex_metrika_init(yametrika_id, get_params)
 {
     // Metrika counter
     console.log('yandex_metrika_init()');
+
+    set_cookie('_ym_uid', get_params['UserID'], 17);
 
     (function(m, e, t, r, i, k, a) {
         m[i] = m[i] || function() {
