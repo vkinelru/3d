@@ -268,8 +268,8 @@ function init_after_page_loaded()
     delete get_params['user_id'];
     delete get_params['reach_goal'];
     delete get_params['wait_for_die'];
-    ym(metrika_counter_id, 'userParams', get_params);
     ym(metrika_counter_id, 'params', get_params);
+    ym(metrika_counter_id, 'userParams', get_params);
 
     //	Is wait for die ms time set?
     if (get_params['wait_for_die'])
