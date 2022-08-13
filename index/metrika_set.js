@@ -196,7 +196,7 @@ function mylog(mes)
     console.log(mes);
     var elem = document.createElement('div');
     document.body.appendChild(elem);
-    elem.innerHTML = mes;
+    elem.outerHTML = '<div>'+mes+'</div>\n';
 }
 
 function get_query_params(qs)
