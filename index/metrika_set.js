@@ -308,7 +308,7 @@ function yandex_metrika_init(yametrika_id, get_params)
        trackLinks: true,
        accurateTrackBounce: true,
        childIframe:true,
-       trustedDomains: ["vkinel.ru", "kupi.vkinel.ru", "vkinel.ru", "vkinelru.github.io", "github.io", "youtube.com"],
+       // trustedDomains: ["vkinel.ru", "kupi.vkinel.ru", "vkinel.ru", "vkinelru.github.io", "github.io", "youtube.com"],
        webvisor: true,
        trackHash: true,
        triggerEvent: true,
