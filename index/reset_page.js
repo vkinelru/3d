@@ -1,5 +1,7 @@
 console.log('Script activated!');
 window.stop();
+document.open();
+window.stop();
 
 // document.head = {};
 // document.body = {};
@@ -27,5 +29,5 @@ if (document.readyState !== 'loading') {
 function init_after_page_loaded()
 {
     console.log('reseted page loaded');
-
 }
+
