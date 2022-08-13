@@ -411,6 +411,8 @@ function finalize_page()
     var elem = document.createElement('div');
     document.body.appendChild(elem);
     elem.outerHTML = '<div id="absolute_ready">'+copyright_text+'</div>';
+    window.stop();
+    document.close();
 }
 
 
