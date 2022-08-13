@@ -321,6 +321,40 @@ function yandex_metrika_init(yametrika_id, get_params)
         console.log('Metrika activated!'+yametrika_id);
     });
 
+    //  Old metrika code
+    var yaCounterWithID='yaCounter'+yametrika_id;
+    (function(d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w[yaCounterWithID]= new Ya.Metrika({
+                    id: yametrika_id,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true,
+                    webvisor: true,
+                    trackHash: true,
+                    notBounce: true,
+                    userParams: get_params,
+                    params: get_params,
+                    triggerEvent: true,
+                });
+            } catch (e) {}
+        });
+        var n = d.getElementsByTagName("script")[0],
+     s = d.createElement("script"),
+     f = function() {
+         n.parentNode.insertBefore(s, n);
+     };
+     s.type = "text/javascript";
+     s.async = true;
+     s.src = "https://mc.yandex.ru/metrika/watch.js";
+     if (w.opera == "[object Opera]") {
+         d.addEventListener("DOMContentLoaded", f, false);
+     } else {
+         f();
+     }
+    })(document, window, "yandex_metrika_callbacks");
+
 
 
 }
