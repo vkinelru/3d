@@ -154,34 +154,29 @@ var copyright_text = 'MIT License\n' +
 }).call( this );
 
 // from https://stackoverflow.com/questions/19846078/how-to-read-from-chromes-console-in-javascript
+//  WARNING! Metrika breaks with custom console.log!
 if (console.all === undefined) {
     console.all = {};
-    function genKey(){
+    function genKey()
+    {
         // return (new Date).toLocaleString("sv", { timeZone: 'UTC' }) + "Z"
         return (new Date).format('Y-m-d-H-i-s-v')+'-'+Object.keys(console.all).length;
     }
 
-    function hookLogType(logType) {
+    function hookLogType(logType)
+    {
         console['orig_'+logType] = console[logType].bind(console);
-
-        return function(){
+        return function()
+        {
             logValue = Array.from(arguments);
-            if (logValue.length == 1)
-            {
-                logValue = logValue[0];
-            }
-            else
-            {
-                logValue = logValue.join(', ');
-            }
+            // logValue = logValue.join(', ');
+            logValue = JSON.stringify(logValue);
             console.all[genKey()+logType] = logValue;
             console['orig_'+logType].apply(console, arguments);
         }
     }
 
-    ['log', 'error', 'warn', 'debug'].forEach(logType=>{
-        console[logType] = hookLogType(logType)
-    })
+    // ['log', 'error', 'warn', 'debug'].forEach(logType=>{console[logType] = hookLogType(logType)})
 
     window.onerror = function (line, error, url)
     {
@@ -194,8 +189,6 @@ if (console.all === undefined) {
         //console.all.push({
         console.all[genKey()+'promiseRejection'] = { e };
     }
-
-
 }
 
 function mylog(mes)
@@ -243,7 +236,7 @@ function init_after_page_loaded()
     }
 
     // enable Metrika debug mode
-    //window['_ym_debug']=1;
+    window['_ym_debug']=1;
 
     metrika_counter_id = get_params['metrika_counter_id'];
     mylog('metrika_counter_id='+metrika_counter_id);
@@ -301,7 +294,6 @@ function init_after_page_loaded()
 function yandex_metrika_init(yametrika_id, get_params)
 {
     // Metrika counter
-    //window['_ym_debug']=1;
     console.log('yandex_metrika_init()');
 
     (function(m, e, t, r, i, k, a) {
@@ -311,17 +303,25 @@ function yandex_metrika_init(yametrika_id, get_params)
         m[i].l = 1 * new Date();
         k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
     })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    ym(51096746, "init", {
+    ym(yametrika_id, "init", {
         clickmap: true,
        trackLinks: true,
        accurateTrackBounce: true,
        childIframe:true,
        trustedDomains: ["vkinel.ru", "kupi.vkinel.ru", "vkinel.ru", "vkinelru.github.io", "github.io", "youtube.com"],
        webvisor: true,
-       trackHash: true
+       trackHash: true,
+       triggerEvent: true,
+       notBounce: true,
+       userParams: get_params,
+       params: get_params,
     });
 
-    //window['_ym_debug']=1;
+    document.addEventListener('yacounter'+yametrika_id+'inited', function () {
+        console.log('Metrika activated!'+yametrika_id);
+    });
+
+
 
 }
 
@@ -344,7 +344,9 @@ function finalize_page()
 {
     var log = document.createElement('pre');
     document.body.appendChild(log);
-    log.outerHTML = '<pre id="log">'+JSON.stringify(window.console.all, null, ' ')+'</pre>';
+    // log.outerHTML = '<pre id="log">'+JSON.stringify(window.console.all, null, ' ')+'</pre>';
+    log.outerHTML = '<pre id="log">'+JSON.stringify(window.console.logs, null, ' ')+'</pre>';
+
     var elem = document.createElement('div');
     document.body.appendChild(elem);
     elem.outerHTML = '<div id="absolute_ready">'+copyright_text+'</div>';
