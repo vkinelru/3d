@@ -266,6 +266,7 @@ function init_after_page_loaded()
     metrika_counter_id = get_params['metrika_counter_id'];
     window.metrika_counter_id = metrika_counter_id;
     mylog('metrika_counter_id='+metrika_counter_id);
+    get_params['USERID'] = get_params['user_id'];
     get_params['UserID'] = get_params['user_id'];
     get_params['userID'] = get_params['user_id'];
     get_params['userid'] = get_params['user_id'];
