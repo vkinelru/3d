@@ -418,7 +418,6 @@ scroll_percents_functions[55.5] = function ()
                 });
                 ym(metrika_counter_id, 'setUserID', yclid_from_get);
                 ym(metrika_counter_id, 'notBounce');
-                ym(metrika_counter_id, 'setUserID', {yclid_from_get});
 				ym(yametrika_id, 'reachGoal', 'dmp_start');
 
 				// set cookie after script run (to prevent run in future)
