@@ -131,12 +131,15 @@ module.exports.handler = async function (event, context)
     //target_url = target_url + '?' +request_parametr_str + '&' + post_data;
     target_url = target_url + '?' +request_parametr_str + '&' + post_data_str;
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        headless: false,
+        args: ['--headless'],
+    });
     const page = await browser.newPage();
 
     await page.setDefaultNavigationTimeout(21111);
     await page.setDefaultTimeout(23333);
-    await page.setUserAgent('Mozilla/5.0 AppleWebKit/537.37 (KHTML, like Gecko)Chrome/107.0.1984.923 dev@Borodin-Atamanov.ru');
+    await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.24 (KHTML, like Gecko) Chrome/89.0.4389.116 Safari/534.24 XiaoMi/MiuiBrowser/13.2.1');
 
     try
     {
