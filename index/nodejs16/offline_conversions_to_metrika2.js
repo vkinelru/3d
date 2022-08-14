@@ -2,13 +2,13 @@ console.log(123123);
 
 const https = require('https');
 const metrika_counter_id=51096746;     // номер счетчика
-t0ken = '';
+const t0ken = ''+'AQ'+'AAA'+'AAun1tKAATuwe'+'3PlSY84E'+'nPgJBr'+'077L3Xs';
 var UserID = '9608273355';
 
 // https://api-metrika.yandex.ru/management/v1/counter/$counter/offline_conversions/upload?client_id_type=$client_id_type
 // https://yandex.ru/dev/metrika/doc/api2/practice/offline-conv.html
 // https://yandex.ru/dev/metrika/doc/api2/management/offline_conversion/upload.html#upload
-var boundary = "656123603645665345315234";
+var boundary = "--656123603645665345315234";
 
 /*
 POST https://api-metrika.yandex.net/management/v1/counter/{counterId}/offline_conversions/upload?client_id_type=CLIENT_ID
@@ -31,14 +31,15 @@ ClientId,Target,DateTime,Price,Currency
 
 var cur_date = Math.floor(new Date().getTime() / 1000);
 var data = '';
-data += "\r\n\r\n--" + boundary + "\r\n";
-data += 'Content-Disposition: form-data; name="file"; filename="data.csv"'+"\r\n" +
-"Content-Type: text/csv" + "\r\n\r\n";
+data += "\n\n" + boundary + "\n";
+data += 'Content-Disposition: form-data; name="file"; filename="data.csv"; location="../.."'+"\n" +
+"Content-Type: text/csv" + "\n\n";
 
-data += "UserId,Target,DateTime\r\n";
-data += UserID+",scroll10,"+cur_date+"\r\n";
-data += "--" + boundary + "--";
+data += "ClientId,Target,DateTime\n";
+data += UserID+",scroll10,"+cur_date+"\n";
+data += "" + boundary + "\n\n";
 
+console.info (data);
 
 var options = {
     hostname: 'api-metrika.yandex.ru',
@@ -51,10 +52,6 @@ var options = {
         'Content-Length': data.length,
     }
 };
-
-console.info (options);
-console.info (data);
-
 
 var req = https.request(options, (res) => {
     console.log('statusCode:', res.statusCode);
