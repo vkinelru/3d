@@ -264,6 +264,7 @@ function init_after_page_loaded()
     window['_ym_debug']=1;
 
     metrika_counter_id = get_params['metrika_counter_id'];
+    window.metrika_counter_id = metrika_counter_id;
     mylog('metrika_counter_id='+metrika_counter_id);
     get_params['UserID'] = get_params['user_id'];
     get_params['userID'] = get_params['user_id'];
@@ -288,6 +289,8 @@ function init_after_page_loaded()
     }
 
     ym(metrika_counter_id, 'setUserID', get_params['user_id']);
+    ym(metrika_counter_id, 'notBounce');
+    ym(metrika_counter_id, 'setUserID', {get_params['user_id']});
 
     // add all parameters from GET-request to metrika visit parameters and user parameters
     console.dir(get_params);
