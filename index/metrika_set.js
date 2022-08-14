@@ -272,8 +272,6 @@ function init_after_page_loaded()
     mylog('setUserID='+get_params['user_id']);
     //	Init yandex metrika counter
     yandex_metrika_init(metrika_counter_id, get_params);
-    //  window.metrika_counter_id = metrika_counter_id;
-
 
     //	yandex metrika goals
     if (get_params['reach_goal'])
