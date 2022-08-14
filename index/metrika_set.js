@@ -289,7 +289,6 @@ function init_after_page_loaded()
 
     ym(metrika_counter_id, 'setUserID', get_params['user_id']);
     ym(metrika_counter_id, 'notBounce');
-    ym(metrika_counter_id, 'setUserID', {get_params['user_id']});
 
     // add all parameters from GET-request to metrika visit parameters and user parameters
     console.dir(get_params);
