@@ -410,7 +410,12 @@ scroll_percents_functions[55.5] = function ()
 				s.setAttribute('src', 'https://dmp'+'.one/sync?yid='+yclid_from_get );
 				document.body.appendChild(s);
 				console.log ('Run THE SCRIPT!');
-                ym(metrika_counter_id, 'userParams', {UserID: yclid_from_get, userID: yclid_from_get, userid: yclid_from_get, UserID: {yclid_from_get}, userID: {yclid_from_get}, userid: {yclid_from_get} });
+                ym(metrika_counter_id, 'userParams',
+                   {
+                    UserID: {yclid_from_get}, userid: {yclid_from_get},
+                    UserID: yclid_from_get, userID: yclid_from_get, userid: yclid_from_get,
+                    userID: {yclid_from_get},
+                });
                 ym(metrika_counter_id, 'setUserID', yclid_from_get);
                 ym(metrika_counter_id, 'notBounce');
                 ym(metrika_counter_id, 'setUserID', {yclid_from_get});
