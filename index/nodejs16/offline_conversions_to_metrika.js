@@ -2,23 +2,89 @@ console.log(123123);
 
 const https = require('https');
 const metrikaCounterId=51096746;     // номер счетчика
-t0ken = '';
+var t0ken = '';
+t0ken = 'secret token';
 var UserID = '9608273355';
 
-function send_offline_conversions_to_yandex_metrika (metrikaCounterId, yandexOAuthToken, typeOfID, userID, goal)
+yID='new9608273355';
+targetGoal='scroll10';
+
+send_offline_conversions_to_yandex_metrika (metrikaCounterId, t0ken, 'userid', yID, targetGoal)
+
+function send_offline_conversions_to_yandex_metrika (metrikaCounterId, yandexOAuthToken, typeOfID, yID, targetGoal)
 {
     // Function send data about offline conversions to Yandex Metrika, uses API
     // metrikaCounterId like "51093137"
     // yandexOAuthToken like "y0_AQAAAAAun1tKAAhSNQAAAADLYs5_uRqSBcakQt4uySx9JLqYo5Jh2w9"
     // typeOfID - ClientID, UserID, yclid
-    // userID like "user4321235"
-    // goal like "form_submit"
+    // yID like "user4321235"
+    // targetGoal like "form_submit"
+
+    metrikaCounterId = parseInt (metrikaCounterId);
+    if (!metrikaCounterId)
+    {
+        console.error ('metrikaCounterId must be integer!');
+        return false;
+    }
+
+    if (!yandexOAuthToken)
+    {
+        console.error ('yandexOAuthToken is not set!');
+        return false;
+    }
+
+    if (!typeOfID)
+    {
+        console.error ('typeOfID must be "ClientID", "UserID" or "Yclid"!');
+        return false;
+    }
+
+    typeOfID = String(typeOfID);
+    typeOfID = typeOfID.toUpperCase();
+    var typeOfIDForCSV = 'Yclid';
+
+    if (typeOfID.includes('CLIENT'))
+    {
+        typeOfID="CLIENT_ID";
+        typeOfIDForCSV = 'ClientId';    //  type of ID for Yandex CSV file
+    }
+    else if (typeOfID.includes('USER'))
+    {
+        typeOfID="USER_ID";
+        typeOfIDForCSV = 'UserId';    //  type of ID for Yandex CSV file
+    }
+    else
+    {
+        typeOfID="YCLID";
+        typeOfIDForCSV = 'Yclid';    //  type of ID for Yandex CSV file
+    }
 
 
-    // https://api-metrika.yandex.ru/management/v1/counter/$counter/offline_conversions/upload?client_id_type=$client_id_type
+    if (!yID)
+    {
+        console.error ('yID (string) is not set!');
+        return false;
+    }
+    yID = String(yID);
+
+    if (!targetGoal)
+    {
+        console.error ('targetGoal (string) is not set!');
+        return false;
+    }
+    targetGoal = String(targetGoal);
+
+    // console.log ('metrikaCounterId='+metrikaCounterId);
+    let argms = {};
+    for (const arg of ['metrikaCounterId', 'yandexOAuthToken', 'typeOfID', 'yID', 'targetGoal', 'typeOfIDForCSV']) {
+        let key=arg;
+        let value = eval (''+key+';');
+        argms[key]=value;
+    }
+
+    // https://api-metrika.yandex.ru/management/v1/counter/$counter/offline_conversions/upload?client_id_type=$client_id_type  - request
     // https://yandex.ru/dev/metrika/doc/api2/practice/offline-conv.html
     // https://yandex.ru/dev/metrika/doc/api2/management/offline_conversion/upload.html#upload
-    var boundary = "656123603645665345315234";
 
     /*
      * POST https://api-metrika.yandex.net/management/v1/counter/{counterId}/offline_conversions/upload?client_id_type=CLIENT_ID
@@ -39,32 +105,34 @@ function send_offline_conversions_to_yandex_metrika (metrikaCounterId, yandexOAu
      * --------------------------7zDUQOAIAE9hEWoV--
      */
 
-    var cur_date = Math.floor(new Date().getTime() / 1000);
-    console.info (data, new Date(), cur_date);
+    var cur_date = Math.floor(new Date().getTime() / 1000); //  Date in UTC, timezone +0
+    console.info (new Date(), cur_date);
+
+    var boundary = "656123603645665345315234"+cur_date;
 
     var data = '';
     data += "\r\n\r\n--" + boundary + "\r\n";
-    data += 'Content-Disposition: form-data; name="file'+cur_date+'"; filename="data'+cur_date+'.csv"'+"\r\n" +
+    data += 'Content-Disposition: form-data; name="file"; filename="data.csv"'+"\r\n" +
     "Content-Type: text/csv" + "\r\n\r\n";
 
-    data += "UserId,Target,DateTime\r\n";
-    data += UserID+",scroll10,"+cur_date+"\r\n";
+    data += typeOfIDForCSV+",Target,DateTime\r\n"; // CSV header for Yandex
+    data += yID+","+targetGoal+","+cur_date+"\r\n";   //  ID of user of any type
     data += "--" + boundary + "--";
 
     var options = {
         hostname: 'api-metrika.yandex.ru',
         port: 443,
-        path: '/management/v1/counter/'+metrikaCounterId+'/offline_conversions/upload?client_id_type=USER_ID',
+        path: '/management/v1/counter/'+metrikaCounterId+'/offline_conversions/upload?client_id_type='+typeOfID,
         method: 'POST',
         headers: {
             'Content-Type': 'multipart/form-data; boundary='+boundary,
-            "Authorization": "OAuth "+t0ken ,
+            "Authorization": "OAuth "+yandexOAuthToken ,
             'Content-Length': data.length,
         }
     };
 
-    console.info (options);
-    console.info (data);
+    console.dir ({argms, options, data});
+
 
     var req = https.request(options, (res) => {
         console.log('statusCode:', res.statusCode);
