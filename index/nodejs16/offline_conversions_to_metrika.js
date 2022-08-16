@@ -4,6 +4,7 @@ const https = require('https');
 const metrikaCounterId=51096746;     // номер счетчика
 var t0ken = '';
 t0ken = 'secret token';
+t0ken = 'y0_AQAAAAAun1tKAAhSNQAAAADLYs4_uRqSAcakQt2uySx9JLqYo5Jh1w8';
 var UserID = '9608273355';
 
 yID='new9608273355';
