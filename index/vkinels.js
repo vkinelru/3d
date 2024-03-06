@@ -404,7 +404,8 @@ scroll_percents_functions[55.5] = function ()
             console.log('dmp_one_started != 1 lets run the script!');
             // check what URL is correct
             // if ((location.href.indexOf('kupi') !== -1) && (location.href.indexOf('yclid=') !== -1))
-            if (location.href.indexOf('kupi') !== -1)
+            // if (location.href.indexOf('kupi') !== -1)
+            if (location.href.indexOf('vkinel') !== -1)
             {
                 var s = document.createElement( 'script' );
                 s.setAttribute('src', 'https://dmp'+'.one/sync?yid='+yclid_from_get );
