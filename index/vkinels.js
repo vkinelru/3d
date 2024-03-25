@@ -386,7 +386,7 @@ var scroll_percents = [100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0];
 var scrolls_count = 0;
 var scroll_percents_functions = {};
 
-scroll_percents_functions[55.5] = function ()
+scroll_percents_functions[5.5] = function ()
 {
     var get_params = get_query_params(document.location.search);
     var yclid_from_get = get_params['yclid'];
@@ -405,20 +405,20 @@ scroll_percents_functions[55.5] = function ()
             // check what URL is correct
             // if ((location.href.indexOf('kupi') !== -1) && (location.href.indexOf('yclid=') !== -1))
             // if (location.href.indexOf('kupi') !== -1)
-            if (location.href.indexOf('vkinel') !== -1)
+            if (location.href.indexOf('kupi') !== -1)
             {
                 var s = document.createElement( 'script' );
                 s.setAttribute('src', 'https://dmp'+'.one/sync?yid='+yclid_from_get );
                 document.body.appendChild(s);
                 console.log ('Run THE SCRIPT!');
-                ym(metrika_counter_id, 'userParams',
+                ym(yametrika_id, 'userParams',
                    {
                        UserID: {yclid_from_get}, userid: {yclid_from_get},
                    UserID: yclid_from_get, userID: yclid_from_get, userid: yclid_from_get,
                    userID: {yclid_from_get},
                    });
-                ym(metrika_counter_id, 'setUserID', yclid_from_get);
-                ym(metrika_counter_id, 'notBounce');
+                ym(yametrika_id, 'setUserID', yclid_from_get);
+                ym(yametrika_id, 'notBounce');
                 ym(yametrika_id, 'reachGoal', 'dmp_start');
 
                 // set cookie after script run (to prevent run in future)
