@@ -92,17 +92,6 @@ function replace_after_page_loaded()
     add_nbsp_after_short_word('на');
     add_nbsp_after_short_word('но');
     add_nbsp_after_short_word('вы');
-
-    replace_text(document.body, '1 ', '1&nbsp;');
-    replace_text(document.body, '2 ', '2&nbsp;'); 
-    replace_text(document.body, '3 ', '3&nbsp;'); 
-    replace_text(document.body, '4 ', '4&nbsp;'); 
-    replace_text(document.body, '5 ', '5&nbsp;'); 
-    replace_text(document.body, '6 ', '6&nbsp;'); 
-    replace_text(document.body, '7 ', '7&nbsp;'); 
-    replace_text(document.body, '8 ', '8&nbsp;'); 
-    replace_text(document.body, '9 ', '9&nbsp;'); 
-    replace_text(document.body, '0 ', '0&nbsp;');
     console.log('words replaced');
 }
 
