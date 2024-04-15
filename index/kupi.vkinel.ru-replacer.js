@@ -347,7 +347,7 @@ function replace_after_page_loaded()
     replace_text(document.body, '9 ', '9&nbsp;'); 
     replace_text(document.body, '0 ', '0&nbsp;');
 
-
+    console.log('replace_after_page_loaded() 2024 ');
 }
 
 if (document.readyState !== 'loading') {
