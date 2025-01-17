@@ -4,25 +4,25 @@ var prices =
 {
     'liverpool' :
     {
-        'weekend':  {'min_price':21500,   'min_guests':15, 'max_guests':60, 'next_person_price':1000 },
+        'weekend':  {'min_price':25000,   'min_guests':15, 'max_guests':60, 'next_person_price':1000 },
         'trivial':  {'min_price':14500,   'min_guests':10, 'max_guests':60, 'next_person_price':1000 },
         'gentive_name': 'аренды коттеджа Ливерпуль на&nbsp;сутки'
     },
     'singapur' :
     {
-        'weekend':  {'min_price':21500,   'min_guests':15, 'max_guests':60, 'next_person_price':1000 },
+        'weekend':  {'min_price':25000,   'min_guests':15, 'max_guests':60, 'next_person_price':1000 },
         'trivial':  {'min_price':14500,   'min_guests':10, 'max_guests':60, 'next_person_price':1000 },
         'gentive_name': 'аренды коттеджа Сингапур на&nbsp;сутки'
     },
     'malta' :
     {
-        'weekend':  {'min_price':21500,   'min_guests':15, 'max_guests':60, 'next_person_price':1000 },
+        'weekend':  {'min_price':25000,   'min_guests':15, 'max_guests':60, 'next_person_price':1000 },
         'trivial':  {'min_price':14500,   'min_guests':10, 'max_guests':60, 'next_person_price':1000 },
         'gentive_name': 'аренды коттеджа Мальта на&nbsp;сутки'
     },
     'valencia' :
     {
-        'weekend':  {'min_price':21500,   'min_guests':15, 'max_guests':60, 'next_person_price':1000 },
+        'weekend':  {'min_price':25000,   'min_guests':15, 'max_guests':60, 'next_person_price':1000 },
         'trivial':  {'min_price':14500,   'min_guests':10, 'max_guests':60, 'next_person_price':1000 },
         'gentive_name': 'аренды коттеджа Валенсия на&nbsp;сутки'
     },
