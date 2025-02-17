@@ -58,14 +58,14 @@ var prices =
     },
     'banya' :
     {
-        'weekend':  {'min_price':4000,   'min_guests':6, 'max_guests':15, 'next_person_price':500 },
-        'trivial':  {'min_price':4000,   'min_guests':6, 'max_guests':15, 'next_person_price':500 },
+        'weekend':  {'min_price':5000,   'min_guests':6, 'max_guests':15, 'next_person_price':500 },
+        'trivial':  {'min_price':5000,   'min_guests':6, 'max_guests':15, 'next_person_price':500 },
         'gentive_name': 'аренды русской бани на&nbsp;дровах на&nbsp;3&nbsp;часа'
     },
     'sauna' :
     {
-        'weekend':  {'min_price':5000,   'min_guests':15, 'max_guests':15, 'next_person_price':1000 },
-        'trivial':  {'min_price':5000,   'min_guests':15, 'max_guests':15, 'next_person_price':1000 },
+        'weekend':  {'min_price':6000,   'min_guests':15, 'max_guests':15, 'next_person_price':1000 },
+        'trivial':  {'min_price':6000,   'min_guests':15, 'max_guests':15, 'next_person_price':1000 },
         'gentive_name': 'аренды сауны с&nbsp;бассейном на&nbsp;3&nbsp;часа'
     },
     'banquet' :
