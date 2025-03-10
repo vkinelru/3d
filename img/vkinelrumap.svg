@@ -1,39 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!--
-Одна клетка 105.84
-Всего высота 340
-Отношение 3.2124
-
-Реальная клетка 46,2 м
-Всего высота 148.41288 м
-14841.288
-
-105.84/46.2
-2.29090
-
-0.26458*2.29090
-
-
-
-Если при scale
-0,26458
-Получается
-340,07347
-
-А надо, чтобы получалось 
-14841.288
-
-22970,12700
-14841,28800
-
-22970
-14841
-1.54774
-
-229.70
-148.41
-
--->
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -434,9 +399,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="8.3220481"
-     inkscape:cx="317.08154"
-     inkscape:cy="274.93431"
+     inkscape:zoom="5.6077062"
+     inkscape:cx="331.02623"
+     inkscape:cy="210.89219"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -545,13 +510,13 @@
        id="path246"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="opacity:1;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="opacity:1;fill:none;stroke:#ff0000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 283.38347,169.50551 -4.7773,3.93563 7.38633,8.72717 -16.71272,13.56879 -31.608,-36.12371 19.59511,-16.25897 z"
        id="path248"
        sodipodi:nodetypes="ccccccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 232.15971,190.03238 19.11639,21.56658 18.00368,-15.86186 -28.1578,-32.27637 -29.34976,25.68425 9.22879,11.28353 z"
+       d="m 232.15017,190.00024 19.03342,21.63984 18.06447,-15.79259 -28.03362,-32.38428 -29.44819,25.57133 9.18538,11.31889 z"
        id="path252"
        sodipodi:nodetypes="ccccccc" />
     <path
@@ -696,23 +661,26 @@
        xml:space="preserve"
        id="text987"
        style="font-size:3.23136002px;fill:#000000;opacity:1;white-space:pre;shape-inside:url(#rect989);" />
-    <a href="https://vkinel.ru/liverpool?from=svg">
-    <text
-       xml:space="preserve"
-       style="font-size:3.23136px;opacity:1;fill:#000000;stroke-width:0.60588"
-       x="254.22298"
-       y="166.40184"
-       id="text995"><tspan
-         sodipodi:role="line"
-         id="tspan993"
+    <a
+       href='javascript:alert("https://vkinel.ru/liverpool?from=svg")'
+       id="a157"
+       style="fill:#ff0000">
+      <text
+         xml:space="preserve"
+         style="font-size:3.23136px;opacity:1;fill:#ff0000;stroke-width:0.60588"
          x="254.22298"
          y="166.40184"
-           style="stroke-width:0.60588">Ливерпуль</tspan><tspan
-         sodipodi:role="line"
-         x="254.22298"
-         y="170.44104"
-         style="stroke-width:0.60588"
-         id="tspan997">коттедж</tspan></text>
+         id="text995"><tspan
+           sodipodi:role="line"
+           id="tspan993"
+           x="254.22298"
+           y="166.40184"
+           style="stroke-width:0.60588;fill:#ff0000">Ливерпуль</tspan><tspan
+           sodipodi:role="line"
+           x="254.22298"
+           y="170.44104"
+           style="stroke-width:0.60588;fill:#ff0000"
+           id="tspan997">коттедж</tspan></text>
     </a>
     <text
        xml:space="preserve"
