@@ -8,9 +8,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="229.7mm"
-   height="148.41mm"
-   viewBox="0 0 5.2599999 3.4000001"
+   width="229.74934mm"
+   height="148.44394mm"
+   viewBox="0 0 526.11226 339.92775"
    version="1.1"
    id="svg20"
    sodipodi:docname="vkinelrumap.svg"
@@ -19,6 +19,48 @@
      id="title214">VKinel.ru</title>
   <defs
      id="defs14">
+    <rect
+       x="265.41421"
+       y="239.87297"
+       width="15.826596"
+       height="12.042108"
+       id="rect947" />
+    <rect
+       x="280.72418"
+       y="241.95807"
+       width="20.064317"
+       height="17.937666"
+       id="rect941" />
+    <rect
+       x="333.18958"
+       y="236.52471"
+       width="39.515276"
+       height="15.538831"
+       id="rect935" />
+    <rect
+       x="282.21313"
+       y="204.5703"
+       width="62.440718"
+       height="42.377956"
+       id="rect106" />
+    <rect
+       x="298.67997"
+       y="238.44395"
+       width="36.200869"
+       height="16.532746"
+       id="rect100" />
+    <rect
+       x="341.54781"
+       y="229.88903"
+       width="36.765093"
+       height="18.054037"
+       id="rect94" />
+    <rect
+       x="303.73797"
+       y="234.81929"
+       width="37.696538"
+       height="8.4004339"
+       id="rect88" />
     <rect
        x="285.21844"
        y="216.07053"
@@ -309,10 +351,10 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.01"
-     inkscape:cx="18274.087"
-     inkscape:cy="45389.045"
-     inkscape:document-units="mm"
+     inkscape:zoom="8.1599026"
+     inkscape:cx="509.72666"
+     inkscape:cy="333.97088"
+     inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
@@ -363,7 +405,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-33.229713,-43.270954)">
+     transform="translate(-33.345457,-43.270954)">
     <image
        width="526.34442"
        height="340.07776"
@@ -479,11 +521,65 @@
            style="font-size:4.23333px;text-align:center;text-anchor:middle;fill:#00ff00">VKinel.ru</tspan></tspan></text>
     <text
        xml:space="preserve"
-       id="text234"
-       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect236);fill:#0000ff;fill-opacity:1;stroke:none;"
-       transform="translate(7.2780452,2.331624)"><tspan
-         x="285.21875"
-         y="222.31283"><tspan
-           style="shape-inside:url(#rect236)">Сингапур</tspan></tspan></text>
+       id="text86"
+       style="font-size:8.0784px;white-space:pre;shape-inside:url(#rect88);fill:#0000ff;"><tspan
+         style="visibility:hidden"
+         x="303.73828"
+         y="250.36624"><tspan
+           dx="0 5.7353482 4.8793845 4.879385 4.7610493 4.950386 4.7610493 4.950386 6.3783073 4.7610474">Кккваваыва</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text92"
+       style="font-size:2.42352px;white-space:pre;shape-inside:url(#rect94);fill:#0000ff;"
+       transform="translate(-34.804465,-2.0936054)"><tspan
+         x="341.54688"
+         y="232.03292"><tspan
+           style="font-size:2.42352px;fill:#ff0000">Квартира свободной </tspan></tspan><tspan
+         x="341.54688"
+         y="235.06232"><tspan
+           style="font-size:2.42352px;fill:#ff0000">планировки</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text98"
+       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect100);fill:#00ff00;"
+       transform="translate(5.3763792,2.465449)"><tspan
+         x="298.67969"
+         y="241.30236"><tspan
+           style="shape-inside:url(#rect100)">Квартира</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text104"
+       style="font-size:6.46272px;line-height:1;white-space:pre;shape-inside:url(#rect106);fill:#008000;"
+       transform="translate(10.424154,9.24146)"><tspan
+         x="282.21289"
+         y="209.48046"><tspan
+           style="font-size:6.46272px;fill:#0000ff">Сингапур </tspan></tspan><tspan
+         x="282.21289"
+         y="215.94319"><tspan
+           style="font-size:6.46272px;fill:#0000ff">коттедж </tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text933"
+       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect935);fill:#0000ff;"
+       transform="translate(7.944999,2.2810576)"><tspan
+         x="333.18945"
+         y="239.38439"><tspan
+           style="fill:#000000">Беседка</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text939"
+       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect941);fill:#000000;"
+       transform="translate(4.3553602,5.44592)"><tspan
+         x="280.72461"
+         y="244.81798"><tspan
+           style="shape-inside:url(#rect941)">Беседка</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text945"
+       style="font-size:2.0196px;white-space:pre;shape-inside:url(#rect947);fill:#000000;"
+       transform="translate(2.5854663,3.5493048)"><tspan
+         x="265.41406"
+         y="241.65992"><tspan
+           style="shape-inside:url(#rect947)">Бербекю</tspan></tspan></text>
   </g>
 </svg>
