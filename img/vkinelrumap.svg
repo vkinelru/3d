@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -19,6 +20,14 @@
      id="title214">Схема VKinel.ru</title>
   <defs
      id="defs14">
+    <linearGradient
+       id="linearGradient2972"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#595959;stop-opacity:1;"
+         offset="0"
+         id="stop2970" />
+    </linearGradient>
     <rect
        x="229.94857"
        y="176.3819"
@@ -399,17 +408,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="256"
-     inkscape:cx="313.45956"
-     inkscape:cy="226.2808"
+     inkscape:zoom="7.9261628"
+     inkscape:cx="380.14956"
+     inkscape:cy="229.75975"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1686"
-     inkscape:window-height="1060"
-     inkscape:window-x="216"
-     inkscape:window-y="9"
+     inkscape:window-width="1718"
+     inkscape:window-height="1078"
+     inkscape:window-x="200"
+     inkscape:window-y="0"
      inkscape:window-maximized="0"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -467,196 +476,197 @@
        inkscape:svg-dpi="1"
        sodipodi:insensitive="true" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 230.2707,239.66592 19.43519,27.84071 11.85317,-8.60662 -20.65988,-27.3976 z"
+       style="fill:none;stroke:#ffff00;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       d="m 229.61047,239.09387 20.09542,28.41276 11.85317,-8.60662 -20.48305,-27.60391 z"
        id="path210"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 291.99395,238.72387 11.24108,12.82696 -11.68958,9.37825 -10.73614,-13.32251 z"
        id="path212"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 272.34116,236.97482 7.97077,8.8032 -8.78491,7.10809 -7.92615,-9.43459 z"
        id="path214"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 293.30283,236.30992 15.41871,18.96324 31.2008,-23.38217 -5.86941,-6.39497 8.54123,-6.54325 -9.74606,-11.10645 -6.793,5.68347 -15.58214,-15.4608 -28.39261,23.30767 4.76594,5.78464 -3.27362,2.52599 7.6052,8.33729 z"
        id="path216"
        sodipodi:nodetypes="ccccccccccccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 262.8315,218.74575 8.23962,10.7065"
-       id="path228" />
+       style="fill:none;stroke:#000000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       d="m 271.07112,229.45225 -10.38187,7.96075 -8.34298,-11.58675 10.48523,-7.0805 z"
+       id="path230"
+       sodipodi:nodetypes="cccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 271.07112,229.45225 -18.3272,14.47715 -8.81413,-12.29937 18.90171,-12.88428"
-       id="path230" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 224.13731,151.01223 10.91235,10.50283 -22.87216,19.81026 -10.11113,-11.09865 z"
        id="path242"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 255.34712,123.16807 -8.98136,7.94722 12.43974,13.19185 9.35736,-8.15754 z"
        id="path244"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.234265px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 239.45562,122.28062 -9.2823,7.44889 7.01965,7.8379 9.83593,-8.31406 z"
        id="path246"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="opacity:1;fill:none;stroke:#ff0000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="opacity:1;fill:none;stroke:#ff0000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 283.38347,169.50551 -4.7773,3.93563 7.38633,8.72717 -16.71272,13.56879 -31.608,-36.12371 19.59511,-16.25897 z"
        id="path248"
        sodipodi:nodetypes="ccccccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 232.15017,190.00024 19.03342,21.63984 18.06447,-15.79259 -28.03362,-32.38428 -29.44819,25.57133 9.18538,11.31889 z"
+       style="fill:none;stroke:#00ff00;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       d="m 251.18359,211.64008 -19.03342,-21.63984 -11.19854,10.35319 -9.18538,-11.31889 29.44819,-25.57133 28.03362,32.38428 -7.01902,4.98999 3.52324,4.05184 -6.96951,4.92503 -1.71333,-2.66652 z"
        id="path252"
-       sodipodi:nodetypes="ccccccc" />
+       sodipodi:nodetypes="ccccccccccc" />
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 221.48207,200.92123 10.05659,-9.40458 18.1393,20.5096 -11.53588,8.97154 z"
        id="path256"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:none;stroke:#0000ff;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:none;stroke:#0000ff;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 250.62405,212.08052 -27.81005,-31.66063 -11.11088,9.72555 26.25299,31.84234 z"
        id="path260"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 221.97707,227.00076 7.67868,10.19801 -12.23264,7.93155 -7.33502,-10.46789 z"
        id="path1091" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 349.74778,228.04063 10.55082,11.95087 -16.69747,13.83881 -10.62697,-12.27786 z"
        id="path1093"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke-dashoffset:0"
        d="m 221.65919,100.19781 77.48568,50.48978 66.50438,85.68289 -105.60792,87.77524 -62.58341,-107.11434 -16.13159,-85.74258 z"
        id="path1095"
        sodipodi:nodetypes="ccccccc" />
     <path
-       style="fill:none;stroke:#fd0000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#fd0000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 225.26072,260.89155 34.99656,60.21739 16.57057,-13.65678 z"
        id="path1107" />
     <path
-       style="fill:none;stroke:#00ff00;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#00ff00;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 306.38025,235.14599 -7.31591,6.35922 9.94101,12.7141 23.45734,-17.82835 -5.0948,-6.04267 -9.43162,7.85659 -2.579,-4.02167 -6.0679,4.98887 z"
        id="path1109"
        sodipodi:nodetypes="ccccccccc" />
     <path
-       style="fill:none;stroke:#ff0000;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#ff0000;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 303.36114,230.44747 29.48188,-21.78783 8.77107,9.92683 -8.5455,6.81329 6.27662,6.48502 c -2.18297,1.58587 -6.27516,4.72676 -6.15563,4.63993 l -5.83186,-6.72202 -9.18318,7.36868 -2.76695,-3.85704 -6.08514,4.8762 z"
        id="Banzal"
        sodipodi:nodetypes="ccccccccccc" />
     <path
-       style="fill:none;stroke:#0000ff;stroke-width:0.444px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#0000ff;stroke-width:0.34349102;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        d="m 303.36134,247.88201 37.48349,-29.36919 -7.93087,-9.04771 -6.7667,5.02938 -15.70407,-15.06133 -27.5666,21.97658 4.86941,5.63218 -3.16069,2.66622 6.74698,7.65132 2.16203,-1.83235 z"
        id="singapur"
        sodipodi:nodetypes="ccccccccccc" />
     <text
        xml:space="preserve"
        id="text92"
-       style="font-size:2.42352px;white-space:pre;shape-inside:url(#rect94);fill:#0000ff;"
+       style="font-size:2.42352px;white-space:pre;shape-inside:url(#rect94);fill:#0000ff;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;"
        transform="translate(-32.829744,-2.3713918)"><tspan
          x="341.54688"
          y="232.74767"><tspan
-           style="font-size:3.23136px;fill:#ff0000">Квартира</tspan></tspan></text>
+           style="font-size:3.23136px;fill:#ff0000;stroke-width:0.343491;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Квартира</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text98"
-       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect100);fill:#00ff00;"
+       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect100);fill:#00ff00;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;"
        transform="translate(5.3763792,2.465449)"><tspan
          x="298.67969"
          y="241.30236"><tspan
-           style="shape-inside:url(#rect100)">Квартира</tspan></tspan></text>
+           style="shape-inside:url(#rect100);stroke-width:0.343491;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Квартира</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text104"
-       style="font-size:3.23136px;line-height:1;white-space:pre;shape-inside:url(#rect106);fill:#008000;"
+       style="font-size:3.23136px;line-height:1;white-space:pre;shape-inside:url(#rect106);fill:#008000;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;"
        transform="translate(8.8992089,15.500383)"><tspan
          x="282.21289"
          y="207.02539"><tspan
-           style="font-size:3.23136px;fill:#0000ff">Сингапур коттедж </tspan></tspan></text>
+           style="font-size:3.23136px;fill:#0000ff;stroke-width:0.343491;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Сингапур коттедж </tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text933"
-       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect935);fill:#0000ff;"
+       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect935);fill:#0000ff;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;"
        transform="translate(7.944999,2.2810576)"><tspan
          x="333.18945"
          y="239.38439"><tspan
-           style="fill:#000000">Беседка</tspan></tspan></text>
+           style="fill:#000000;stroke-width:0.343491;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Беседка</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text939"
-       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect941);fill:#000000;"
+       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect941);fill:#000000;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;"
        transform="translate(4.3553602,5.44592)"><tspan
          x="280.72461"
          y="244.81798"><tspan
-           style="shape-inside:url(#rect941)">Беседка</tspan></tspan></text>
+           style="shape-inside:url(#rect941);stroke-width:0.343491;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Беседка</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text951"
-       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect953);opacity:1;fill:#00ffff;"
+       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect953);opacity:1;fill:#00ffff;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;"
        transform="translate(5.4388437,0.18642685)"><tspan
          x="244.47461"
          y="232.03087"><tspan
-           style="font-size:3.23136px;fill:#000000">Беседка</tspan></tspan></text>
+           style="font-size:3.23136px;fill:#000000;stroke-width:0.343491;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Беседка</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text957"
-       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect959);opacity:1;fill:#00ffff;"
+       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect959);opacity:1;fill:#ffff00;fill-opacity:1;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;"
        transform="translate(7.3171158,8.9587662)"><tspan
          x="235.52734"
          y="241.50939"><tspan
-           style="fill:#000000">Дом</tspan></tspan></text>
+           style="fill:#ffff00;fill-opacity:1;stroke-width:0.343491;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Дом</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text963"
-       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect965);opacity:1;fill:#000000;"
+       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect965);opacity:1;fill:#000000;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;"
        transform="translate(5.5037517,5.3283979)"><tspan
          x="207.18359"
-         y="231.42736"><tspan>Беседка</tspan></tspan></text>
+         y="231.42736"><tspan
+           style="stroke-width:0.343491;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Беседка</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text969"
-       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect971);opacity:1;fill:#000000;"
+       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect971);opacity:1;fill:#000000;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;"
        transform="translate(6.5821143,-2.149259)"><tspan
          x="208.34961"
-         y="168.75353"><tspan>Баня</tspan></tspan></text>
+         y="168.75353"><tspan
+           style="stroke-width:0.343491;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Баня</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text975"
-       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect977);opacity:1;fill:#000000;"
+       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect977);opacity:1;fill:#000000;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;"
        transform="translate(0.22651623,1.7889346)"><tspan
          x="249.77539"
-         y="132.3629"><tspan>Беседка</tspan></tspan></text>
+         y="132.3629"><tspan
+           style="stroke-width:0.343491;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Беседка</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text981"
-       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect983);opacity:1;fill:#000000;"
+       style="font-size:3.23136px;white-space:pre;shape-inside:url(#rect983);opacity:1;fill:#000000;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;"
        transform="translate(3.3243165,1.5366672)"><tspan
          x="231.74023"
-         y="128.83165"><tspan>BBQ</tspan></tspan></text>
+         y="128.83165"><tspan
+           style="stroke-width:0.343491;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">BBQ</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text987"
-       style="font-size:3.23136px;fill:#000000;opacity:1;white-space:pre;shape-inside:url(#rect989);" />
+       style="font-size:3.23136px;fill:#000000;opacity:1;white-space:pre;shape-inside:url(#rect989);stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" />
     <a
        href="javascript:alert('https://vkinel.ru/liverpool?from=svg')"
        id="a157"
-       style="fill:#ff0000">
+       style="fill:#ff0000;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">
       <text
          xml:space="preserve"
-         style="font-size:3.23136px;opacity:1;fill:#ff0000;stroke-width:0.60588"
+         style="font-size:3.23136px;opacity:1;fill:#ff0000;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
          x="254.22298"
          y="166.40184"
          id="text995"><tspan
@@ -664,20 +674,20 @@
            id="tspan993"
            x="254.22298"
            y="166.40184"
-           style="stroke-width:0.60588;fill:#ff0000">Ливерпуль</tspan><tspan
+           style="stroke-width:0.34349102;fill:#ff0000;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Ливерпуль</tspan><tspan
            sodipodi:role="line"
            x="254.22298"
            y="170.44104"
-           style="stroke-width:0.60588;fill:#ff0000"
+           style="stroke-width:0.34349102;fill:#ff0000;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
            id="tspan997">коттедж</tspan></text>
     </a>
     <text
        xml:space="preserve"
        id="text999"
-       style="font-size:3.23136px;fill:#000000;opacity:1;white-space:pre;shape-inside:url(#rect1001);" />
+       style="font-size:3.23136px;fill:#000000;opacity:1;white-space:pre;shape-inside:url(#rect1001);stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;" />
     <text
        xml:space="preserve"
-       style="font-size:3.23136px;opacity:1;fill:#000000;stroke-width:0.60588"
+       style="font-size:3.23136px;opacity:1;fill:#00fd00;stroke-width:0.34349102;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        x="233.93361"
        y="179.94406"
        id="text1007"><tspan
@@ -685,15 +695,15 @@
          id="tspan1005"
          x="233.93361"
          y="179.94406"
-         style="stroke-width:0.60588">Мальта</tspan><tspan
+         style="stroke-width:0.34349102;fill:#00fd00;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Мальта</tspan><tspan
          sodipodi:role="line"
          x="233.93361"
          y="183.98326"
-         style="stroke-width:0.60588"
+         style="stroke-width:0.34349102;fill:#00fd00;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
          id="tspan1009">коттедж</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:3.23136px;opacity:1;fill:#000000;stroke-width:0.60588"
+       style="font-size:3.23136px;opacity:1;fill:#000000;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        x="213.8678"
        y="191.29227"
        id="text1013"><tspan
@@ -701,10 +711,10 @@
          id="tspan1011"
          x="213.8678"
          y="191.29227"
-         style="fill:#0000ff;stroke-width:0.60588">Квартира</tspan></text>
+         style="fill:#0000ff;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Квартира</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:3.23136px;opacity:1;fill:#000000;stroke-width:0.60588"
+       style="font-size:3.23136px;opacity:1;fill:#000000;stroke-width:0.34349102;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        x="226.93524"
        y="206.14352"
        id="text1017"><tspan
@@ -712,10 +722,10 @@
          id="tspan1015"
          x="226.93524"
          y="206.14352"
-         style="fill:#ff0000;stroke-width:0.60588">Квартира</tspan></text>
+         style="fill:#000000;stroke-width:0.34349102;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">Квартира</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:3.23136px;fill:#0000ff;stroke-width:0.60588"
+       style="font-size:3.23136px;fill:#0000ff;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        x="268.82944"
        y="245.32155"
        id="text997"><tspan
@@ -723,10 +733,26 @@
          id="tspan995"
          x="268.82944"
          y="245.32155"
-         style="fill:#000000;stroke-width:0.60588">BBQ</tspan></text>
+         style="fill:#000000;stroke-width:0.34349102;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0">BBQ</tspan></text>
+    <path
+       style="fill:none;stroke:#f9ff00;stroke-width:0.34349101;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.74792805,0.34349101;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 215.66522,247.2912 25.92853,-17.39048 21.34808,29.39963 -28.61652,19.80759 z"
+       id="path163"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="display:inline;fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:0.34349101;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.74792805,0.34349101;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 237.67178,159.61339 -16.96221,-24.13473 25.69512,-21.00829 53.83068,34.02925 11.10087,14.62169 -40.88628,33.93396 z"
+       id="path993"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="fill:none;stroke:#00ff00;stroke-width:0.34349101;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.74792805,0.34349101;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 279.58654,209.08671 -9.13658,-12.03144 -31.42542,-35.74424 -29.96035,26.79753 10.53862,14.0557 12.54736,-12.16402 19.03342,21.63984 -0.46042,13.93006 9.93911,13.64368 12.11418,-9.49487 -5.24549,-6.59017 z"
+       id="path1025"
+       sodipodi:nodetypes="cccccccccccc" />
   </g>
-<style type="text/css" id="style">
-<![CDATA[
+  <style
+     type="text/css"
+     id="style"><![CDATA[
 svg {
 width:100%;
 height:100%;
@@ -734,9 +760,8 @@ margin: 0 !important;
 padding: 0 !important;
 border: 0 !important;
 }
-]]>
-</style>
-<script
+]]></style>
+  <script
      id="script171">
     console.log('loaded! 2');
 </script>
