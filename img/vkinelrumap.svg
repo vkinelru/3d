@@ -481,16 +481,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.5082882"
-     inkscape:cx="384.92348"
-     inkscape:cy="195.93264"
+     inkscape:zoom="29.154609"
+     inkscape:cx="20.464411"
+     inkscape:cy="38.371824"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1080"
-     inkscape:window-x="0"
+     inkscape:window-width="1718"
+     inkscape:window-height="1078"
+     inkscape:window-x="200"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      fit-margin-top="0"
@@ -990,6 +990,10 @@
        inkscape:path-effect="#path-effect1130"
        inkscape:original-d="m 193.56369,109.74566 c -3.2893,-4.19346 -6.58465,-8.39299 -9.88606,-12.598568 -0.96117,-1.803832 -1.9284,-3.613723 -2.9017,-5.429673 -8.88873,-6.493547 -17.78468,-12.992525 -26.68783,-19.496934 7.80958,-4.406949 15.61028,-8.809836 23.40954,-13.212852 5.25577,-2.519171 10.50548,-5.044402 15.74913,-7.57569 2.78281,2.346249 5.55956,4.68644 8.33024,7.020571 1.40856,0.929945 2.79999,1.848373 4.2048,2.77543 2.03821,1.362643 4.07028,2.720979 6.09621,4.075009 22.88437,14.624017 45.76269,29.241981 68.63495,43.853887 1.53675,2.03236 3.06744,4.05867 4.59208,6.07891 1.87811,1.33957 3.75017,2.67307 5.61616,4.00052"
        sodipodi:nodetypes="cccccccccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.60588px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 0,0 V 340.07776 H 526.34442 V 0 Z"
+       id="path208" />
   </g>
   <style
      type="text/css"
@@ -1001,7 +1005,53 @@ margin: 0 !important;
 padding: 0 !important;
 border: 0 !important;
 }
+path {
+    transition: stroke 0.1s ease; /* Плавное изменение обводки */
+}
+    path:hover {
+    stroke: white !important; /* Подсветка красной обводкой при наведении */
+}
 ]]></style>
+  <script
+     id="script204"><![CDATA[
+document.querySelectorAll("path").forEach(path => {
+    path.addEventListener("click", function () {
+        const pathId = path.id || "(без id)";
+        const length = path.getTotalLength();
+        let points = [];
+
+        for (let i = 0; i <= length; i += 5) {  // Берём точки через 5 пикселей
+            const { x, y } = path.getPointAtLength(i);
+            points.push({ x, y });
+        }
+
+        if (points.length < 3) {
+            alert(`Path ID: ${pathId}\nНе хватает точек для вычисления площади`);
+            return;
+        }
+
+        console.log(`Path ID: ${pathId}`);
+        console.log("Координаты точек:", points);
+        console.log(`Количество точек: ${points.length}`);
+
+        // Вычисление площади по формуле Гаусса
+        let area = 0;
+        for (let i = 0; i < points.length - 1; i++) {
+            area += (points[i].x * points[i + 1].y) - (points[i + 1].x * points[i].y);
+        }
+        area = Math.abs(area) / 2;
+        //  Коэффициент преобразования пикселей в метры
+        area = area / 5,24382628733
+
+        console.log(`Площадь: ${area.toFixed(2)} м²`);
+        
+        // Формируем строку с координатами для alert
+        let pointsStr = points.map(p => `(${p.x.toFixed(2)}, ${p.y.toFixed(2)})`).join("\n");
+        // alert(`Path ID: ${pathId}\nПлощадь: ${area.toFixed(2)} м²\nКоличество точек: ${points.length}\nКоординаты точек:\n${pointsStr}`);
+        alert(`Path ID: ${pathId}\nПлощадь: ${area.toFixed(2)} м²\nКоличество точек: ${points.length}`);
+    });
+});
+]]></script>
   <script
      id="script171">
     console.log('loaded! 2');
