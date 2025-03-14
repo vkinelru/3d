@@ -1020,7 +1020,7 @@ document.querySelectorAll("path").forEach(path => {
         const length = path.getTotalLength();
         let points = [];
 
-        for (let i = 0; i <= length; i += 5) {  // Берём точки через 5 пикселей
+        for (let i = 0; i <= length; i += 1) {  // Берём точки через 5 пикселей
             const { x, y } = path.getPointAtLength(i);
             points.push({ x, y });
         }
