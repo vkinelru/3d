@@ -1014,7 +1014,7 @@ border: 0 !important;
 }
 path {
     transition: stroke 0.1s ease; /* Плавное изменение обводки */
-    stroke-width:0.8px !important;
+    stroke-width:1.0px !important;
 
 }
     path:hover {
@@ -1096,7 +1096,7 @@ document.querySelectorAll("path").forEach(path => {
                     line.setAttribute("y2", i === points.length - 1 ? points[0].y : points[i + 1].y);
                     line.setAttribute("stroke", getRandomColor()); // Меняем цвет
                     i++;
-                    setTimeout(moveLine, 20); // Задержка
+                    setTimeout(moveLine, 20); // Задержка 10 мс
                 } else {
                     // Удаляем SVG после завершения
                     setTimeout(() => {
