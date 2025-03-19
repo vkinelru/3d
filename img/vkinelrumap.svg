@@ -1012,14 +1012,23 @@ margin: 0 !important;
 padding: 0 !important;
 border: 0 !important;
 }
-path {
-    transition: stroke 0.1s ease; /* Плавное изменение обводки */
-    stroke-width:1.0px !important;
 
+
+path {
+    transition: stroke 0.1s ease;
+    stroke-width: 1.0px !important;
+    stroke: black;
 }
-    path:hover {
-    stroke: white !important; /* Подсветка обводкой при наведении */
-    stroke-width:3px
+
+path:hover {
+    stroke-width: 3px;
+    animation: pulseColor 1.8s infinite;
+}
+
+@keyframes pulseColor {
+    0% { stroke: black; }
+    50% { stroke: red; }
+    100% { stroke: black; }
 }
 ]]></style>
 
