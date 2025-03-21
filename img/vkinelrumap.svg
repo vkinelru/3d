@@ -169,9 +169,25 @@ path:hover {
 }
 
 @keyframes pulseColor {
-    000% { stroke: #000; fill:#F001; }
-    050% { stroke: #F00; fill:#0001; }
-    100% { stroke: #000; fill:#F001; }
+    000% { stroke: #000; fill:#F002; }
+    050% { stroke: #F00; fill:#0002; }
+    100% { stroke: #000; fill:#F002; }
+}
+
+.textfade {
+    animation: fadeOutText 13s ease forwards;
+}
+
+@keyframes fadeOutText {
+    0% {
+        opacity: 1;
+    }
+    80% { 
+        opacity: 0.75;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 ]]></style>
 
@@ -240,6 +256,10 @@ path:hover {
                 }
             }
             text.setAttribute("fill", pathColor); // Устанавливаем оригинальный цвет
+            text.setAttribute("stroke", "#999D");        // Цвет обводки
+            text.setAttribute("stroke-width", "1.5");      // Толщина обводки
+            text.setAttribute("paint-order", "stroke");  // Обводка рисуется под заливкой            
+            text.setAttribute("class", "textfade");        // Цвет обводки
 
             // Корректируем координаты клика
             const point = svgRoot.createSVGPoint();
@@ -250,7 +270,7 @@ path:hover {
 
             text.setAttribute("x", svgPoint.x);
             text.setAttribute("y", svgPoint.y);
-            text.setAttribute("font-size", "7");
+            text.setAttribute("font-size", "8");
             text.textContent = `${pathId}: ${area.toFixed(2)} м²`;
 
             // Добавляем текст в SVG
