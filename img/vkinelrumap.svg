@@ -209,9 +209,9 @@ document.addEventListener('keydown', function(event) {
     let currentRotation = parseFloat(svgRoot.getAttribute('data-rotation') || '0');
     
     if (event.key === 'a' || event.key === 'A') {
-        currentRotation -= 5; // Поворот влево
+        currentRotation -= 0.5; // Поворот влево
     } else if (event.key === 'd' || event.key === 'D') {
-        currentRotation += 5; // Поворот вправо
+        currentRotation += 0.5; // Поворот вправо
     }
     
     svgRoot.setAttribute('data-rotation', currentRotation);
@@ -317,7 +317,7 @@ document.addEventListener('keydown', function(event) {
             parentSvg.appendChild(svg);
 
             const line = document.createElementNS(svgNS, "line");
-            line.setAttribute("stroke-width", "10");
+            line.setAttribute("stroke-width", "7");
             svg.appendChild(line);
 
             function getRandomColor() {
