@@ -26,16 +26,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="30.092534"
-     inkscape:cx="202.31673"
-     inkscape:cy="337.14094"
+     inkscape:zoom="7.0055779"
+     inkscape:cx="454.09305"
+     inkscape:cy="366.64524"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1080"
-     inkscape:window-x="0"
+     inkscape:window-width="1718"
+     inkscape:window-height="1078"
+     inkscape:window-x="200"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      fit-margin-top="0"
@@ -108,7 +108,7 @@
        sodipodi:nodetypes="ccccccccccccccccccc" />
     <path
        style="fill:none;stroke:#0000ff;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 174.91303,147.27108 24.71558,32.79895 20.17859,-15.25623 3.15623,4.27036 10.968,-8.37464 -3.25916,-4.02479 4.27584,-3.83435 -28.01741,-32.88217 z"
+       d="m 174.91303,147.27108 24.71558,32.79895 20.17859,-15.25623 3.15623,4.27036 10.968,-8.37464 -3.25916,-4.02479 3.40037,-2.57075 -28.90773,-32.4968 z"
        id="Валенсия"
        sodipodi:nodetypes="ccccccccc" />
     <path
@@ -118,7 +118,7 @@
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:none;stroke:#00ff00;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 223.22738,100.04131 28.21693,24.89323 -4.94297,5.01077 4.55743,9.08198 -16.73477,14.35165 -30.93743,-35.90963 2.36743,-2.27898 -3.01349,-3.15875 5.15462,-4.49568 3.28021,3.17726 z"
+       d="m 223.22738,100.04131 28.21693,24.89323 -4.94297,5.01077 4.55743,9.08198 -16.2386,14.45969 -31.4336,-36.01767 2.36743,-2.27898 -3.01349,-3.15875 5.15462,-4.49568 3.28021,3.17726 z"
        id="Ливерпуль"
        sodipodi:nodetypes="ccccccccccc" />
     <path
@@ -128,29 +128,29 @@
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:none;stroke:#f90000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:6, 1;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 286.83448,134.55044 -53.92871,41.10435 11.10633,15.12602 -16.08771,11.21767 33.0585,51.70655 70.94905,-57.5338 z"
+       d="m 286.83448,134.55044 -52.19847,39.81536 10.00752,15.6191 -14.26943,11.60578 32.52986,50.6083 69.02798,-56.02775 z"
        id="Сингапур_территория"
        sodipodi:nodetypes="ccccccc" />
     <path
        style="fill:none;stroke:#00f900;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.63528, 0.60588;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 186.08903,55.471002 79.50653,50.322828 14.00662,18.61554 -43.15465,34.05196 -33.84365,-39.36255 0.84688,-3.94741 -3.80187,-4.38888 -33.34814,-40.226939 z"
+       d="m 186.08903,55.471002 79.50653,50.322828 14.00662,18.61554 -41.10784,32.78645 -35.10777,-39.72651 -1.31622,-2.86666 -1.202,-5.64635 -12.69744,-14.334745 -22.87453,-23.314894 z"
        id="Ливерпуль_территория"
-       sodipodi:nodetypes="ccccccccc" />
+       sodipodi:nodetypes="cccccccccc" />
     <path
-       style="fill:none;stroke:#ffff00;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:5.99821, 0.999702;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 221.48424,202.35815 -15.29217,-18.2372 -30.4862,17.06674 39.81172,89.1099 46.64318,-37.47561 -34.993,-54.55144 z"
+       style="fill:none;stroke:#ffff00;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:6, 1;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 220.60804,201.2039 -10.7978,-15.47726 -12.04539,7.26401 -20.12285,12.74234 37.87559,84.5646 46.64318,-37.47561 -33.03258,-51.49529 14.18311,-11.57728 -10.04735,-15.62654 52.75907,-40.40657 -2.63095,-3.77013 -54.48976,42.87031 10.70403,16.11935 -13.28236,8.54998 z"
        id="Газифицированный_дом_территория"
-       sodipodi:nodetypes="ccccccc" />
+       sodipodi:nodetypes="ccccccccccccccc" />
     <path
        style="fill:none;stroke:#ff0000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:6, 1;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 144.17806,88.087553 14.45413,69.776267 42.6503,-37.16063 -1.75725,-12.1848 -32.36268,-38.531404 z"
+       d="m 144.17806,88.087553 14.241,70.676367 43.87315,-37.01309 -2.9801,-12.33234 -13.07805,-15.570889 -21.74244,-21.920724 z"
        id="Баня_территория"
-       sodipodi:nodetypes="cccccc" />
+       sodipodi:nodetypes="ccccccc" />
     <path
        style="fill:none;stroke:#0000f8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.63528, 0.60588;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 158.59998,159.94705 48.46707,-42.24748 38.75944,45.6703 -16.06684,11.61243 9.80428,13.7879 -17.7049,11.77476 -13.54538,-15.9274 -32.03823,17.90114 -16.46546,-36.27646 z"
+       d="m 158.59998,159.94705 45.84346,-39.17366 33.85204,38.13011 41.68555,-34.0667 2.94217,4.26413 -39.78303,31.55328 -8.2227,6.22632 -7.38758,5.77274 10.61628,15.79901 -17.24458,11.46854 -10.83934,-15.54242 -12.68628,7.43978 -20.19739,12.96676 -17.36862,-38.5427 z"
        id="Валенсия_территория"
-       sodipodi:nodetypes="cccccccccc" />
+       sodipodi:nodetypes="ccccccccccccccc" />
     <path
        style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.27898872;stroke-width:0.60588001;stroke-miterlimit:4;stroke-dasharray:0.60588001, 4.84704005000000038;stroke-dashoffset:0"
        d="m 126.48162,312.21454 -105.845754,-0.0339 0.02417,-105.8097 105.717544,0.0249 z"
