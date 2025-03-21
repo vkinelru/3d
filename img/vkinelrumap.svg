@@ -26,16 +26,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.7532531"
-     inkscape:cx="421.52624"
-     inkscape:cy="325.36935"
+     inkscape:zoom="30.092534"
+     inkscape:cx="202.31673"
+     inkscape:cy="337.14094"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1718"
-     inkscape:window-height="1078"
-     inkscape:window-x="200"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      fit-margin-top="0"
@@ -151,6 +151,10 @@
        d="m 158.59998,159.94705 48.46707,-42.24748 38.75944,45.6703 -16.06684,11.61243 9.80428,13.7879 -17.7049,11.77476 -13.54538,-15.9274 -32.03823,17.90114 -16.46546,-36.27646 z"
        id="Валенсия_территория"
        sodipodi:nodetypes="cccccccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.27898872;stroke-width:0.60588001;stroke-miterlimit:4;stroke-dasharray:0.60588001, 4.84704005000000038;stroke-dashoffset:0"
+       d="m 126.48162,312.21454 -105.845754,-0.0339 0.02417,-105.8097 105.717544,0.0249 z"
+       id="Kvadrat" />
   </g>
   <style
      type="text/css"
@@ -194,10 +198,12 @@ text {
         opacity: 1;
     }
     80% { 
-        opacity: 0.75;
+        opacity: 0.85;
+        filter: blur(0px);
     }
     100% {
         opacity: 0;
+        filter: blur(6px);
     }
 }
 ]]></style>
