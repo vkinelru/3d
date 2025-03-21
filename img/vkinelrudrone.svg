@@ -93,10 +93,6 @@
        y="0"
        inkscape:svg-dpi="1"
        sodipodi:insensitive="true" />
-    <path
-       style="display:inline;fill:none;stroke:#000000;stroke-width:0.60588px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 0,0 V 340.07776 H 526.34442 V 0 Z"
-       id="Граница_карты" />
     <g
        id="g858"
        transform="matrix(1.0734592,0,0,1.1365767,-1.9117085,-26.026819)">
@@ -155,10 +151,6 @@
          id="Валенсия_территория"
          sodipodi:nodetypes="ccccccccccccccc" />
     </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:0.27898872;stroke-width:0.60588001;stroke-miterlimit:4;stroke-dasharray:0.60588001, 4.84704005000000038;stroke-dashoffset:0"
-       d="m 126.48162,312.21454 -105.845754,-0.0339 0.02417,-105.8097 105.717544,0.0249 z"
-       id="Kvadrat" />
   </g>
   <style
      type="text/css"
