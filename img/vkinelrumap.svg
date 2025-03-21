@@ -27,15 +27,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="5.0318527"
-     inkscape:cx="345.80611"
-     inkscape:cy="193.47184"
+     inkscape:cx="331.78496"
+     inkscape:cy="272.13084"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1080"
-     inkscape:window-x="0"
+     inkscape:window-width="1718"
+     inkscape:window-height="1078"
+     inkscape:window-x="200"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      fit-margin-top="0"
@@ -96,41 +96,54 @@
     <path
        style="display:inline;fill:none;stroke:#000000;stroke-width:0.60588px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 0,0 V 340.07776 H 526.34442 V 0 Z"
-       id="frameall" />
+       id="Граница_карты" />
     <path
-       style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:6.00000001,1;stroke-dashoffset:0"
        d="m 186.19334,57.124202 78.61034,50.195438 65.38822,88.50949 -114.08734,91.99046 -54.85271,-121.9305 -15.66258,-77.368856 z"
-       id="allterritory" />
+       id="Вся_территория_VKinelru" />
     <path
        style="fill:none;stroke:#ff0000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 249.88543,179.21152 4.42204,4.99363 -3.51956,2.88804 7.44551,7.98735 2.71944,-2.03758 16.00038,20.25627 28.63753,-24.61152 -6.06922,-6.32694 8.28869,-6.66618 -10.10049,-10.98938 -5.89503,5.70641 0.57849,-2.75661 -4.19337,-4.29998 -4.08501,1.46291 1.70186,-4.75472 -3.99078,-3.80748 -4.20121,1.26677 -2.56347,-3.06696 z"
-       id="Singapur" />
+       id="Сингапур" />
     <path
        style="fill:none;stroke:#0000ff;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 175.35735,149.81868 24.27126,30.25135 20.88319,-14.56184 2.45163,3.57597 9.62842,-8.54527 -2.33961,-4.29514 4.69587,-3.39337 -28.01741,-32.88217 z"
-       id="Valencia"
+       id="Валенсия"
        sodipodi:nodetypes="ccccccccc" />
     <path
        style="fill:none;stroke:#ff0000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 192.45254,108.73814 8.49039,8.81927 -24.60886,21.55709 -9.72806,-10.23814 z"
-       id="Banya" />
+       id="Баня" />
     <path
        style="fill:none;stroke:#00ff00;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 223.22738,100.04131 28.21693,24.89323 -4.94297,5.01077 4.55743,9.08198 -16.73477,14.35165 -30.93743,-35.90963 2.36743,-2.27898 -3.01349,-3.15875 5.15462,-4.49568 3.28021,3.17726 z"
-       id="Liverpool"
+       id="Ливерпуль"
        sodipodi:nodetypes="ccccccccccc" />
     <path
        style="fill:none;stroke:#ffff00;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 198.11786,195.18567 18.02818,28.17849 12.03016,-8.16211 -20.88832,-26.15092 z"
-       id="Gazdom" />
+       id="Газифицированный_дом" />
     <path
-       style="fill:none;stroke:#f90000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:none;stroke:#f90000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:6.00000001,1;stroke-dashoffset:0"
        d="m 286.50431,137.86752 -53.28318,38.91632 10.38763,13.95139 -15.68437,11.26325 31.78346,50.5154 73.08813,-55.5409 z"
-       id="terrSingapur" />
+       id="Сингапур_территория" />
     <path
-       style="fill:none;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-width:0.60588001;stroke-miterlimit:4;stroke-dasharray:3.63528004,0.60588001;stroke-dashoffset:0"
+       style="fill:none;stroke:#00f900;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-width:0.60588001;stroke-miterlimit:4;stroke-dasharray:3.63528004, 0.60588001000000002;stroke-dashoffset:0"
        d="m 186.11932,54.537735 80.10042,50.658265 13.0331,16.05233 -42.97308,34.85349 -33.43145,-35.89636 -3.19942,-9.44297 -36.47183,-39.298373 z"
-       id="path843" />
+       id="Ливерпуль_территория" />
+    <path
+       style="fill:none;stroke:#ffff00;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-width:0.99970201;stroke-miterlimit:4;stroke-dasharray:5.99821206,0.99970201;stroke-dashoffset:0"
+       d="m 214.7869,180.66435 -36.61877,22.48994 36.1844,89.04769 47.64734,-37.17965 z"
+       id="Газифицированный_дом_территория"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:6.00000001,1;stroke-dashoffset:0"
+       d="m 143.34971,87.327849 12.04628,67.726901 45.05626,-32.06023 -39.31134,-49.863839 z"
+       id="Баня_территория" />
+    <path
+       style="fill:none;stroke:#0000f8;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-width:0.60588001;stroke-miterlimit:4;stroke-dasharray:3.63528004, 0.60588001000000002;stroke-dashoffset:0"
+       d="m 155.49494,158.84036 56.49914,-38.47603 32.39084,44.30901 -70.35264,39.51249 z"
+       id="Валенсия_территория" />
   </g>
   <style
      type="text/css"
@@ -161,92 +174,140 @@ path:hover {
     100% { stroke: #000; fill:#F001; }
 }
 ]]></style>
-  <script
-     id="script204"><![CDATA[
-document.querySelectorAll("path").forEach(path => {
-    path.addEventListener("click", function () {
-        const pathId = path.id || "(без id)";
-        const length = path.getTotalLength();
-        let points = [];
 
-        for (let i = 0; i <= length; i += 1) {
-            const { x, y } = path.getPointAtLength(i);
-            points.push({ x, y });
-        }
 
-        if (points.length < 3) {
-            alert(`Path ID: ${pathId}\nНе хватает точек для вычисления площади`);
-            return;
-        }
 
-        console.log(`Path ID: ${pathId}`);
-        console.log("Координаты точек:", points);
-        console.log(`Количество точек: ${points.length}`);
+<script id="vkinelrujs"><![CDATA[
+    // Получаем корневой SVG элемент
+    const svgRoot = document.documentElement;
+    const originalTitle = svgRoot.getAttribute('title') || 'Vkinel.ru';
+    
+    // Находим все path элементы
+    const paths = svgRoot.querySelectorAll('path');
 
-        let area = 0;
-        for (let i = 0; i < points.length - 1; i++) {
-            area += (points[i].x * points[i + 1].y) - (points[i + 1].x * points[i].y);
-        }
-        area = Math.abs(area) / 2;
-        area = area / 5.24382628733;
+    paths.forEach(path => {
+        // Обработчик наведения
+        path.addEventListener('mouseover', function() {
+            const pathId = this.getAttribute('id') || '(без id)';
+            svgRoot.setAttribute('title', pathId);
+            document.title = pathId;
+        });
 
-        console.log(`Площадь: ${area.toFixed(2)} м²`);
+        path.addEventListener('mouseout', function() {
+            svgRoot.setAttribute('title', originalTitle);
+            document.title = originalTitle;
+        });
 
-        // Показываем alert до рисования линий
-        alert(`ID: ${pathId}\nПлощадь: ${area.toFixed(2)} м²\nКоличество точек: ${points.length}`);
+        // Обработчик клика
+        path.addEventListener("click", function (event) {
+            const pathId = path.id || "(без id)";
+            const length = path.getTotalLength();
+            let points = [];
 
-        const svgNS = "http://www.w3.org/2000/svg";
-        const svg = document.createElementNS(svgNS, "svg");
-        const parentSvg = path.ownerSVGElement;
-        svg.setAttribute("width", parentSvg.getAttribute("width"));
-        svg.setAttribute("height", parentSvg.getAttribute("height"));
-        svg.style.position = "absolute";
-        svg.style.top = "0";
-        svg.style.left = "0";
-        svg.style.pointerEvents = "none";
-        parentSvg.appendChild(svg);
-
-        // Создаем одну линию
-        const line = document.createElementNS(svgNS, "line");
-        line.setAttribute("stroke-width", "10");
-        svg.appendChild(line);
-
-        // Функция для генерации случайного цвета
-        function getRandomColor() {
-            const letters = "0123456789ABCDEF";
-            let color = "#";
-            for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
+            for (let i = 0; i <= length; i += 1) {
+                const { x, y } = path.getPointAtLength(i);
+                points.push({ x, y });
             }
-            return color;
-        }
 
-        // Функция для перемещения линии
-        function drawLine() {
-            let i = 0;
+            if (points.length < 3) {
+                alert(`Path ID: ${pathId}\nНе хватает точек для вычисления площади`);
+                return;
+            }
 
-            function moveLine() {
-                if (i < points.length) {
-                    line.setAttribute("x1", points[i].x);
-                    line.setAttribute("y1", points[i].y);
-                    line.setAttribute("x2", i === points.length - 1 ? points[0].x : points[i + 1].x);
-                    line.setAttribute("y2", i === points.length - 1 ? points[0].y : points[i + 1].y);
-                    line.setAttribute("stroke", getRandomColor()); // Меняем цвет
-                    i++;
-                    setTimeout(moveLine, 20); // Задержка
-                } else {
-                    // Удаляем SVG после завершения
-                    setTimeout(() => {
-                        parentSvg.removeChild(svg);
-                    }, 100);
+            console.log(`ID: ${pathId}`);
+            console.log(`Количество точек: ${points.length}`);
+
+            let area = 0;
+            for (let i = 0; i < points.length - 1; i++) {
+                area += (points[i].x * points[i + 1].y) - (points[i + 1].x * points[i].y);
+            }
+            area = Math.abs(area) / 2;
+            area = area / 5.24382628733;
+
+            console.log(`Площадь: ${area.toFixed(2)} м²`);
+
+            // Создаем текстовый элемент
+            const svgNS = "http://www.w3.org/2000/svg";
+            const text = document.createElementNS(svgNS, "text");
+
+            // Получаем оригинальный цвет stroke из атрибута style
+            const style = path.getAttribute('style');
+            let pathColor = '#000000'; // Цвет по умолчанию, если stroke не найден
+            if (style) {
+                const strokeMatch = style.match(/stroke:#[0-9A-Fa-f]{6}/) || style.match(/stroke:#[0-9A-Fa-f]{3}/);
+                if (strokeMatch) {
+                    pathColor = strokeMatch[0].replace('stroke:', '');
                 }
             }
+            text.setAttribute("fill", pathColor); // Устанавливаем оригинальный цвет
 
-            moveLine();
-        }
+            // Корректируем координаты клика
+            const point = svgRoot.createSVGPoint();
+            point.x = event.clientX;
+            point.y = event.clientY;
+            const ctm = svgRoot.getScreenCTM();
+            const svgPoint = point.matrixTransform(ctm.inverse());
 
-        drawLine();
+            text.setAttribute("x", svgPoint.x);
+            text.setAttribute("y", svgPoint.y);
+            text.setAttribute("font-size", "7");
+            text.textContent = `${pathId}: ${area.toFixed(2)} м²`;
+
+            // Добавляем текст в SVG
+            svgRoot.appendChild(text);
+
+            // Удаляем текст через 13 секунд
+            setTimeout(() => {
+                svgRoot.removeChild(text);
+            }, 13000);
+
+            // Оставляем старую анимацию линий
+            const svg = document.createElementNS(svgNS, "svg");
+            const parentSvg = path.ownerSVGElement;
+            svg.setAttribute("width", parentSvg.getAttribute("width"));
+            svg.setAttribute("height", parentSvg.getAttribute("height"));
+            svg.style.position = "absolute";
+            svg.style.top = "0";
+            svg.style.left = "0";
+            svg.style.pointerEvents = "none";
+            parentSvg.appendChild(svg);
+
+            const line = document.createElementNS(svgNS, "line");
+            line.setAttribute("stroke-width", "10");
+            svg.appendChild(line);
+
+            function getRandomColor() {
+                const letters = "0123456789ABCDEF";
+                let color = "#";
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+
+            function drawLine() {
+                let i = 0;
+                function moveLine() {
+                    if (i < points.length) {
+                        line.setAttribute("x1", points[i].x);
+                        line.setAttribute("y1", points[i].y);
+                        line.setAttribute("x2", i === points.length - 1 ? points[0].x : points[i + 1].x);
+                        line.setAttribute("y2", i === points.length - 1 ? points[0].y : points[i + 1].y);
+                        line.setAttribute("stroke", getRandomColor());
+                        i++;
+                        setTimeout(moveLine, 13);
+                    } else {
+                        setTimeout(() => {
+                            parentSvg.removeChild(svg);
+                        }, 100);
+                    }
+                }
+                moveLine();
+            }
+
+            drawLine();
+        });
     });
-});
 ]]></script>
+
 </svg>
