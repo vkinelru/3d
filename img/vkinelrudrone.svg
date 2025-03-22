@@ -110,9 +110,9 @@ path {
 }
 
 @keyframes pulseColor {
-    000% { stroke: #F009; fill:#0000; }
-    050% { stroke: #000F; fill:#F009; }
-    100% { stroke: #F009; fill:#0000; }
+    000% { stroke: #F006; fill:#0000; }
+    050% { stroke: #000D; fill:#F009; }
+    100% { stroke: #F006; fill:#0000; }
 }
 
 text {
