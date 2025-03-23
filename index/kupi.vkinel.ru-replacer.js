@@ -304,7 +304,7 @@ replacer = {
     }
 };
 
-/* Copyright (c) 2021 Borodin-Atamanov */
+/* Copyright (c) 2025 Borodin-Atamanov */
 
 function replace_after_page_loaded() 
 {
@@ -348,7 +348,7 @@ function replace_after_page_loaded()
     replace_text(document.body, '9 ', '9\xA0'); 
     replace_text(document.body, '0 ', '0\xA0'); 
 
-    console.log('replace_after_page_loaded() 202404');
+    console.log('replace_after_page_loaded() 202503');
 }
 
 if (document.readyState !== 'loading') {
