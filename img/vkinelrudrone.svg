@@ -103,10 +103,17 @@ padding: 0 !important;
 border: 0 !important;
 }
 
-path {
+.path {
     stroke-width: 10.0px !important;
     animation: pulseColor 6s infinite ease-in-out;
 }
+
+.selectedpath
+{
+    stroke-width: 10.0px !important;
+    animation: pulseColor 6s infinite ease-in-out;
+}
+
 
 @keyframes pulseColor {
     000% { stroke: #F009; fill:#0000; }
@@ -138,7 +145,7 @@ text {
 ]]></style>
   <script
      id="vkinelrujs"><![CDATA[
-    
+     
 document.addEventListener('keydown', function(event) {
     const svgRoot = document.documentElement;
     let currentRotation = parseFloat(svgRoot.getAttribute('data-rotation') || '0');
@@ -155,139 +162,20 @@ document.addEventListener('keydown', function(event) {
 
     // Получаем корневой SVG элемент
     const svgRoot = document.documentElement;
-    const originalTitle = svgRoot.getAttribute('title') || 'Vkinel.ru';
     
+    const currentUrl = window.location.href;
+
     // Находим все path элементы
     const paths = svgRoot.querySelectorAll('path');
 
     paths.forEach(path => {
-        // Обработчик наведения
-        path.addEventListener('mouseover', function() {
-            const pathId = this.getAttribute('id') || '(без id)';
-            svgRoot.setAttribute('title', pathId);
-            document.title = pathId;
-        });
-
-        path.addEventListener('mouseout', function() {
-            svgRoot.setAttribute('title', originalTitle);
-            document.title = originalTitle;
-        });
-
-        // Обработчик клика
-        path.addEventListener("click", function (event) {
-            const pathId = path.id || "(без id)";
-            const length = path.getTotalLength();
-            let points = [];
-
-            for (let i = 0; i <= length; i += 1) {
-                const { x, y } = path.getPointAtLength(i);
-                points.push({ x, y });
-            }
-
-            if (points.length < 3) {
-                alert(`Path ID: ${pathId}\nНе хватает точек для вычисления площади`);
-                return;
-            }
-
-            console.log(`ID: ${pathId}`);
-            console.log(`Количество точек: ${points.length}`);
-
-            let area = 0;
-            for (let i = 0; i < points.length - 1; i++) {
-                area += (points[i].x * points[i + 1].y) - (points[i + 1].x * points[i].y);
-            }
-            area = Math.abs(area) / 2;
-            area = area / 5.24382628733;
-
-            console.log(`Площадь: ${area.toFixed(2)} м²`);
-
-            // Создаем текстовый элемент
-            const svgNS = "http://www.w3.org/2000/svg";
-            const text = document.createElementNS(svgNS, "text");
-
-            // Получаем оригинальный цвет stroke из атрибута style
-            const style = path.getAttribute('style');
-            let pathColor = '#000000'; // Цвет по умолчанию, если stroke не найден
-            if (style) {
-                const strokeMatch = style.match(/stroke:#[0-9A-Fa-f]{6}/) || style.match(/stroke:#[0-9A-Fa-f]{3}/);
-                if (strokeMatch) {
-                    pathColor = strokeMatch[0].replace('stroke:', '');
-                }
-            }
-            text.setAttribute("fill", pathColor); // Устанавливаем оригинальный цвет
-            text.setAttribute("stroke", "#999D");        // Цвет обводки
-            text.setAttribute("stroke-width", "1.5");      // Толщина обводки
-            text.setAttribute("paint-order", "stroke");  // Обводка рисуется под заливкой            
-            text.setAttribute("class", "textfade");        // Цвет обводки
-
-            // Корректируем координаты клика
-            const point = svgRoot.createSVGPoint();
-            point.x = event.clientX;
-            point.y = event.clientY;
-            const ctm = svgRoot.getScreenCTM();
-            const svgPoint = point.matrixTransform(ctm.inverse());
-
-            text.setAttribute("x", svgPoint.x);
-            text.setAttribute("y", svgPoint.y);
-            text.setAttribute("font-size", "8");
-            text.textContent = `${pathId}: ${area.toFixed(2)} м²`;
-
-            // Добавляем текст в SVG
-            svgRoot.appendChild(text);
-
-            // Удаляем текст через 13 секунд
-            setTimeout(() => {
-                svgRoot.removeChild(text);
-            }, 13000);
-
-            // Оставляем старую анимацию линий
-            const svg = document.createElementNS(svgNS, "svg");
-            const parentSvg = path.ownerSVGElement;
-            svg.setAttribute("width", parentSvg.getAttribute("width"));
-            svg.setAttribute("height", parentSvg.getAttribute("height"));
-            svg.style.position = "absolute";
-            svg.style.top = "0";
-            svg.style.left = "0";
-            svg.style.pointerEvents = "none";
-            parentSvg.appendChild(svg);
-
-            const line = document.createElementNS(svgNS, "line");
-            line.setAttribute("stroke-width", "7");
-            svg.appendChild(line);
-
-            function getRandomColor() {
-                const letters = "0123456789ABCDEF";
-                let color = "#";
-                for (let i = 0; i < 6; i++) {
-                    color += letters[Math.floor(Math.random() * 16)];
-                }
-                return color;
-            }
-
-            function drawLine() {
-                let i = 0;
-                function moveLine() {
-                    if (i < points.length) {
-                        line.setAttribute("x1", points[i].x);
-                        line.setAttribute("y1", points[i].y);
-                        line.setAttribute("x2", i === points.length - 1 ? points[0].x : points[i + 1].x);
-                        line.setAttribute("y2", i === points.length - 1 ? points[0].y : points[i + 1].y);
-                        line.setAttribute("stroke", getRandomColor());
-                        i++;
-                        setTimeout(moveLine, 13);
-                    } else {
-                        setTimeout(() => {
-                            parentSvg.removeChild(svg);
-                        }, 100);
-                    }
-                }
-                moveLine();
-            }
-
-            drawLine();
-        });
+        const pathId = path.getAttribute('id');
+        if (pathId && currentUrl.includes(pathId)) {
+            path.classList.add('selectedpath');
+            console.log(`selectedpath: ${pathId}`);
+        }
     });
     
-    
+        
 ]]></script>
 </svg>
