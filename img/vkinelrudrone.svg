@@ -114,6 +114,12 @@ border: 0 !important;
     animation: pulseColor 6s infinite ease-in-out;
 }
 
+.notselectedpath
+{
+    stroke-width: 1.0px !important;
+    stroke: #8888;
+}
+
 
 @keyframes pulseColor {
     000% { stroke: #F009; fill:#0000; }
@@ -143,8 +149,7 @@ text {
     }
 }
 ]]></style>
-  <script
-     id="vkinelrujs"><![CDATA[
+<script id="vkinelrujs"><![CDATA[
      
 document.addEventListener('keydown', function(event) {
     const svgRoot = document.documentElement;
@@ -160,22 +165,27 @@ document.addEventListener('keydown', function(event) {
     svgRoot.style.transform = `rotate(${currentRotation}deg)`;
 });
 
-    // Получаем корневой SVG элемент
-    const svgRoot = document.documentElement;
-    
-    const currentUrl = window.location.href;
+// Получаем корневой SVG элемент
+const svgRoot = document.documentElement;
 
-    // Находим все path элементы
-    const paths = svgRoot.querySelectorAll('path');
+const currentUrl = window.location.href;
 
-    paths.forEach(path => {
-        const pathId = path.getAttribute('id');
-        if (pathId && currentUrl.includes(pathId)) {
+// Находим все path элементы
+const paths = svgRoot.querySelectorAll('path');
+
+// Если в URL есть ID path - то к этому элементу применится класс selectedpath, если нет - notselectedpath
+paths.forEach(path => {
+    const pathId = path.getAttribute('id');
+    if (pathId) {
+        if (currentUrl.includes(pathId)) {
             path.classList.add('selectedpath');
             console.log(`selectedpath: ${pathId}`);
+        } else {
+            path.classList.add('notselectedpath');
+            console.log(`notselectedpath: ${pathId}`);
         }
-    });
-    
-        
+    }
+});
+
 ]]></script>
 </svg>
