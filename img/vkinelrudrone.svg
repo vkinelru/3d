@@ -148,13 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const svgRoot = document.documentElement;
 
     // Пытаемся получить URL родителя, если не удаётся - используем document.referrer
-    let currentUrl;
-    try {
-        currentUrl = parent.parent.parent.window.location.href;
-    } catch (e) {
-        console.log('Не удалось получить URL родителя, используется document.referrer:', e);
-        currentUrl = document.referrer;
-    }
+    const currentUrl = window.location.href;
 
     // Находим все path элементы
     const paths = svgRoot.querySelectorAll('path');
