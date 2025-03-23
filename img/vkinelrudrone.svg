@@ -102,23 +102,14 @@ border: 0 !important;
 
 .notselectedpath
 {
-    stroke-width: 1.0px !important;
-    stroke: #8888;
+    stroke-width: 0.3px !important;
+    stroke: #8888 !important;
 }
-
 
 @keyframes pulseColor {
     000% { stroke: #F009; fill:#0000; }
     050% { stroke: #000F; fill:#F009; }
     100% { stroke: #F009; fill:#0000; }
-}
-
-text {
-    pointer-events: none; /* Предотвращает взаимодействие с текстом при вращении */
-}
-
-.textfade {
-    animation: fadeOutText 13s ease forwards;
 }
 
 @keyframes fadeOutText {
