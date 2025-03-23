@@ -89,15 +89,11 @@ padding: 0 !important;
 border: 0 !important;
 }
 
-.path {
-    stroke-width: 10.0px !important;
-    animation: pulseColor 6s infinite ease-in-out;
-}
-
 .selectedpath
 {
     stroke-width: 10.0px !important;
     animation: pulseColor 6s infinite ease-in-out;
+    stroke: #FFFF;
 }
 
 .notselectedpath
@@ -107,9 +103,9 @@ border: 0 !important;
 }
 
 @keyframes pulseColor {
-    000% { stroke: #F009; fill:#0000; }
-    050% { stroke: #000F; fill:#F009; }
-    100% { stroke: #F009; fill:#0000; }
+    000% { stroke: #F009; fill:#FFF0; }
+    050% { stroke: #FFFF; fill:#F009; }
+    100% { stroke: #F009; fill:#FFF0; }
 }
 
 @keyframes fadeOutText {
