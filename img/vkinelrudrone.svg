@@ -93,7 +93,8 @@ border: 0 !important;
 {
     stroke-width: 10.0px !important;
     animation: pulseColor 6s infinite ease-in-out;
-    stroke: #FFFF;
+    stroke: #F009; 
+    fill:#FFF0;
 }
 
 .notselectedpath
