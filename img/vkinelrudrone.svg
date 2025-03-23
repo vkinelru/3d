@@ -8,7 +8,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="0 0 526.34441 340.07775"
+   width="2048"
+   height="1636"
+   viewBox="0 0 2048 1636"
    version="1.1"
    id="svg20"
    sodipodi:docname="vkinelrudrone.svg"
@@ -24,16 +26,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="6.0334322"
-     inkscape:cx="274.2785"
-     inkscape:cy="263.4135"
+     inkscape:zoom="0.79007495"
+     inkscape:cx="776.65989"
+     inkscape:cy="1311.8356"
      inkscape:document-units="px"
      inkscape:current-layer="svg20"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1718"
-     inkscape:window-height="1078"
-     inkscape:window-x="200"
+     inkscape:window-width="1920"
+     inkscape:window-height="1080"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      fit-margin-top="0"
@@ -41,6 +43,9 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      lock-margins="true"
+     scale-x="0.10001"
+     viewbox-width="526"
+     units="mm"
      inkscape:showpageshadow="false"
      showborder="false" />
   <metadata
@@ -74,37 +79,39 @@
     </rdf:RDF>
   </metadata>
   <image
-     width="100%"
+     width="2048"
+     height="1636"
      style="display:inline;opacity:1"
      xlink:href="https://vkinelru.github.io/3d/img/kupi.VKinel.ru-doma-i-horizont-full-remaker_ai.jpeg"
      id="jpegback"
      x="0"
      y="0"
-     inkscape:svg-dpi="1"
-     sodipodi:insensitive="true" />
+     inkscape:svg-dpi="1" />
   <path
      style="fill:none;stroke:#ff0000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 353.86612,307.47039 7.13124,-58.3722 -65.96427,-6.20709 -2.92248,8.83624 -21.91416,-5.26047 -29.76964,46.17795 35.65478,7.09386 42.62742,5.72219 z"
+     d="m 1414.3208,1462.6499 30.4262,-251.4047 -281.4448,-26.7336 -12.4693,38.0573 -93.4997,-22.6566 -127.01585,198.8853 152.12575,30.5525 181.8754,24.6451 z"
      id="singapur"
      sodipodi:nodetypes="ccccccccc" />
   <style
      type="text/css"
      id="style"><![CDATA[
 svg {
+width:100%;
+height:100%;
 margin: 0 !important;
 padding: 0 !important;
 border: 0 !important;
 }
 
 path {
-    stroke-width: 3.0px !important;
+    stroke-width: 10.0px !important;
     animation: pulseColor 6s infinite ease-in-out;
 }
 
 @keyframes pulseColor {
-    000% { stroke: #F006; fill:#0000; }
-    050% { stroke: #000D; fill:#F009; }
-    100% { stroke: #F006; fill:#0000; }
+    000% { stroke: #F009; fill:#0000; }
+    050% { stroke: #000F; fill:#F009; }
+    100% { stroke: #F009; fill:#0000; }
 }
 
 text {
