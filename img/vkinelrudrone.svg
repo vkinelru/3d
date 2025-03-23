@@ -168,7 +168,7 @@ document.addEventListener('keydown', function(event) {
 // Получаем корневой SVG элемент
 const svgRoot = document.documentElement;
 
-const currentUrl = window.location.href;
+const currentUrl = parent.parent.parent.window.location.href;
 
 // Находим все path элементы
 const paths = svgRoot.querySelectorAll('path');
@@ -182,7 +182,7 @@ paths.forEach(path => {
             console.log(`selectedpath: ${pathId}`);
         } else {
             path.classList.add('notselectedpath');
-            console.log(`notselectedpath: ${pathId}`);
+            console.log(`notselectedpath: ${pathId} ${currentUrl}`);
         }
     }
 });
