@@ -89,9 +89,10 @@ svg {
     margin: 0 !important;
     padding: 0 !important;
     border: 0 !important;
-    transform-origin: center bottom;
+    /* transform-origin: center bottom; */
+    transform-origin: 047% 088% 0;
     transform: scale(1);
-    animation: zoomCycle 30s ease-in-out infinite;
+    animation: zoomCycle 40s ease-in-out infinite;
 }
 
 @keyframes zoomCycle {
@@ -102,10 +103,10 @@ svg {
         transform: scale(1);
     }
     50% { 
-        transform: scale(1.8);
+        transform: scale(2.5);
     }
     75% { 
-        transform: scale(1.8);
+        transform: scale(2.5);
     }
     100% {
         transform: scale(1);
@@ -115,7 +116,7 @@ svg {
 .selectedpath
 {
     stroke-width: 10.0px !important;
-    animation: pulseColor 6s infinite ease-in-out;
+    animation: pulseColor 5.7s infinite ease-in-out;
     stroke: #F009; 
     fill:#FFF0;
 }
