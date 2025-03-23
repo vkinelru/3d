@@ -306,6 +306,7 @@ replacer = {
 
 /* Copyright (c) 2025 Borodin-Atamanov */
 
+
 function replace_after_page_loaded() 
 {
     /*  parse GET parameters */
@@ -319,6 +320,8 @@ function replace_after_page_loaded()
     replace_html(' шт.', '&nbsp;шт.');
     replace_html(' м²', '&nbsp;м²');
     
+    add_nbsp_after_short_word('к');
+    add_nbsp_after_short_word('о');
     add_nbsp_after_short_word('а');
     add_nbsp_after_short_word('и');
     add_nbsp_after_short_word('в');
@@ -350,7 +353,6 @@ function replace_after_page_loaded()
 
     console.log('replace_after_page_loaded() 202503');
 }
-
 if (document.readyState !== 'loading') {
     console.log('document.readyState replace_after_page_loaded');
     replace_after_page_loaded() 
