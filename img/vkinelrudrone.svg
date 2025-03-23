@@ -26,16 +26,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.79007495"
-     inkscape:cx="776.65989"
-     inkscape:cy="1311.8356"
+     inkscape:zoom="2.7877778"
+     inkscape:cx="965.3812"
+     inkscape:cy="1233.8438"
      inkscape:document-units="px"
      inkscape:current-layer="svg20"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1080"
-     inkscape:window-x="0"
+     inkscape:window-width="1718"
+     inkscape:window-height="1078"
+     inkscape:window-x="200"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      fit-margin-top="0"
@@ -78,20 +78,6 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <image
-     width="2048"
-     height="1636"
-     style="display:inline;opacity:1"
-     xlink:href="https://vkinelru.github.io/3d/img/kupi.VKinel.ru-doma-i-horizont-full-remaker_ai.jpeg"
-     id="jpegback"
-     x="0"
-     y="0"
-     inkscape:svg-dpi="1" />
-  <path
-     style="fill:none;stroke:#ff0000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-     d="m 1414.3208,1462.6499 30.4262,-251.4047 -281.4448,-26.7336 -12.4693,38.0573 -93.4997,-22.6566 -127.01585,198.8853 152.12575,30.5525 181.8754,24.6451 z"
-     id="singapur"
-     sodipodi:nodetypes="ccccccccc" />
   <style
      type="text/css"
      id="style"><![CDATA[
@@ -149,7 +135,8 @@ text {
     }
 }
 ]]></style>
-<script id="vkinelrujs"><![CDATA[
+  <script
+     id="vkinelrujs"><![CDATA[
      
 document.addEventListener('keydown', function(event) {
     const svgRoot = document.documentElement;
@@ -165,27 +152,48 @@ document.addEventListener('keydown', function(event) {
     svgRoot.style.transform = `rotate(${currentRotation}deg)`;
 });
 
-// Получаем корневой SVG элемент
-const svgRoot = document.documentElement;
+document.addEventListener('DOMContentLoaded', function() {
+    // Получаем корневой SVG элемент
+    const svgRoot = document.documentElement;
 
-const currentUrl = parent.parent.parent.window.location.href;
+    const currentUrl = parent.parent.parent.window.location.href;
 
-// Находим все path элементы
-const paths = svgRoot.querySelectorAll('path');
+    // Находим все path элементы
+    const paths = svgRoot.querySelectorAll('path');
 
-// Если в URL есть ID path - то к этому элементу применится класс selectedpath, если нет - notselectedpath
-paths.forEach(path => {
-    const pathId = path.getAttribute('id');
-    if (pathId) {
-        if (currentUrl.includes(pathId)) {
-            path.classList.add('selectedpath');
-            console.log(`selectedpath: ${pathId}`);
-        } else {
-            path.classList.add('notselectedpath');
-            console.log(`notselectedpath: ${pathId} ${currentUrl}`);
+    // Если в URL есть ID path - то к этому элементу применится класс selectedpath, если нет - notselectedpath
+    paths.forEach(path => {
+        const pathId = path.getAttribute('id');
+        if (pathId) {
+            if (currentUrl.includes(pathId)) {
+                path.classList.add('selectedpath');
+                console.log(`selectedpath: ${pathId}`);
+            } else {
+                path.classList.add('notselectedpath');
+                console.log(`notselectedpath: ${pathId} ${currentUrl}`);
+            }
         }
-    }
+    });
 });
 
 ]]></script>
+  <image
+     width="2048"
+     height="1636"
+     style="display:inline;opacity:1"
+     xlink:href="https://vkinelru.github.io/3d/img/kupi.VKinel.ru-doma-i-horizont-full-remaker_ai.jpeg"
+     id="jpegback"
+     x="0"
+     y="0"
+     inkscape:svg-dpi="1" />
+  <path
+     style="fill:none;stroke:#ff0000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     d="m 1414.3208,1462.6499 30.4262,-251.4047 -281.4448,-26.7336 -12.4693,38.0573 -107.8747,-25.9891 -127.6383,196.3969 167.1232,36.3734 181.8754,24.6451 z"
+     id="singapur"
+     sodipodi:nodetypes="ccccccccc" />
+  <path
+     style="fill:none;stroke:#ffff00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 956.12389,1110.8322 128.10341,32.2014 -159.34321,255.3644 -207.8652,-62.5469 147.52153,-134.4177 z"
+     id="gazdom"
+     sodipodi:nodetypes="cccccc" />
 </svg>
