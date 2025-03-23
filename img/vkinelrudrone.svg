@@ -134,9 +134,9 @@ document.addEventListener('keydown', function(event) {
     let currentRotation = parseFloat(svgRoot.getAttribute('data-rotation') || '0');
     
     if (event.key === 'a' || event.key === 'A') {
-        currentRotation -= 0.5; // Поворот влево
+        currentRotation -= 5; // Поворот влево
     } else if (event.key === 'd' || event.key === 'D') {
-        currentRotation += 0.5; // Поворот вправо
+        currentRotation += 5; // Поворот вправо
     }
     
     svgRoot.setAttribute('data-rotation', currentRotation);
