@@ -113,6 +113,20 @@ svg {
     }
 }
 
+.selectedpath
+{
+    stroke-width: 10.0px !important;
+    animation: pulseColor 5.7s infinite ease-in-out;
+    stroke: #F009; 
+    fill:#FFF0;
+}
+
+.notselectedpath
+{
+    stroke-width: 0.3px !important;
+    stroke: #8888 !important;
+}
+
 @keyframes pulseColor {
     000% { stroke: #F009; fill:#FFF0; }
     050% { stroke: #FFFF; fill:#F009; }
