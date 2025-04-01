@@ -13,7 +13,7 @@
    viewBox="0 0 526.34441 340.07775"
    version="1.1"
    id="svg20"
-   sodipodi:docname="vkinelrumap-reestr.svg"
+   sodipodi:docname="vkinelrumap.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15)">
   <defs
      id="defs13" />
@@ -26,16 +26,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.3222752"
-     inkscape:cx="277.63747"
-     inkscape:cy="295.6418"
+     inkscape:zoom="3.9403334"
+     inkscape:cx="370.9727"
+     inkscape:cy="303.44443"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1080"
-     inkscape:window-x="0"
+     inkscape:window-width="1718"
+     inkscape:window-height="1078"
+     inkscape:window-x="200"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      fit-margin-top="0"
@@ -137,8 +137,8 @@
        id="Газифицированный_дом"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:none;stroke:#f90000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:6, 1;stroke-dashoffset:0;stroke-opacity:1;opacity:1"
-       d="m 286.83448,134.55044 -52.19847,39.81536 10.00752,15.6191 -14.26943,11.60578 32.52986,50.6083 69.02798,-56.02775 z"
+       style="opacity:1;fill:none;stroke:#f90000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:6, 1;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 289.87652,139.04206 -52.19847,39.81536 6.96548,11.12748 -14.26943,11.60578 32.52986,50.6083 69.02798,-56.02775 z"
        id="Сингапур_территория"
        sodipodi:nodetypes="ccccccc" />
     <path
@@ -148,7 +148,7 @@
        sodipodi:nodetypes="cccccccccc" />
     <path
        style="opacity:1;fill:none;stroke:#ffff00;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:6, 1;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 220.60804,201.2039 -10.7978,-15.47726 -12.04539,7.26401 -9.26918,5.8057 47.77525,73.81814 26.2706,-20.08919 -33.41333,-51.19861 14.18311,-11.57728 -9.61849,-15.44817 43.29754,-33.77556 -2.63095,-3.77013 -45.95196,36.03184 11.1989,16.14844 -13.28236,8.54998 z"
+       d="m 220.60804,201.2039 -10.7978,-15.47726 -12.04539,7.26401 -9.26918,5.8057 47.77525,73.81814 26.2706,-20.08919 -33.41333,-51.19861 14.18311,-11.57728 -6.76369,-11.44236 43.95144,-32.81981 -2.63095,-3.77013 -46.60586,35.07609 8.3441,12.14263 -13.28236,8.54998 z"
        id="Газифицированный_дом_территория"
        sodipodi:nodetypes="ccccccccccccccc" />
     <path
@@ -158,7 +158,7 @@
        sodipodi:nodetypes="cccccccc" />
     <path
        style="opacity:1;fill:none;stroke:#0000f8;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:3.63528, 0.60588;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 158.59998,159.94705 45.84346,-39.17366 31.50319,35.23497 34.96535,-24.46341 2.94217,4.26413 -30.71398,24.84513 -8.2227,6.22632 -7.38758,5.77274 10.61628,15.79901 -17.24458,11.46854 -10.83934,-15.54242 -12.68628,7.43978 -9.41525,5.87103 -4.09918,-6.09195 -10.10977,7.10052 -13.94181,-32.45554 z"
+       d="m 158.59998,159.94705 45.84346,-39.17366 31.50319,35.23497 34.96535,-24.46341 6.68577,9.66264 -31.72869,23.47505 -8.2227,6.22632 -7.38758,5.77274 7.88739,11.77058 -17.24458,11.46854 -10.83934,-15.54242 -12.68628,7.43978 -9.41525,5.87103 -4.09918,-6.09195 -10.10977,7.10052 -13.94181,-32.45554 z"
        id="Валенсия_территория"
        sodipodi:nodetypes="ccccccccccccccccc" />
     <path
